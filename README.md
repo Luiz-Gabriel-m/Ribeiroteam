@@ -103,6 +103,7 @@ Para publicar:
 ## 👤 Treinador Samuel Ribeiro
 
 - **Instagram:** [@treinador_samuelribeiro](https://www.instagram.com/treinador_samuelribeiro/)
+- **WhatsApp:** [+55 (35) 9865-7628](https://wa.me/553598657628)
 - **Metodologia:** Biomecânica Aplicada, Periodização Não-Linear e Alta Performance.
 
 ---

@@ -5,7 +5,7 @@
  */
 
 // Configuração Global de Contato WhatsApp Oficial (sem pontuação)
-const WHATSAPP_NUMBER = "5535999999999";
+const WHATSAPP_NUMBER = "553598657628";
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize Lucide Icons if available

@@ -4,6 +4,9 @@
  * GSAP ScrollTrigger Animations, Interactive UI, Video Handling & Lead Generation
  */
 
+// Configuração Global de Contato WhatsApp Oficial (sem pontuação)
+const WHATSAPP_NUMBER = "5535999999999";
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize Lucide Icons if available
   if (typeof lucide !== "undefined") {
@@ -71,21 +74,23 @@ function setupGSAPAnimations(deadlift3D) {
     });
   });
 
-  // Staggered Cards (Methodology & Plans)
+  // Staggered Cards (Safe Guard against NodeList errors)
   gsap.utils.toArray(".stagger-group").forEach((group) => {
-    const cards = group.querySelectorAll(".stagger-card");
-    gsap.from(cards, {
-      scrollTrigger: {
-        trigger: group,
-        start: "top 80%",
-        toggleActions: "play none none none"
-      },
-      opacity: 0,
-      y: 45,
-      stagger: 0.15,
-      duration: 0.85,
-      ease: "power2.out"
-    });
+    const cards = Array.from(group.querySelectorAll(".stagger-card"));
+    if (cards.length > 0) {
+      gsap.from(cards, {
+        scrollTrigger: {
+          trigger: group,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 45,
+        stagger: 0.15,
+        duration: 0.85,
+        ease: "power2.out"
+      });
+    }
   });
 
   // 3D Deadlift Module ScrollTrigger Integration

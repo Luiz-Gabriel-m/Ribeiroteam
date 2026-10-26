@@ -23,3 +23,8 @@ yarn-error.log*
 .idea/
 *.swp
 *.swo
+
+# Local backups
+backup/
+*.zip
+

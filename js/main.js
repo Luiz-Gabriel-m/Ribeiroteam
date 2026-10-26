@@ -47,7 +47,7 @@ function setupGSAPAnimations(deadlift3D) {
 
   heroTL
     .from("#hero-badge", { opacity: 0, y: -20, duration: 0.8, delay: 0.2 })
-    .from("#hero-title span", { opacity: 0, y: 35, stagger: 0.15, duration: 1 }, "-=0.4")
+    .from("#hero-title > span", { opacity: 0, y: 30, stagger: 0.15, duration: 0.9 }, "-=0.4")
     .from("#hero-subtitle", { opacity: 0, y: 20, duration: 0.8 }, "-=0.6")
     .from("#hero-ctas", { opacity: 0, y: 20, duration: 0.8 }, "-=0.5")
     .from("#hero-stats", { opacity: 0, y: 20, duration: 0.8 }, "-=0.4")

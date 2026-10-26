@@ -80,8 +80,9 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
         <a href="#hero" class="hover:text-red-500 transition-colors duration-200">Início</a>
+        <a href="#metodologia-app" class="hover:text-red-500 transition-colors duration-200">App & Planilha</a>
         <a href="#metodo" class="hover:text-red-500 transition-colors duration-200">Método</a>
         <a href="#deadlift-section" class="hover:text-red-500 transition-colors duration-200 flex items-center gap-1.5 text-white font-semibold">
           <span class="w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
@@ -89,7 +90,7 @@
         </a>
         <a href="#planos" class="hover:text-red-500 transition-colors duration-200">Planos</a>
         <a href="#resultados" class="hover:text-red-500 transition-colors duration-200">Resultados</a>
-        <a href="#depoimentos" class="hover:text-red-500 transition-colors duration-200">Depoimentos</a>
+        <a href="#depoimentos" class="hover:text-red-500 transition-colors duration-200">FAQ</a>
       </nav>
 
       <!-- Action Button CTA -->
@@ -112,11 +113,12 @@
     <!-- Mobile Drawer Menu -->
     <div id="mobile-drawer" class="hidden md:hidden mt-3 px-4 py-6 bg-neutral-950/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl flex flex-col gap-4">
       <a href="#hero" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Início</a>
-      <a href="#metodo" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Método Ribeiro</a>
-      <a href="#deadlift-section" class="mobile-nav-link text-base font-semibold text-red-400 flex items-center gap-2">
+      <a href="#metodologia-app" class="mobile-nav-link text-base font-semibold text-red-400 flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-red-600"></span>
-        Análise 3D Deadlift
+        App & Planilha de Treino
       </a>
+      <a href="#metodo" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Método Ribeiro</a>
+      <a href="#deadlift-section" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Análise 3D Deadlift</a>
       <a href="#planos" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Planos & Consultoria</a>
       <a href="#resultados" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Resultados & Galeria</a>
       <a href="#depoimentos" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Perguntas Frequentes</a>
@@ -132,9 +134,9 @@
 
 
   <!-- ========================================================================
-       2. HERO SECTION (FUSÃO DOS MODELOS 1 E 2: VIDEO BACKGROUND + SAMUEL RIBEIRO)
+       2. HERO SECTION (REFINAMENTO TIPOGRÁFICO & RETRATO PURO DE SAMUEL RIBEIRO)
        ======================================================================== -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-8 overflow-hidden">
+  <section id="hero" class="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 sm:pb-20 lg:py-24 px-4 sm:px-8 overflow-hidden">
     
     <!-- Video Hero Background Layer -->
     <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
@@ -142,7 +144,7 @@
       <img id="hero-video-fallback" 
            src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40.jpeg" 
            alt="Treinador Samuel Ribeiro" 
-           class="absolute inset-0 w-full h-full object-cover object-top opacity-30 filter blur-sm transition-opacity duration-700">
+           class="absolute inset-0 w-full h-full object-cover object-top opacity-25 filter blur-sm transition-opacity duration-700">
       
       <!-- Video Element -->
       <video id="hero-video" 
@@ -156,115 +158,122 @@
         <source src="Assets/video%20hero/WhatsApp%20Video%202026-10-26%20at%2018.57.44.mp4" type="video/mp4">
       </video>
 
-      <!-- Calibrated Dark Carbon Gradient Overlays (#0B0B0B & Vignette) -->
+      <!-- Calibrated Dark Carbon Gradient Overlays (#070707 & Vignette) -->
       <div class="absolute inset-0 bg-gradient-to-t from-[#070707] via-[#070707]/80 to-[#070707]/75"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-[#070707] via-[#070707]/70 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#070707] via-[#070707]/75 to-transparent"></div>
       <!-- Subtle Red Volumetric Ambient Radial Glow -->
-      <div class="absolute top-1/4 -right-20 w-[550px] h-[550px] bg-red-600/15 rounded-full filter blur-[120px] pointer-events-none"></div>
+      <div class="absolute top-1/4 -right-20 w-[550px] h-[550px] bg-red-600/15 rounded-full filter blur-[130px] pointer-events-none"></div>
     </div>
 
     <!-- Main Content Container -->
-    <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       
-      <!-- Left Column: Copywriting & High Conversion CTAs -->
-      <div class="lg:col-span-7 flex flex-col items-start text-left">
+      <!-- Left Column: Copywriting & High Conversion CTAs (max-w-xl refinado) -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left max-w-xl">
         
         <!-- Status / Authority Pill Badge -->
-        <div id="hero-badge" class="tech-badge mb-6 shadow-[0_0_20px_rgba(229,9,20,0.3)]">
+        <div id="hero-badge" class="tech-badge mb-5 shadow-[0_0_15px_rgba(229,9,20,0.3)]">
           <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
           <span>Biomecânica Aplicada & Alta Performance</span>
         </div>
 
-        <!-- Main Headline -->
-        <h1 id="hero-title" class="font-display font-black text-4xl sm:text-6xl xl:text-7xl uppercase leading-[1.05] tracking-tight mb-6">
+        <!-- Main Headline (Escala tipográfica refinada e equilibrada) -->
+        <h1 id="hero-title" class="font-display font-black text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px] uppercase leading-[1.1] tracking-tight mb-5">
           <span class="block text-white">FORÇA, TÉCNICA</span>
-          <span class="block bg-gradient-to-r from-red-500 via-red-600 to-rose-700 bg-clip-text text-transparent text-glow">
-            E RESULTADO REAL
+          <span class="block text-white">
+            E <span class="bg-gradient-to-r from-red-500 via-red-600 to-rose-700 bg-clip-text text-transparent text-glow">RESULTADO REAL</span>
           </span>
-          <span class="block text-white/90 text-3xl sm:text-5xl xl:text-6xl">
+          <span class="block text-white/90 text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] mt-0.5">
             COM O RIBEIRO TEAM
           </span>
         </h1>
 
-        <!-- Subheadline focused on science, hypertrophy and fat loss -->
-        <p id="hero-subtitle" class="text-gray-300 text-base sm:text-lg max-w-2xl font-normal leading-relaxed mb-8">
+        <!-- Subheadline com opacidade e escala balanceadas -->
+        <p id="hero-subtitle" class="text-neutral-400 text-sm sm:text-base font-normal leading-relaxed mb-7 max-w-lg">
           Transformação corporal de elite com o Treinador <strong>Samuel Ribeiro</strong>. Periodização individualizada, 
           ajuste biomecânico milimétrico e acompanhamento contínuo para quem não aceita estagnação nos treinos.
         </p>
 
         <!-- Dual Call-to-Action Buttons -->
-        <div id="hero-ctas" class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
+        <div id="hero-ctas" class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-8">
           <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Quero%20iniciar%20minha%20consultoria%20com%20o%20Ribeiro%20Team." 
              target="_blank" 
              rel="noopener noreferrer"
-             class="btn-primary px-8 py-4 rounded-xl text-center text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-3">
+             class="btn-primary px-7 py-3.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5">
             <span>Iniciar Minha Transformação</span>
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
 
-          <a href="#deadlift-section" 
-             class="btn-secondary px-8 py-4 rounded-xl text-center text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2">
-            <i data-lucide="activity" class="w-4 h-4 text-red-500"></i>
-            <span>Ver Laboratório 3D</span>
+          <a href="#metodologia-app" 
+             class="btn-secondary px-6 py-3.5 rounded-xl text-center text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2">
+            <i data-lucide="smartphone" class="w-4 h-4 text-red-500"></i>
+            <span>Ver Aplicativo & Planilha</span>
           </a>
         </div>
 
-        <!-- Quick Metrics Bar (Fusão dos Modelos 1 e 2) -->
-        <div id="hero-stats" class="grid grid-cols-3 gap-4 sm:gap-8 pt-6 border-t border-white/10 w-full max-w-xl">
+        <!-- Quick Metrics Bar -->
+        <div id="hero-stats" class="grid grid-cols-3 gap-4 sm:gap-6 pt-5 border-t border-white/10 w-full">
           <div class="flex flex-col">
             <span class="font-display font-extrabold text-2xl sm:text-3xl text-white" data-counter-target="500" data-counter-prefix="+">
               +500
             </span>
-            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Vidas Transformadas</span>
+            <span class="text-[11px] text-gray-400 uppercase tracking-wider font-medium">Vidas Transformadas</span>
           </div>
 
           <div class="flex flex-col">
             <span class="font-display font-extrabold text-2xl sm:text-3xl text-red-500" data-counter-target="100" data-counter-suffix="%">
               100%
             </span>
-            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Personalizado</span>
+            <span class="text-[11px] text-gray-400 uppercase tracking-wider font-medium">Personalizado</span>
           </div>
 
           <div class="flex flex-col">
             <span class="font-display font-extrabold text-2xl sm:text-3xl text-white">
               BIOMECÂNICA
             </span>
-            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Método Científico</span>
+            <span class="text-[11px] text-gray-400 uppercase tracking-wider font-medium">Método Científico</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Right Column: Samuel Ribeiro Featured Hero Portrait with Red Rim Light -->
+      <!-- Right Column: Fotografia Pura de Alta Qualidade do Treinador Samuel Ribeiro (Sem Frame de Celular) -->
       <div class="lg:col-span-5 flex justify-center items-center relative">
-        <div id="hero-portrait-wrapper" class="hero-portrait-container relative max-w-md w-full">
+        <div id="hero-portrait-wrapper" class="hero-portrait-container relative max-w-sm sm:max-w-md w-full">
           
-          <!-- Atmospheric Backdrop Rings -->
-          <div class="absolute -inset-4 bg-gradient-to-t from-red-600/30 via-red-900/10 to-transparent rounded-3xl blur-2xl -z-10"></div>
-          
-          <!-- Main Hero Photo Cutout/Highlight -->
-          <div class="relative rounded-2xl overflow-hidden border border-white/15 bg-gradient-to-b from-neutral-900/80 to-black/90 shadow-[0_20px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(229,9,20,0.25)]">
+          <!-- Atmospheric Red Rim Lighting & Glow Volumétrico -->
+          <div class="absolute -inset-3 bg-gradient-to-t from-red-600/35 via-red-900/15 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none"></div>
+          <div class="absolute top-1/4 -right-4 w-40 h-40 bg-red-600/25 rounded-full blur-2xl -z-10 pointer-events-none"></div>
+
+          <!-- Moldura Atlética Sofisticada e Limpa -->
+          <div class="relative rounded-3xl overflow-hidden border border-white/15 bg-gradient-to-b from-neutral-900/80 via-black/85 to-black shadow-[0_25px_65px_rgba(0,0,0,0.9),0_0_35px_rgba(229,9,20,0.22)]">
             <img id="hero-portrait-img" 
                  src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40.jpeg" 
                  alt="Treinador Samuel Ribeiro - Ribeiro Team" 
-                 class="hero-portrait-img w-full h-[520px] object-cover object-top">
+                 class="hero-portrait-img w-full h-[470px] sm:h-[510px] object-cover object-top filter contrast-[1.06] brightness-[1.03]">
 
-            <!-- Floating Authority Card Overlay -->
-            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-neutral-950/85 backdrop-blur-md border border-white/10 flex items-center justify-between">
+            <!-- Gradiente de fade inferior para fusão com o fundo escuro -->
+            <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#070707] via-[#070707]/60 to-transparent pointer-events-none"></div>
+
+            <!-- Badge Minimalista e Elegante de Autoridade -->
+            <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-black/75 backdrop-blur-xl border border-white/10 flex items-center justify-between shadow-lg">
               <div>
-                <p class="text-xs uppercase tracking-widest text-red-500 font-bold">Coach Titular</p>
-                <h4 class="text-base font-bold text-white uppercase">Samuel Ribeiro</h4>
-                <p class="text-[11px] text-gray-400">@treinador_samuelribeiro</p>
+                <div class="flex items-center gap-1.5 mb-0.5">
+                  <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-red-400">Coach Titular</span>
+                </div>
+                <h4 class="text-sm font-extrabold uppercase text-white font-display">Samuel Ribeiro</h4>
+                <p class="text-[11px] text-gray-400 font-medium">@treinador_samuelribeiro</p>
               </div>
-              <div class="w-10 h-10 rounded-full bg-red-600/20 border border-red-500/50 flex items-center justify-center">
-                <i data-lucide="shield-check" class="w-5 h-5 text-red-500"></i>
+              <div class="w-9 h-9 rounded-xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-500 shrink-0">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
               </div>
             </div>
           </div>
 
-          <!-- Technical Corner Accents -->
-          <div class="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-red-600"></div>
-          <div class="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-red-600"></div>
+          <!-- Acentos técnicos sutis nos cantos -->
+          <div class="absolute -top-2 -left-2 w-5 h-5 border-t-2 border-l-2 border-red-600/80"></div>
+          <div class="absolute -bottom-2 -right-2 w-5 h-5 border-b-2 border-r-2 border-red-600/80"></div>
         </div>
       </div>
 
@@ -296,7 +305,239 @@
 
 
   <!-- ========================================================================
-       3. AUTORIDADE & METODOLOGIA RIBEIRO (SAMUEL RIBEIRO)
+       NOVA SEÇÃO DEDICADA: METODOLOGIA & APLICATIVO DE TREINO
+       ======================================================================== -->
+  <section id="metodologia-app" class="py-20 sm:py-28 px-4 sm:px-8 relative bg-gradient-to-b from-[#070707] via-[#0c0c11] to-[#070707] border-b border-white/5 overflow-hidden">
+    
+    <!-- Ambient Red Background Glow -->
+    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Coluna 1 (Mockup do Smartphone Reestilizado: Planilha / Dashboard de Treino de Alta Performance) -->
+        <div class="lg:col-span-6 flex justify-center items-center relative stagger-group order-2 lg:order-1">
+          <div class="relative w-full max-w-[350px]">
+            
+            <!-- Floating Badge 1 (Topo Direito): Planilha Individualizada -->
+            <div class="absolute -top-4 -right-2 sm:-right-6 z-20 px-3.5 py-2.5 rounded-2xl bg-neutral-900/90 backdrop-blur-xl border border-red-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_20px_rgba(229,9,20,0.25)] flex items-center gap-2.5">
+              <div class="w-7 h-7 rounded-lg bg-red-600/20 border border-red-500/50 flex items-center justify-center text-red-500 shrink-0">
+                <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase font-bold text-red-400 tracking-wider block">Sistema Ativo</span>
+                <p class="text-xs font-bold text-white leading-tight">Planilha Individualizada</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2 (Base Esquerda): Acompanhamento em Tempo Real -->
+            <div class="absolute -bottom-4 -left-2 sm:-left-6 z-20 px-3.5 py-2.5 rounded-2xl bg-neutral-900/90 backdrop-blur-xl border border-white/15 shadow-[0_10px_30px_rgba(0,0,0,0.8)] flex items-center gap-2.5">
+              <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              </span>
+              <div>
+                <p class="text-xs font-bold text-white leading-tight">Acompanhamento em Tempo Real</p>
+                <span class="text-[9px] uppercase font-medium text-gray-400 tracking-wider block">Treinador Samuel Ribeiro</span>
+              </div>
+            </div>
+
+            <!-- Smartphone Chassis (Reestilizado Premium Dark Mode) -->
+            <div class="phone-mockup">
+              <div class="phone-screen p-4 flex flex-col gap-3 text-white">
+                
+                <!-- Dynamic Island & Status Bar -->
+                <div class="flex items-center justify-between text-[11px] font-semibold text-gray-400 px-2 pt-1 pb-1">
+                  <span>09:41</span>
+                  <div class="phone-dynamic-island">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-neutral-800"></span>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <i data-lucide="wifi" class="w-3.5 h-3.5 text-gray-400"></i>
+                    <i data-lucide="battery-charging" class="w-4 h-4 text-emerald-400"></i>
+                  </div>
+                </div>
+
+                <!-- App Header Profile Info -->
+                <div class="flex items-center justify-between bg-neutral-900/90 p-3 rounded-2xl border border-white/5">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center font-black text-xs text-white shadow-sm">
+                      RT
+                    </div>
+                    <div>
+                      <h5 class="text-xs font-bold text-white uppercase font-display leading-tight">Ribeiro Team Pro</h5>
+                      <span class="text-[10px] text-gray-400">Semana 4 • Mesociclo de Força</span>
+                    </div>
+                  </div>
+                  <span class="text-[9px] uppercase font-bold px-2 py-0.5 rounded-full bg-red-950/80 border border-red-700/50 text-red-400">
+                    Fase II
+                  </span>
+                </div>
+
+                <!-- Workout Division Tabs (A/B/C) -->
+                <div class="grid grid-cols-3 gap-1.5 p-1 bg-black/60 rounded-xl border border-white/5 text-center text-[10px] font-bold uppercase">
+                  <div class="py-1.5 rounded-lg bg-red-600 text-white shadow-[0_0_12px_rgba(229,9,20,0.4)]">Treino A</div>
+                  <div class="py-1.5 rounded-lg text-gray-400 hover:text-white transition-colors">Treino B</div>
+                  <div class="py-1.5 rounded-lg text-gray-400 hover:text-white transition-colors">Treino C</div>
+                </div>
+
+                <!-- Active Workout Card: Levantamento Terra -->
+                <div class="bg-gradient-to-b from-neutral-900/95 to-neutral-950 p-3.5 rounded-2xl border border-white/10 space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="text-[9px] font-bold text-red-400 uppercase tracking-widest block">Exercício Principal</span>
+                      <h6 class="text-xs font-bold text-white">Levantamento Terra (Deadlift)</h6>
+                    </div>
+                    <span class="text-[9px] font-semibold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
+                      Validado ✓
+                    </span>
+                  </div>
+
+                  <!-- Sets and Reps Micro Table -->
+                  <div class="space-y-1.5 text-[10px]">
+                    <div class="flex items-center justify-between p-1.5 rounded-lg bg-neutral-800/60 text-gray-300">
+                      <span class="font-bold text-white">Série 1:</span>
+                      <span>8 reps @ 120 kg</span>
+                      <span class="text-red-400 font-semibold">RPE 7.5</span>
+                    </div>
+                    <div class="flex items-center justify-between p-1.5 rounded-lg bg-neutral-800/60 text-gray-300">
+                      <span class="font-bold text-white">Série 2:</span>
+                      <span>6 reps @ 140 kg</span>
+                      <span class="text-red-400 font-semibold">RPE 8.5</span>
+                    </div>
+                    <div class="flex items-center justify-between p-1.5 rounded-lg bg-red-950/40 border border-red-800/40 text-gray-200">
+                      <span class="font-bold text-red-300">Série 3 (Top):</span>
+                      <span class="font-bold text-white">4 reps @ 155 kg</span>
+                      <span class="text-amber-400 font-bold">PR 🏆</span>
+                    </div>
+                  </div>
+
+                  <!-- Biomechanical Coaching Cue -->
+                  <div class="p-2 rounded-xl bg-black/50 border border-white/5 text-[9px] text-gray-400 flex items-start gap-1.5">
+                    <i data-lucide="info" class="w-3.5 h-3.5 text-red-500 shrink-0 mt-0.5"></i>
+                    <span><em>"Excelente velocidade de saída. Manter o queixo alinhado e travamento de glúteos no lockout."</em> — Samuel</span>
+                  </div>
+                </div>
+
+                <!-- Mini Progress Metric Bar Chart -->
+                <div class="p-3 rounded-2xl bg-neutral-900/70 border border-white/5">
+                  <div class="flex items-center justify-between text-[10px] mb-2">
+                    <span class="font-bold text-gray-300 uppercase">Progressão de Carga Acumulada</span>
+                    <span class="text-red-400 font-bold">+18.5%</span>
+                  </div>
+                  <div class="flex items-end justify-between gap-2 h-11 pt-1 border-b border-white/5 pb-1">
+                    <div class="flex-1 flex flex-col items-center gap-1">
+                      <div class="w-full bg-neutral-800 rounded-t h-4"></div>
+                      <span class="text-[8px] text-gray-500">S1</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-1">
+                      <div class="w-full bg-neutral-700 rounded-t h-6"></div>
+                      <span class="text-[8px] text-gray-500">S2</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-1">
+                      <div class="w-full bg-red-900 rounded-t h-8"></div>
+                      <span class="text-[8px] text-gray-500">S3</span>
+                    </div>
+                    <div class="flex-1 flex flex-col items-center gap-1">
+                      <div class="w-full bg-gradient-to-t from-red-600 to-rose-500 rounded-t h-11 shadow-[0_0_10px_rgba(229,9,20,0.5)]"></div>
+                      <span class="text-[8px] text-red-400 font-bold">S4</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Coluna 2: Conteúdo Explicativo -->
+        <div class="lg:col-span-6 flex flex-col items-start section-reveal order-1 lg:order-2">
+          <span class="tech-badge mb-4">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            Metodologia Ribeiro Team
+          </span>
+          
+          <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white mb-6 leading-tight">
+            PERIODIZAÇÃO CIENTÍFICA <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-red-500 via-red-600 to-rose-600 bg-clip-text text-transparent text-glow">
+              NA PALMA DA SUA MÃO
+            </span>
+          </h2>
+
+          <p class="text-neutral-400 text-sm sm:text-base leading-relaxed mb-8">
+            Você nunca mais precisará adivinhar qual carga colocar ou qual exercício fazer. Toda a sua rotina é estruturada em nosso ecossistema digital inteligente, com acompanhamento biomecânico individualizado.
+          </p>
+
+          <!-- 3 Bullet Points Técnicos -->
+          <div class="space-y-5 mb-10 w-full">
+            
+            <!-- Bullet 1 -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-red-600/15 border border-red-500/30 flex items-center justify-center shrink-0 text-red-500 shadow-sm mt-0.5">
+                <i data-lucide="sliders" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white uppercase font-display mb-1">
+                  1. Planilhas 100% Individualizadas
+                </h4>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Volume, intensidade e seleção de exercícios calculados com precisão para a sua rotina, alavancas ósseas e objetivos específicos.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bullet 2 -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-red-600/15 border border-red-500/30 flex items-center justify-center shrink-0 text-red-500 shadow-sm mt-0.5">
+                <i data-lucide="video" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white uppercase font-display mb-1">
+                  2. Feedback Técnico por Vídeo
+                </h4>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Envie a gravação dos seus exercícios e receba correções angulares detalhadas do Treinador Samuel Ribeiro a cada fase do movimento.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bullet 3 -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-red-600/15 border border-red-500/30 flex items-center justify-center shrink-0 text-red-500 shadow-sm mt-0.5">
+                <i data-lucide="trending-up" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white uppercase font-display mb-1">
+                  3. Progressão Contínua de Cargas
+                </h4>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                  Registro sistemático de RPE e quilagem semana após semana, quebrando qualquer platô de força ou hipertrofia.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Botão de Ação -->
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Quero%20acessar%20a%20minha%20consultoria%20com%20a%20planilha%20individualizada%20da%20Ribeiro%20Team." 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-primary px-8 py-4 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-3 shadow-[0_0_25px_rgba(229,9,20,0.5)]">
+            <span>Acessar Minha Consultoria</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       4. AUTORIDADE & METODOLOGIA RIBEIRO (SAMUEL RIBEIRO)
        ======================================================================== -->
   <section id="metodo" class="py-24 px-4 sm:px-8 relative tech-grid-bg">
     <div class="max-w-7xl mx-auto">

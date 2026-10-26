@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ribeiro Team | Treinador Samuel Ribeiro - Alta Performance & Biomecânica</title>
+  <meta name="description" content="Consultoria fitness de elite e personal training com o Treinador Samuel Ribeiro. Biomecânica de precisão, hipertrofia, emagrecimento e resultados reais.">
+  <meta name="keywords" content="Samuel Ribeiro, Ribeiro Team, personal trainer, consultoria online, biomecânica, deadlift, levantamento terra, hipertrofia, musculação">
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ribeiro Team | Treinador Samuel Ribeiro">
+  <meta property="og:description" content="Força, técnica e resultado real. Consultoria e acompanhamento de alta performance com base em biomecânica aplicada.">
+  <meta property="og:image" content="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40.jpeg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            carbon: {
+              950: '#070707',
+              900: '#0c0c0e',
+              850: '#111114',
+              800: '#18181c',
+              700: '#222228'
+            },
+            scarlet: {
+              DEFAULT: '#E50914',
+              glow: '#ff1a26',
+              dark: '#990000',
+              muted: 'rgba(229, 9, 20, 0.15)'
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'Bebas Neue', 'sans-serif'],
+            bebas: ['Bebas Neue', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#070707] text-[#FFFFFF] font-body selection:bg-red-600 selection:text-white">
+
+  <!-- ========================================================================
+       1. FIXED HEADER (GLASSMORPHISM & BRAND LOGO)
+       ======================================================================== -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo Branding -->
+      <a href="#hero" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center font-display font-black text-xl text-white shadow-[0_0_20px_rgba(229,9,20,0.5)] group-hover:scale-105 transition-transform duration-300">
+          RT
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-lg tracking-wider text-white leading-tight flex items-center gap-1.5">
+            RIBEIRO <span class="text-red-600">TEAM</span>
+          </span>
+          <span class="text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-400">
+            Treinador Samuel Ribeiro
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#hero" class="hover:text-red-500 transition-colors duration-200">Início</a>
+        <a href="#metodo" class="hover:text-red-500 transition-colors duration-200">Método</a>
+        <a href="#deadlift-section" class="hover:text-red-500 transition-colors duration-200 flex items-center gap-1.5 text-white font-semibold">
+          <span class="w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
+          Análise 3D
+        </a>
+        <a href="#planos" class="hover:text-red-500 transition-colors duration-200">Planos</a>
+        <a href="#resultados" class="hover:text-red-500 transition-colors duration-200">Resultados</a>
+        <a href="#depoimentos" class="hover:text-red-500 transition-colors duration-200">Depoimentos</a>
+      </nav>
+
+      <!-- Action Button CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Quero%20fazer%20parte%20da%20Ribeiro%20Team%20e%20transformar%20meu%20f%C3%ADsico." 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="btn-primary px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-[0_0_20px_rgba(229,9,20,0.4)]">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Entrar para o Time</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" aria-label="Abrir Menu" class="md:hidden text-white p-2 focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-drawer" class="hidden md:hidden mt-3 px-4 py-6 bg-neutral-950/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl flex flex-col gap-4">
+      <a href="#hero" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Início</a>
+      <a href="#metodo" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Método Ribeiro</a>
+      <a href="#deadlift-section" class="mobile-nav-link text-base font-semibold text-red-400 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-red-600"></span>
+        Análise 3D Deadlift
+      </a>
+      <a href="#planos" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Planos & Consultoria</a>
+      <a href="#resultados" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Resultados & Galeria</a>
+      <a href="#depoimentos" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Perguntas Frequentes</a>
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Quero%20fazer%20parte%20da%20Ribeiro%20Team%20e%20transformar%20meu%20f%C3%ADsico." 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="btn-primary w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider mt-2 flex items-center justify-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span>Entrar para o Time Agora</span>
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================
+       2. HERO SECTION (FUSÃO DOS MODELOS 1 E 2: VIDEO BACKGROUND + SAMUEL RIBEIRO)
+       ======================================================================== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-8 overflow-hidden">
+    
+    <!-- Video Hero Background Layer -->
+    <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+      <!-- Dark Fallback Background Image -->
+      <img id="hero-video-fallback" 
+           src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40.jpeg" 
+           alt="Treinador Samuel Ribeiro" 
+           class="absolute inset-0 w-full h-full object-cover object-top opacity-30 filter blur-sm transition-opacity duration-700">
+      
+      <!-- Video Element -->
+      <video id="hero-video" 
+             autoplay 
+             muted 
+             loop 
+             playsinline 
+             preload="auto"
+             poster="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40.jpeg"
+             class="absolute inset-0 w-full h-full object-cover object-center scale-105">
+        <source src="Assets/video%20hero/WhatsApp%20Video%202026-10-26%20at%2018.57.44.mp4" type="video/mp4">
+      </video>
+
+      <!-- Calibrated Dark Carbon Gradient Overlays (#0B0B0B & Vignette) -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#070707] via-[#070707]/80 to-[#070707]/75"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#070707] via-[#070707]/70 to-transparent"></div>
+      <!-- Subtle Red Volumetric Ambient Radial Glow -->
+      <div class="absolute top-1/4 -right-20 w-[550px] h-[550px] bg-red-600/15 rounded-full filter blur-[120px] pointer-events-none"></div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Copywriting & High Conversion CTAs -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left">
+        
+        <!-- Status / Authority Pill Badge -->
+        <div id="hero-badge" class="tech-badge mb-6 shadow-[0_0_20px_rgba(229,9,20,0.3)]">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+          <span>Biomecânica Aplicada & Alta Performance</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 id="hero-title" class="font-display font-black text-4xl sm:text-6xl xl:text-7xl uppercase leading-[1.05] tracking-tight mb-6">
+          <span class="block text-white">FORÇA, TÉCNICA</span>
+          <span class="block bg-gradient-to-r from-red-500 via-red-600 to-rose-700 bg-clip-text text-transparent text-glow">
+            E RESULTADO REAL
+          </span>
+          <span class="block text-white/90 text-3xl sm:text-5xl xl:text-6xl">
+            COM O RIBEIRO TEAM
+          </span>
+        </h1>
+
+        <!-- Subheadline focused on science, hypertrophy and fat loss -->
+        <p id="hero-subtitle" class="text-gray-300 text-base sm:text-lg max-w-2xl font-normal leading-relaxed mb-8">
+          Transformação corporal de elite com o Treinador <strong>Samuel Ribeiro</strong>. Periodização individualizada, 
+          ajuste biomecânico milimétrico e acompanhamento contínuo para quem não aceita estagnação nos treinos.
+        </p>
+
+        <!-- Dual Call-to-Action Buttons -->
+        <div id="hero-ctas" class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Quero%20iniciar%20minha%20consultoria%20com%20o%20Ribeiro%20Team." 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-primary px-8 py-4 rounded-xl text-center text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-3">
+            <span>Iniciar Minha Transformação</span>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+
+          <a href="#deadlift-section" 
+             class="btn-secondary px-8 py-4 rounded-xl text-center text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2">
+            <i data-lucide="activity" class="w-4 h-4 text-red-500"></i>
+            <span>Ver Laboratório 3D</span>
+          </a>
+        </div>
+
+        <!-- Quick Metrics Bar (Fusão dos Modelos 1 e 2) -->
+        <div id="hero-stats" class="grid grid-cols-3 gap-4 sm:gap-8 pt-6 border-t border-white/10 w-full max-w-xl">
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-2xl sm:text-3xl text-white" data-counter-target="500" data-counter-prefix="+">
+              +500
+            </span>
+            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Vidas Transformadas</span>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-2xl sm:text-3xl text-red-500" data-counter-target="100" data-counter-suffix="%">
+              100%
+            </span>
+            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Personalizado</span>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-2xl sm:text-3xl text-white">
+              BIOMECÂNICA
+            </span>
+            <span class="text-xs text-gray-400 uppercase tracking-wider font-medium">Método Científico</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Samuel Ribeiro Featured Hero Portrait with Red Rim Light -->
+      <div class="lg:col-span-5 flex justify-center items-center relative">
+        <div id="hero-portrait-wrapper" class="hero-portrait-container relative max-w-md w-full">
+          
+          <!-- Atmospheric Backdrop Rings -->
+          <div class="absolute -inset-4 bg-gradient-to-t from-red-600/30 via-red-900/10 to-transparent rounded-3xl blur-2xl -z-10"></div>
+          
+          <!-- Main Hero Photo Cutout/Highlight -->
+          <div class="relative rounded-2xl overflow-hidden border border-white/15 bg-gradient-to-b from-neutral-900/80 to-black/90 shadow-[0_20px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(229,9,20,0.25)]">
+            <img id="hero-portrait-img" 
+                 src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40.jpeg" 
+                 alt="Treinador Samuel Ribeiro - Ribeiro Team" 
+                 class="hero-portrait-img w-full h-[520px] object-cover object-top">
+
+            <!-- Floating Authority Card Overlay -->
+            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-neutral-950/85 backdrop-blur-md border border-white/10 flex items-center justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-widest text-red-500 font-bold">Coach Titular</p>
+                <h4 class="text-base font-bold text-white uppercase">Samuel Ribeiro</h4>
+                <p class="text-[11px] text-gray-400">@treinador_samuelribeiro</p>
+              </div>
+              <div class="w-10 h-10 rounded-full bg-red-600/20 border border-red-500/50 flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-5 h-5 text-red-500"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Corner Accents -->
+          <div class="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-red-600"></div>
+          <div class="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-red-600"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       INFINITE BRAND MARQUEE BANNER
+       ======================================================================== -->
+  <section class="py-4 bg-gradient-to-r from-red-950/70 via-red-900/40 to-neutral-950 border-y border-red-900/30 overflow-hidden">
+    <div class="animate-marquee flex items-center gap-12 whitespace-nowrap text-xs sm:text-sm font-display font-extrabold uppercase tracking-[0.25em] text-gray-200">
+      <span>• RIBEIRO TEAM</span>
+      <span class="text-red-500">• BIOMECÂNICA APLICADA</span>
+      <span>• HIPERTROFIA DE ALTA DENSIDADE</span>
+      <span class="text-red-500">• PERIODIZAÇÃO NÃO-LINEAR</span>
+      <span>• EMAGRECIMENTO COM RETENÇÃO DE MASSA</span>
+      <span class="text-red-500">• EXECUÇÃO MILIMÉTRICA</span>
+      <span>• @TREINADOR_SAMUELRIBEIRO</span>
+      <span>• RIBEIRO TEAM</span>
+      <span class="text-red-500">• BIOMECÂNICA APLICADA</span>
+      <span>• HIPERTROFIA DE ALTA DENSIDADE</span>
+      <span class="text-red-500">• PERIODIZAÇÃO NÃO-LINEAR</span>
+      <span>• EMAGRECIMENTO COM RETENÇÃO DE MASSA</span>
+      <span class="text-red-500">• EXECUÇÃO MILIMÉTRICA</span>
+      <span>• @TREINADOR_SAMUELRIBEIRO</span>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       3. AUTORIDADE & METODOLOGIA RIBEIRO (SAMUEL RIBEIRO)
+       ======================================================================== -->
+  <section id="metodo" class="py-24 px-4 sm:px-8 relative tech-grid-bg">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="section-reveal flex flex-col items-center text-center mb-16">
+        <span class="tech-badge mb-3">Metodologia Comprovada</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-4">
+          A CIÊNCIA POR TRÁS DO <span class="text-red-600">SEU RESULTADO</span>
+        </h2>
+        <p class="text-gray-400 text-base max-w-2xl">
+          Chega de treinos genéricos retirados da internet. O método Ribeiro Team analisa suas alavancas ósseas e histórico para construir o melhor físico da sua vida.
+        </p>
+      </div>
+
+      <!-- Grid: Samuel Bio & Pillars -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+        
+        <!-- Secondary Photo / Bio Image (Assets/eu/WhatsApp Image 2026-10-26 at 18.54.40 (1).jpeg) -->
+        <div class="lg:col-span-5 section-reveal">
+          <div class="relative rounded-2xl overflow-hidden border border-white/10 group shadow-[0_15px_40px_rgba(0,0,0,0.8)]">
+            <img src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40%20(1).jpeg" 
+                 alt="Samuel Ribeiro - Autoridade Técnica" 
+                 class="w-full h-[520px] object-cover object-center filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-500">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="text-red-500 text-xs font-bold uppercase tracking-wider block mb-1">Fundador & Treinador</span>
+              <h3 class="text-2xl font-black text-white uppercase font-display">Samuel Ribeiro</h3>
+              <p class="text-sm text-gray-300 mt-1">Especialista em periodização de força, reabilitação biomecânica e hipertrofia estética.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Pillars of Ribeiro Method -->
+        <div class="lg:col-span-7 flex flex-col gap-6 stagger-group">
+          
+          <!-- Pillar 1 -->
+          <div class="glass-panel p-6 stagger-card flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/40 flex items-center justify-center shrink-0 text-red-500">
+              <i data-lucide="crosshair" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold uppercase text-white font-display mb-1 flex items-center gap-2">
+                1. Biomecânica Individualizada
+              </h4>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Cada corpo possui proporções distintas de fêmur, tíbia e tronco. Ajustamos a amplitude, base dos pés e pegadas para recrutar a musculatura-alvo com zero sobrecarga articular danosa.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="glass-panel p-6 stagger-card flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/40 flex items-center justify-center shrink-0 text-red-500">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold uppercase text-white font-display mb-1 flex items-center gap-2">
+                2. Periodização Não-Linear Ondulatória
+              </h4>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Alternância estratégica entre blocos de volume, intensidade e densidade. Você quebra platôs de força e gera estresse mecânico ideal para hipertrofia contínua semana a semana.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="glass-panel p-6 stagger-card flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/40 flex items-center justify-center shrink-0 text-red-500">
+              <i data-lucide="video" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold uppercase text-white font-display mb-1 flex items-center gap-2">
+                3. Feedback Técnico por Vídeo
+              </h4>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Você envia as gravações dos seus exercícios principais. Samuel Ribeiro analisa o vetor de movimento, controle de cadência e postura, devolvendo correções cirúrgicas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="glass-panel p-6 stagger-card flex items-start gap-5">
+            <div class="w-12 h-12 rounded-xl bg-red-600/15 border border-red-500/40 flex items-center justify-center shrink-0 text-red-500">
+              <i data-lucide="flame" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold uppercase text-white font-display mb-1 flex items-center gap-2">
+                4. Recomposição Corporal Acelerada
+              </h4>
+              <p class="text-sm text-gray-400 leading-relaxed">
+                Gasto energético maximizado e estímulo de densidade muscular. Ideal para quem busca secar mantendo a massa magra e tônus muscular intactos.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       4. MÓDULO 3D INTERATIVO: LEVANTAMENTO TERRA / DEADLIFT (MODELO 3)
+       ======================================================================== -->
+  <section id="deadlift-section" class="py-24 px-4 sm:px-8 relative bg-gradient-to-b from-[#070707] via-[#0b0b0e] to-[#070707] border-y border-white/5">
+    
+    <!-- Ambient Red Background Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-600/10 rounded-full blur-[160px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <!-- Section Header -->
+      <div class="section-reveal flex flex-col items-center text-center mb-12">
+        <span class="tech-badge mb-3 shadow-[0_0_15px_rgba(229,9,20,0.3)]">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          Laboratório Biomecânico WebGL
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-3">
+          ANÁLISE CINEMÁTICA 3D: <span class="text-red-600">DEADLIFT</span>
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base max-w-3xl">
+          Interaja em 360° com a cinemática do Levantamento Terra. Observe os vetores de reação do solo, 
+          ativação da cadeia posterior e a trajetória estritamente vertical da barra nos 3 momentos críticos.
+        </p>
+      </div>
+
+      <!-- Interactive 3D Canvas Box -->
+      <div class="relative glass-panel p-4 sm:p-6 rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+        
+        <!-- Controls Top Toolbar -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-white/10">
+          
+          <!-- Phase Switcher Tabs -->
+          <div class="flex items-center gap-2 bg-neutral-900/90 p-1 rounded-xl border border-white/10 text-xs">
+            <button data-phase-btn="0.0" class="active-phase px-3.5 py-1.5 rounded-lg font-bold uppercase transition-all duration-200 text-white bg-red-600 shadow-[0_0_15px_rgba(229,9,20,0.5)]">
+              Fase 1: Setup
+            </button>
+            <button data-phase-btn="0.5" class="px-3.5 py-1.5 rounded-lg font-bold uppercase transition-all duration-200 text-gray-400 hover:text-white">
+              Fase 2: Tração
+            </button>
+            <button data-phase-btn="1.0" class="px-3.5 py-1.5 rounded-lg font-bold uppercase transition-all duration-200 text-gray-400 hover:text-white">
+              Fase 3: Lockout
+            </button>
+          </div>
+
+          <!-- Camera Angles & Extras -->
+          <div class="flex items-center gap-2">
+            <!-- Camera Preset Buttons -->
+            <div class="hidden sm:flex items-center gap-1 bg-neutral-900/80 p-1 rounded-xl border border-white/10 text-xs text-gray-400">
+              <button data-cam-preset="perspective" class="active-cam px-2.5 py-1 rounded-md hover:text-white">3D</button>
+              <button data-cam-preset="sagittal" class="px-2.5 py-1 rounded-md hover:text-white">Lateral</button>
+              <button data-cam-preset="front" class="px-2.5 py-1 rounded-md hover:text-white">Frontal</button>
+            </div>
+
+            <!-- Vector Toggle -->
+            <button id="deadlift-vector-toggle" class="bg-red-600 text-white px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 border border-red-500/50 shadow-[0_0_12px_rgba(229,9,20,0.3)]">
+              <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+              <span class="hidden sm:inline">Vetores</span>
+            </button>
+
+            <!-- Auto-Play Demonstration -->
+            <button id="deadlift-play-toggle" class="px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 border border-white/15 bg-neutral-800 text-gray-200 hover:bg-neutral-700 transition-colors">
+              <i data-lucide="play" class="w-3.5 h-3.5 text-red-500"></i>
+              <span>Execução Contínua</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- 3D Canvas Viewport + Technical Overlay Cards -->
+        <div class="relative w-full">
+          <!-- WebGL Three.js Container -->
+          <div id="deadlift-canvas-container" class="cursor-grab active:cursor-grabbing"></div>
+
+          <!-- Floating Biomechanical Diagnostic HUD Card -->
+          <div class="absolute top-4 left-4 max-w-xs sm:max-w-sm w-full p-4 rounded-xl bg-neutral-950/80 backdrop-blur-md border border-white/15 shadow-2xl pointer-events-none">
+            <div class="flex items-center justify-between mb-2">
+              <span id="3d-card-badge" class="text-[10px] uppercase font-bold tracking-wider text-red-400 px-2 py-0.5 rounded-md bg-red-950/60 border border-red-800/40">
+                Fundação Biomecânica
+              </span>
+              <span class="text-[10px] text-gray-400 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Em Tempo Real
+              </span>
+            </div>
+
+            <h4 id="3d-card-title" class="text-base font-bold text-white uppercase font-display mb-3">
+              Fase 1: Setup & Saída
+            </h4>
+
+            <!-- Active Muscles Badges -->
+            <div class="mb-3">
+              <span class="text-[10px] text-gray-400 uppercase tracking-wider block mb-1.5 font-semibold">Musculatura em Alta Demanda:</span>
+              <div id="3d-card-muscles" class="flex flex-wrap gap-1.5">
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Isquiotibiais</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Grande Dorsal</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Core</span>
+              </div>
+            </div>
+
+            <!-- Technical Cues List -->
+            <div id="3d-card-cues" class="space-y-2 border-t border-white/10 pt-2.5">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+
+          <!-- Bottom User Drag Hint -->
+          <div class="absolute bottom-4 right-4 pointer-events-none hidden sm:flex items-center gap-2 text-xs text-gray-400 bg-neutral-950/70 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10">
+            <i data-lucide="rotate-3d" class="w-4 h-4 text-red-500"></i>
+            <span>Arraste com o mouse para girar em 360°</span>
+          </div>
+        </div>
+
+        <!-- Scrubber Range Control for manual frame-by-frame scrub -->
+        <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 shrink-0">Saída</span>
+          <input type="range" 
+                 id="deadlift-scrubber" 
+                 min="0.0" 
+                 max="1.0" 
+                 step="0.01" 
+                 value="0.0" 
+                 aria-label="Controle de Fase do Deadlift"
+                 class="w-full h-1.5 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600">
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 shrink-0">Lockout</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       5. ECOSSISTEMA DE PLANOS & CONSULTORIA (MODELO 4)
+       ======================================================================== -->
+  <section id="planos" class="py-24 px-4 sm:px-8 relative tech-grid-bg">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="section-reveal flex flex-col items-center text-center mb-16">
+        <span class="tech-badge mb-3">Vagas Mensais Limitadas</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-4">
+          ESCOLHA SEU PROTOCOLO <span class="text-red-600">DE ALTO IMPACTO</span>
+        </h2>
+        <p class="text-gray-400 text-base max-w-2xl">
+          Atendimento exclusivo focado em resultados rápidos, sólidos e sustentáveis. Selecione o modelo que melhor se encaixa nos seus objetivos.
+        </p>
+      </div>
+
+      <!-- Pricing & Services Grid (3 Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-group items-stretch">
+        
+        <!-- CARD 1: CONSULTORIA ONLINE INDIVIDUALIZADA (MAIS PROCURADO / FEATURED) -->
+        <div class="glass-card-featured rounded-2xl p-8 flex flex-col justify-between relative stagger-card md:-translate-y-2">
+          
+          <!-- Badge Mais Procurado -->
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-red-800 text-white text-[11px] font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-[0_0_20px_rgba(229,9,20,0.6)] flex items-center gap-1.5 border border-white/20">
+            <i data-lucide="flame" class="w-3.5 h-3.5"></i>
+            <span>Mais Procurado</span>
+          </div>
+
+          <div>
+            <div class="mb-6">
+              <span class="text-xs font-bold text-red-400 uppercase tracking-wider block mb-1">Totalmente Sob Medida</span>
+              <h3 class="text-2xl font-black text-white uppercase font-display">Consultoria Online Individual</h3>
+              <p class="text-sm text-gray-300 mt-2">
+                O método completo no seu bolso. Treine onde quiser com acompanhamento direto do Treinador Samuel Ribeiro.
+              </p>
+            </div>
+
+            <!-- Feature Checklist -->
+            <ul class="space-y-3.5 text-sm text-gray-200 mb-8">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Periodização completa via aplicativo exclusivo</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Correção biomecânica de exercícios por vídeo</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Suporte contínuo direto no WhatsApp do Samuel</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Estratégia de recomposição corporal e cardio</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Reavaliações periódicas para quebra de platô</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Quero%20entrar%20para%20a%20Consultoria%20Online%20Individualizada%20da%20Ribeiro%20Team." 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-primary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+            <span>Garantir Minha Vaga Online</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- CARD 2: PERSONAL TRAINING PRESENCIAL -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between stagger-card">
+          <div>
+            <div class="mb-6">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-1">Acompanhamento Físico</span>
+              <h3 class="text-2xl font-black text-white uppercase font-display">Personal Presencial</h3>
+              <p class="text-sm text-gray-400 mt-2">
+                Para quem busca precisão cirúrgica a cada repetição e motivação ininterrupta dentro da sala de musculação.
+              </p>
+            </div>
+
+            <!-- Feature Checklist -->
+            <ul class="space-y-3.5 text-sm text-gray-300 mb-8">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Acompanhamento presencial 1-on-1 em tempo real</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Correção tátil de alavancas e postura instantânea</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Manipulação de cargas e técnicas avançadas (drop/rest-pause)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Foco em segurança articular e superação de limites</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Acesso total ao app de periodização incluso</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20hor%C3%A1rios%20para%20o%20Personal%20Training%20Presencial." 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-secondary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+            <span>Consultar Horários Disponíveis</span>
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- CARD 3: PREPARAÇÃO DE ATLETAS & FÍSICO EXTREMO -->
+        <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between stagger-card">
+          <div>
+            <div class="mb-6">
+              <span class="text-xs font-bold text-red-400 uppercase tracking-wider block mb-1">Alta Performance Competitiva</span>
+              <h3 class="text-2xl font-black text-white uppercase font-display">Atletas & Físico Extremo</h3>
+              <p class="text-sm text-gray-400 mt-2">
+                Periodização rigorosa para palcos de fisiculturismo, testes de aptidão física (TAF) ou definição extrema.
+              </p>
+            </div>
+
+            <!-- Feature Checklist -->
+            <ul class="space-y-3.5 text-sm text-gray-300 mb-8">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Periodização avançada com pico de rendimento (Peak Week)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Monitoramento de retenção hídrica, dobras e simetria</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Check-ins frequentes e ajustes de volume em 24h</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Análise de poses e linha muscular de palco</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                <span>Linha direta prioritária com o treinador</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Busco%20a%20Prepara%C3%A7%C3%A3o%20para%20Atletas%20e%20F%C3%ADsico%20Extremo%20com%20voc%C3%AA." 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-secondary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+            <span>Candidatar-se para Preparação</span>
+            <i data-lucide="trophy" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       6. GALERIA DE AUTORIDADE, BASTIDORES & PROVA SOCIAL
+       ======================================================================== -->
+  <section id="resultados" class="py-24 px-4 sm:px-8 relative bg-gradient-to-b from-[#070707] via-[#09090c] to-[#070707]">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="section-reveal flex flex-col items-center text-center mb-16">
+        <span class="tech-badge mb-3">Bastidores & Resultados</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-4">
+          CONSISTÊNCIA, <span class="text-red-600">PESO E SUOR</span>
+        </h2>
+        <p class="text-gray-400 text-base max-w-2xl">
+          Acompanhe o dia a dia de treinos de alta intensidade e a mentalidade de quem faz parte do time no Instagram oficial.
+        </p>
+      </div>
+
+      <!-- Masonry Gallery Grid with Assets -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        
+        <!-- Image 1: Assets/eu/WhatsApp Image 2026-10-26 at 18.54.40 (2).jpeg -->
+        <div class="gallery-card group">
+          <img src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40%20(2).jpeg" 
+               alt="Treino Intenso Samuel Ribeiro" 
+               class="w-full h-80 object-cover object-center">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <span class="text-red-500 text-xs font-bold uppercase tracking-wider">Alta Carga</span>
+            <h4 class="text-base font-bold text-white uppercase font-display">Tensão Mecânica Pura</h4>
+          </div>
+        </div>
+
+        <!-- Image 2: Assets/eu/WhatsApp Image 2026-10-26 at 18.54.41.jpeg -->
+        <div class="gallery-card group">
+          <img src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.41.jpeg" 
+               alt="Biomecânica Aplicada Samuel Ribeiro" 
+               class="w-full h-80 object-cover object-center">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <span class="text-red-500 text-xs font-bold uppercase tracking-wider">Metodologia</span>
+            <h4 class="text-base font-bold text-white uppercase font-display">Controle de Cadência</h4>
+          </div>
+        </div>
+
+        <!-- Image 3: Assets/eu/WhatsApp Image 2026-10-26 at 18.54.41 (1).jpeg -->
+        <div class="gallery-card group">
+          <img src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.41%20(1).jpeg" 
+               alt="Preparação Física de Alto Rendimento" 
+               class="w-full h-80 object-cover object-center">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <span class="text-red-500 text-xs font-bold uppercase tracking-wider">Disciplina</span>
+            <h4 class="text-base font-bold text-white uppercase font-display">Físico Competitivo</h4>
+          </div>
+        </div>
+
+        <!-- Image 4: Assets/eu/WhatsApp Image 2026-10-26 at 18.54.41 (2).jpeg -->
+        <div class="gallery-card group">
+          <img src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.41%20(2).jpeg" 
+               alt="Ribeiro Team Resultados Reais" 
+               class="w-full h-80 object-cover object-center">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <span class="text-red-500 text-xs font-bold uppercase tracking-wider">Definição</span>
+            <h4 class="text-base font-bold text-white uppercase font-display">Densidade & Simetria</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Instagram Official Banner Link -->
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-red-900/30">
+        <div class="flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 via-red-600 to-amber-500 flex items-center justify-center text-white shrink-0 shadow-[0_0_20px_rgba(229,9,20,0.4)]">
+            <i data-lucide="instagram" class="w-7 h-7"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold uppercase text-white font-display">Acompanhe no Instagram</h4>
+            <p class="text-sm text-gray-400">Dicas diárias de biomecânica, vídeos de execução e bastidores da equipe.</p>
+          </div>
+        </div>
+
+        <a href="https://www.instagram.com/treinador_samuelribeiro/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="btn-secondary px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-red-500/40 text-red-400 hover:text-white">
+          <span>@treinador_samuelribeiro</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       7. PERGUNTAS FREQUENTES (FAQ ACCORDION)
+       ======================================================================== -->
+  <section id="depoimentos" class="py-24 px-4 sm:px-8 relative tech-grid-bg">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="section-reveal flex flex-col items-center text-center mb-16">
+        <span class="tech-badge mb-3">Tire Suas Dúvidas</span>
+        <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-4">
+          PERGUNTAS <span class="text-red-600">FREQUENTES</span>
+        </h2>
+        <p class="text-gray-400 text-base max-w-xl">
+          Tudo o que você precisa saber para começar seu acompanhamento com segurança e clareza.
+        </p>
+      </div>
+
+      <!-- FAQ Items Accordion -->
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item glass-panel rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+            <span class="text-base font-bold text-white uppercase font-display">A consultoria online funciona mesmo se eu for iniciante?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-red-500 transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6">
+            <p class="text-sm text-gray-300 pb-5 leading-relaxed">
+              Com certeza. Na verdade, para iniciantes é ainda mais crucial, pois você aprende a mecânica correta dos exercícios desde o primeiro dia, prevenindo lesões e construindo base de força rápida. Você envia seus vídeos e o Samuel corrige ponto a ponto.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item glass-panel rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+            <span class="text-base font-bold text-white uppercase font-display">Como é feita a entrega dos treinos?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-red-500 transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6">
+            <p class="text-sm text-gray-300 pb-5 leading-relaxed">
+              Você recebe acesso ao aplicativo exclusivo de treino com vídeos demonstrativos de cada exercício, séries, repetições, intervalos de descanso e notas biomecânicas. Além disso, tem canal direto no WhatsApp do Samuel Ribeiro para tirar dúvidas a qualquer momento.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item glass-panel rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+            <span class="text-base font-bold text-white uppercase font-display">Tenho dores articulares ou hérnia de disco. Posso treinar?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-red-500 transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6">
+            <p class="text-sm text-gray-300 pb-5 leading-relaxed">
+              Sim! Essa é justamente a especialidade da metodologia biomecânica do Samuel. O programa adapta os ângulos, substitui exercícios que comprimem discos ou articulações vulneráveis e fortalece a musculatura estabilizadora (core, glúteos e eretores) para eliminar as dores.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item glass-panel rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+            <span class="text-base font-bold text-white uppercase font-display">Treino em academia de condomínio ou com poucos aparelhos. Dá certo?</span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-red-500 transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out px-6">
+            <p class="text-sm text-gray-300 pb-5 leading-relaxed">
+              Sim! O planejamento é 100% individualizado e feito sob medida com base exata na lista de equipamentos que você tem disponível no seu espaço de treino.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       8. FOOTER & CONVERSÃO FINAL
+       ======================================================================== -->
+  <footer class="pt-20 pb-12 px-4 sm:px-8 bg-neutral-950 border-t border-white/10 relative overflow-hidden">
+    
+    <!-- Top Scarlet Glow Flare -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- High Impact Final CTA Banner -->
+      <div class="glass-card-featured rounded-3xl p-8 sm:p-14 mb-16 text-center relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl mx-auto">
+          <span class="tech-badge mb-4">Próximo Passo</span>
+          <h3 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-6">
+            ESTÁ PRONTO PARA TREINAR <span class="text-red-500">COMO A ELITE?</span>
+          </h3>
+          <p class="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed">
+            As vagas são limitadas mensalmente para assegurar a atenção cirúrgica a cada aluno. Clique no botão abaixo e fale diretamente com o Treinador Samuel Ribeiro.
+          </p>
+
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Quero%20fazer%20parte%20da%20Ribeiro%20Team%20agora!" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-primary inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-sm font-bold uppercase tracking-wider shadow-[0_0_35px_rgba(229,9,20,0.6)]">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>Falar com o Treinador no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-6 flex flex-col items-start">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-900 flex items-center justify-center font-display font-black text-xl text-white shadow-[0_0_20px_rgba(229,9,20,0.5)]">
+              RT
+            </div>
+            <span class="font-display font-black text-xl tracking-wider text-white">
+              RIBEIRO <span class="text-red-600">TEAM</span>
+            </span>
+          </div>
+          <p class="text-sm text-gray-400 max-w-sm leading-relaxed mb-6">
+            Metodologia esportiva de alta precisão liderada pelo Treinador Samuel Ribeiro. Biomecânica, periodização de força e estética corporal.
+          </p>
+          <div class="flex items-center gap-4">
+            <a href="https://www.instagram.com/treinador_samuelribeiro/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-500 transition-colors">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-500 transition-colors">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-3">
+          <h4 class="text-xs uppercase font-bold tracking-widest text-white mb-4">Navegação</h4>
+          <ul class="space-y-2.5 text-sm text-gray-400">
+            <li><a href="#hero" class="hover:text-red-500 transition-colors">Início</a></li>
+            <li><a href="#metodo" class="hover:text-red-500 transition-colors">Metodologia Biomecânica</a></li>
+            <li><a href="#deadlift-section" class="hover:text-red-500 transition-colors">Laboratório 3D Deadlift</a></li>
+            <li><a href="#planos" class="hover:text-red-500 transition-colors">Planos & Consultoria</a></li>
+            <li><a href="#resultados" class="hover:text-red-500 transition-colors">Galeria de Resultados</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Legal -->
+        <div class="md:col-span-3">
+          <h4 class="text-xs uppercase font-bold tracking-widest text-white mb-4">Contato Direto</h4>
+          <ul class="space-y-2.5 text-sm text-gray-400">
+            <li class="flex items-center gap-2">
+              <i data-lucide="instagram" class="w-4 h-4 text-red-500"></i>
+              <span>@treinador_samuelribeiro</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="shield" class="w-4 h-4 text-red-500"></i>
+              <span>Profissional de Educação Física</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-red-500"></i>
+              <span>Atendimento Brasil & Exterior</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Back to Top -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; 2026 Ribeiro Team. Todos os direitos reservados. Treinador Samuel Ribeiro.</p>
+        <a href="#hero" class="hover:text-white flex items-center gap-1 transition-colors">
+          <span>Voltar ao Topo</span>
+          <i data-lucide="arrow-up" class="w-4 h-4 text-red-500"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Floating Quick WhatsApp Button -->
+  <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Samuel!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Ribeiro%20Team." 
+     target="_blank" 
+     rel="noopener noreferrer"
+     aria-label="Falar no WhatsApp"
+     class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-tr from-emerald-600 to-green-500 flex items-center justify-center text-white shadow-[0_8px_30px_rgba(16,185,129,0.45)] hover:scale-110 active:scale-95 transition-all duration-300 group">
+    <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-red-600 border-2 border-neutral-900 animate-ping"></span>
+    <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-red-600 border-2 border-neutral-900"></span>
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+
+  <!-- ========================================================================
+       EXTERNAL SCRIPTS & LIBRARIES
+       ======================================================================== -->
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Three.js & OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- Application Modules -->
+  <script src="js/biomechanics3d.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

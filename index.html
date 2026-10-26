@@ -237,43 +237,74 @@
 
       </div>
 
-      <!-- Right Column: Fotografia Pura de Alta Qualidade do Treinador Samuel Ribeiro (Sem Frame de Celular) -->
+      <!-- Right Column: Card 3D Interativo de Evolução (Antes & Depois com Slider e Tilt) -->
       <div class="lg:col-span-5 flex justify-center items-center relative">
-        <div id="hero-portrait-wrapper" class="hero-portrait-container relative max-w-sm sm:max-w-md w-full">
+        <div class="comparison-container relative w-full flex justify-center">
           
-          <!-- Atmospheric Red Rim Lighting & Glow Volumétrico -->
-          <div class="absolute -inset-3 bg-gradient-to-t from-red-600/35 via-red-900/15 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none"></div>
-          <div class="absolute top-1/4 -right-4 w-40 h-40 bg-red-600/25 rounded-full blur-2xl -z-10 pointer-events-none"></div>
+          <!-- Volumetric Red Rim Lighting & Glow Traseiro -->
+          <div class="absolute -inset-4 bg-gradient-to-t from-red-600/35 via-red-900/15 to-transparent rounded-3xl blur-3xl -z-10 pointer-events-none"></div>
+          <div class="absolute top-1/4 -right-4 w-44 h-44 bg-red-600/25 rounded-full blur-2xl -z-10 pointer-events-none"></div>
 
-          <!-- Moldura Atlética Sofisticada e Limpa -->
-          <div class="relative rounded-3xl overflow-hidden border border-white/15 bg-gradient-to-b from-neutral-900/80 via-black/85 to-black shadow-[0_25px_65px_rgba(0,0,0,0.9),0_0_35px_rgba(229,9,20,0.22)]">
-            <img id="hero-portrait-img" 
-                 src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40.jpeg" 
-                 alt="Treinador Samuel Ribeiro - Ribeiro Team" 
-                 class="hero-portrait-img w-full h-[470px] sm:h-[510px] object-cover object-top filter contrast-[1.06] brightness-[1.03]">
+          <!-- 3D Interactive Comparison Card -->
+          <div id="before-after-card" class="comparison-card group">
+            
+            <!-- Base Layer: ANTES (Aluno no Início) -->
+            <img src="Assets/transformacoes/aluno_antes.jpg" 
+                 alt="Aluno Antes da Consultoria" 
+                 class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none">
+            
+            <!-- Badge ANTES (Canto Superior Esquerdo) -->
+            <div class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-bold uppercase tracking-wider text-gray-300 pointer-events-none shadow-md">
+              Antes
+            </div>
 
-            <!-- Gradiente de fade inferior para fusão com o fundo escuro -->
-            <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#070707] via-[#070707]/60 to-transparent pointer-events-none"></div>
+            <!-- Clipped Overlay Layer: DEPOIS (Evolução 90 Dias) -->
+            <div id="comparison-after-layer" class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+              <img src="Assets/transformacoes/aluno_depois.jpg" 
+                   alt="Aluno Depois da Consultoria Ribeiro Team" 
+                   class="absolute inset-0 w-full h-full object-cover object-top">
+            </div>
 
-            <!-- Badge Minimalista e Elegante de Autoridade -->
-            <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-black/75 backdrop-blur-xl border border-white/10 flex items-center justify-between shadow-lg">
-              <div>
-                <div class="flex items-center gap-1.5 mb-0.5">
-                  <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                  <span class="text-[10px] font-bold uppercase tracking-widest text-red-400">Coach Titular</span>
-                </div>
-                <h4 class="text-sm font-extrabold uppercase text-white font-display">Samuel Ribeiro</h4>
-                <p class="text-[11px] text-gray-400 font-medium">@treinador_samuelribeiro</p>
-              </div>
-              <div class="w-9 h-9 rounded-xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-500 shrink-0">
-                <i data-lucide="shield-check" class="w-4 h-4"></i>
+            <!-- Badge DEPOIS (Canto Superior Direito) -->
+            <div class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-red-600/85 backdrop-blur-md border border-red-500/50 text-[10px] font-bold uppercase tracking-wider text-white pointer-events-none shadow-[0_0_15px_rgba(229,9,20,0.6)]">
+              Depois
+            </div>
+
+            <!-- Slider Divider Line & Circular Drag Handle -->
+            <div id="comparison-handle" class="comparison-slider-bar" style="left: 50%;">
+              <div class="comparison-slider-btn" aria-label="Arraste para comparar Antes e Depois">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-4 3 4 3m8-6l4 3-4 3"></path>
+                </svg>
               </div>
             </div>
+
+            <!-- Footer: Dados da Transformação & Métricas em Destaque -->
+            <div class="absolute bottom-0 inset-x-0 z-20 p-4 sm:p-5 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-red-400">Evolução 90 Dias • Protocolo Ribeiro Team</span>
+                <span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-red-950/80 border border-red-700/50 text-red-300">Caso Real</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 pt-2 border-t border-white/10">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                  <span class="text-xs font-black text-white">+4.5kg <span class="text-[10px] font-medium text-gray-400">Massa Magra</span></span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-red-500 shrink-0"></span>
+                  <span class="text-xs font-black text-white">-8% <span class="text-[10px] font-medium text-gray-400">Gordura Corporal</span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3D Specular Light Glare Overlay -->
+            <div id="comparison-glare" class="comparison-glare"></div>
+
+            <!-- Acentos técnicos sutis nos cantos -->
+            <div class="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-red-600/80 pointer-events-none z-20"></div>
+            <div class="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-red-600/80 pointer-events-none z-20"></div>
           </div>
 
-          <!-- Acentos técnicos sutis nos cantos -->
-          <div class="absolute -top-2 -left-2 w-5 h-5 border-t-2 border-l-2 border-red-600/80"></div>
-          <div class="absolute -bottom-2 -right-2 w-5 h-5 border-b-2 border-r-2 border-red-600/80"></div>
         </div>
       </div>
 
@@ -559,9 +590,9 @@
         <!-- Secondary Photo / Bio Image (Assets/eu/WhatsApp Image 2026-10-26 at 18.54.40 (1).jpeg) -->
         <div class="lg:col-span-5 section-reveal">
           <div class="relative rounded-2xl overflow-hidden border border-white/10 group shadow-[0_15px_40px_rgba(0,0,0,0.8)]">
-            <img src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40%20(1).jpeg" 
+            <img src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40%20(2).jpeg" 
                  alt="Samuel Ribeiro - Autoridade Técnica" 
-                 class="w-full h-[520px] object-cover object-center filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-500">
+                 class="w-full h-[520px] object-cover object-top filter grayscale-[10%] group-hover:grayscale-0 transition-all duration-500">
             
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             

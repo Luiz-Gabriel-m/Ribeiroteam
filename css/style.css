@@ -243,6 +243,94 @@ body {
   transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ==========================================================================
+   3D BEFORE & AFTER COMPARISON CARD
+   ========================================================================== */
+.comparison-container {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.comparison-card {
+  position: relative;
+  width: 100%;
+  max-width: 410px;
+  height: 510px;
+  border-radius: 24px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #08080a;
+  box-shadow: 
+    0 25px 65px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(229, 9, 20, 0.25);
+  cursor: ew-resize;
+  transition: border-color 0.3s ease;
+}
+
+.comparison-card:hover {
+  border-color: rgba(229, 9, 20, 0.45);
+}
+
+@media (max-width: 640px) {
+  .comparison-card {
+    height: 460px;
+    max-width: 340px;
+  }
+}
+
+.comparison-slider-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2.5px;
+  background: #E50914;
+  box-shadow: 0 0 16px rgba(229, 9, 20, 0.95), 0 0 4px #FFFFFF;
+  z-index: 30;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  pointer-events: auto;
+}
+
+.comparison-slider-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #E50914;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.8), 0 4px 15px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.comparison-card.is-dragging .comparison-slider-btn {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: #ff1a26;
+}
+
+.comparison-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 25;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 
 /* Marquee Banner */
 @keyframes marquee {

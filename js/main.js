@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 8. Dynamic Header Glassmorphism on Scroll
   setupHeaderScroll();
+
+  // 9. Interactive 3D Before & After Comparison Slider
+  setupComparisonSlider();
 });
 
 /**
@@ -51,16 +54,7 @@ function setupGSAPAnimations(deadlift3D) {
     .from("#hero-subtitle", { opacity: 0, y: 20, duration: 0.8 }, "-=0.6")
     .from("#hero-ctas", { opacity: 0, y: 20, duration: 0.8 }, "-=0.5")
     .from("#hero-stats", { opacity: 0, y: 20, duration: 0.8 }, "-=0.4")
-    .from("#hero-portrait-wrapper", { opacity: 0, scale: 0.95, duration: 1.2, ease: "power2.out" }, "-=1.0");
-
-  // Subtle floating idle motion for Hero Portrait
-  gsap.to("#hero-portrait-img", {
-    y: 8,
-    duration: 3.5,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut"
-  });
+    .from(".comparison-container", { opacity: 0, scale: 0.95, duration: 1.2, ease: "power2.out" }, "-=1.0");
 
   // Section Headers Reveal
   gsap.utils.toArray(".section-reveal").forEach((elem) => {
@@ -290,3 +284,96 @@ function setupStatsCounters() {
 
   counterElements.forEach((el) => observer.observe(el));
 }
+
+/**
+ * 3D Before & After Comparison Slider with Interactive Drag & 3D Tilt
+ */
+function setupComparisonSlider() {
+  const card = document.getElementById("before-after-card");
+  const handle = document.getElementById("comparison-handle");
+  const afterLayer = document.getElementById("comparison-after-layer");
+  const glare = document.getElementById("comparison-glare");
+
+  if (!card || !handle || !afterLayer) return;
+
+  let isDragging = false;
+
+  function updateSlider(clientX) {
+    const rect = card.getBoundingClientRect();
+    const offsetX = clientX - rect.left;
+    let percentage = (offsetX / rect.width) * 100;
+    percentage = Math.max(3, Math.min(97, percentage));
+
+    handle.style.left = `${percentage}%`;
+    afterLayer.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+  }
+
+  function onPointerDown(e) {
+    isDragging = true;
+    card.classList.add("is-dragging");
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    updateSlider(clientX);
+  }
+
+  function onPointerMove(e) {
+    if (!isDragging) return;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    updateSlider(clientX);
+  }
+
+  function onPointerUp() {
+    if (isDragging) {
+      isDragging = false;
+      card.classList.remove("is-dragging");
+    }
+  }
+
+  // Pointer events on handle & card
+  handle.addEventListener("mousedown", onPointerDown);
+  handle.addEventListener("touchstart", onPointerDown, { passive: true });
+
+  card.addEventListener("mousedown", (e) => {
+    onPointerDown(e);
+  });
+  card.addEventListener("touchstart", (e) => {
+    onPointerDown(e);
+  }, { passive: true });
+
+  window.addEventListener("mousemove", onPointerMove);
+  window.addEventListener("touchmove", onPointerMove, { passive: true });
+
+  window.addEventListener("mouseup", onPointerUp);
+  window.addEventListener("touchend", onPointerUp);
+
+  // 3D Tilt Effect on Desktop (Mousemove)
+  if (window.innerWidth > 768) {
+    card.addEventListener("mousemove", (e) => {
+      if (isDragging) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+
+      if (glare) {
+        glare.style.opacity = "1";
+        const glareX = (x / rect.width) * 100;
+        const glareY = (y / rect.height) * 100;
+        glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.18) 0%, transparent 65%)`;
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+      if (glare) {
+        glare.style.opacity = "0";
+      }
+    });
+  }
+}
+

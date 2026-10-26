@@ -57,7 +57,7 @@ function setupGSAPAnimations(deadlift3D) {
     .from("#hero-subtitle", { opacity: 0, y: 20, duration: 0.8 }, "-=0.6")
     .from("#hero-ctas", { opacity: 0, y: 20, duration: 0.8 }, "-=0.5")
     .from("#hero-stats", { opacity: 0, y: 20, duration: 0.8 }, "-=0.4")
-    .from(".comparison-container", { opacity: 0, scale: 0.95, duration: 1.2, ease: "power2.out" }, "-=1.0");
+    .from("#hero-coach-frame", { opacity: 0, scale: 0.95, duration: 1.2, ease: "power2.out" }, "-=1.0");
 
   // Section Headers Reveal
   gsap.utils.toArray(".section-reveal").forEach((elem) => {
@@ -291,18 +291,153 @@ function setupStatsCounters() {
 }
 
 /**
- * 3D Before & After Comparison Slider with Interactive Drag & 3D Tilt
+ * 3D Before & After Comparison Multi-Case Carousel with Drag & 3D Tilt
  */
+const TRANSFORMATION_CASES = [
+  {
+    id: 0,
+    title: "Caso 1: Hipertrofia Acelerada",
+    timeTag: "Evolução 90 Dias • Protocolo Ribeiro Team",
+    category: "Hipertrofia 90D",
+    badge: "Caso Real",
+    beforeImg: "Assets/transformacoes/antes.jpeg",
+    afterImg: "Assets/transformacoes/depois.jpeg",
+    metric1Val: "+6.5kg",
+    metric1Label: "Massa Magra",
+    metric2Val: "-8%",
+    metric2Label: "Gordura Corporal"
+  },
+  {
+    id: 1,
+    title: "Caso 2: Recomposição Corporal",
+    timeTag: "Recomposição 120 Dias • Densidade & Força",
+    category: "Recomposição Corporal",
+    badge: "Alta Densidade",
+    beforeImg: "Assets/transformacoes/case2_antes.jpg",
+    afterImg: "Assets/transformacoes/case2_depois.jpg",
+    metric1Val: "+4.8kg",
+    metric1Label: "Massa Magra",
+    metric2Val: "-11%",
+    metric2Label: "Gordura Corporal"
+  },
+  {
+    id: 2,
+    title: "Caso 3: Emagrecimento & Definição",
+    timeTag: "Definição 16 Semanas • Retenção Muscular",
+    category: "Emagrecimento & Definição",
+    badge: "Definição Extrema",
+    beforeImg: "Assets/transformacoes/case3_antes.jpg",
+    afterImg: "Assets/transformacoes/case3_depois.jpg",
+    metric1Val: "-14kg",
+    metric1Label: "Gordura Total",
+    metric2Val: "6-Pack",
+    metric2Label: "Definição Visível"
+  }
+];
+
 function setupComparisonSlider() {
   const card = document.getElementById("before-after-card");
   const handle = document.getElementById("comparison-handle");
   const afterLayer = document.getElementById("comparison-after-layer");
   const glare = document.getElementById("comparison-glare");
+  const beforeImg = document.getElementById("case-before-img");
+  const afterImg = document.getElementById("case-after-img");
+  const timeTag = document.getElementById("case-time-tag");
+  const statusBadge = document.getElementById("case-status-badge");
+  const metric1Val = document.getElementById("case-metric-1-val");
+  const metric1Lbl = document.getElementById("case-metric-1-lbl");
+  const metric2Val = document.getElementById("case-metric-2-val");
+  const metric2Lbl = document.getElementById("case-metric-2-lbl");
+  const prevBtn = document.getElementById("case-prev-btn");
+  const nextBtn = document.getElementById("case-next-btn");
 
   if (!card || !handle || !afterLayer) return;
 
+  let currentCaseIndex = 0;
   let isDragging = false;
 
+  function resetSlider() {
+    handle.style.left = "50%";
+    afterLayer.style.clipPath = "polygon(0 0, 50% 0, 50% 100%, 0 100%)";
+  }
+
+  function renderCase(index) {
+    currentCaseIndex = (index + TRANSFORMATION_CASES.length) % TRANSFORMATION_CASES.length;
+    const c = TRANSFORMATION_CASES[currentCaseIndex];
+
+    // Smooth image transition
+    if (beforeImg && afterImg) {
+      beforeImg.style.opacity = "0.2";
+      afterImg.style.opacity = "0.2";
+
+      setTimeout(() => {
+        beforeImg.src = c.beforeImg;
+        afterImg.src = c.afterImg;
+        beforeImg.style.opacity = "1";
+        afterImg.style.opacity = "1";
+      }, 140);
+    }
+
+    if (timeTag) timeTag.textContent = c.timeTag;
+    if (statusBadge) statusBadge.textContent = c.badge;
+    if (metric1Val) metric1Val.textContent = c.metric1Val;
+    if (metric1Lbl) metric1Lbl.textContent = c.metric1Label;
+    if (metric2Val) metric2Val.textContent = c.metric2Val;
+    if (metric2Lbl) metric2Lbl.textContent = c.metric2Label;
+
+    // Reset drag handle to exactly 50%
+    resetSlider();
+
+    // Update Tabs
+    TRANSFORMATION_CASES.forEach((_, i) => {
+      const tab = document.getElementById(`case-tab-${i}`);
+      const dot = document.getElementById(`case-dot-${i}`);
+
+      if (tab) {
+        if (i === currentCaseIndex) {
+          tab.classList.add("active");
+          tab.classList.remove("text-gray-400", "bg-neutral-900/60", "border-white/10");
+          const dotSpan = tab.querySelector("span:first-child");
+          if (dotSpan) dotSpan.className = "w-2 h-2 rounded-full bg-red-500";
+        } else {
+          tab.classList.remove("active");
+          tab.classList.add("text-gray-400", "bg-neutral-900/60", "border-white/10");
+          const dotSpan = tab.querySelector("span:first-child");
+          if (dotSpan) dotSpan.className = "w-2 h-2 rounded-full bg-neutral-600";
+        }
+      }
+
+      if (dot) {
+        if (i === currentCaseIndex) {
+          dot.className = "case-dot h-2 rounded-full transition-all duration-300 w-8 bg-red-600 active";
+        } else {
+          dot.className = "case-dot h-2 rounded-full transition-all duration-300 w-2.5 bg-neutral-700 hover:bg-neutral-500";
+        }
+      }
+    });
+  }
+
+  // Prev / Next button listeners
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => renderCase(currentCaseIndex - 1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => renderCase(currentCaseIndex + 1));
+  }
+
+  // Tab and dot click listeners
+  TRANSFORMATION_CASES.forEach((_, i) => {
+    const tab = document.getElementById(`case-tab-${i}`);
+    const dot = document.getElementById(`case-dot-${i}`);
+    if (tab) {
+      tab.addEventListener("click", () => renderCase(i));
+    }
+    if (dot) {
+      dot.addEventListener("click", () => renderCase(i));
+    }
+  });
+
+  // Slider Dragging Functionality
   function updateSlider(clientX) {
     const rect = card.getBoundingClientRect();
     const offsetX = clientX - rect.left;

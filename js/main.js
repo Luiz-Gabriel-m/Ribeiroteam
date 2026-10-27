@@ -113,22 +113,6 @@ function setupGSAPAnimations(deadlift3D) {
     });
   }
 
-  // Gallery Stagger Reveal
-  if (document.getElementById("gallery-grid")) {
-    gsap.from(".gallery-card", {
-      scrollTrigger: {
-        trigger: "#gallery-grid",
-        start: "top 80%",
-        toggleActions: "play none none none"
-      },
-      opacity: 0,
-      scale: 0.94,
-      y: 30,
-      stagger: 0.12,
-      duration: 0.8,
-      ease: "power2.out"
-    });
-  }
 }
 
 /**

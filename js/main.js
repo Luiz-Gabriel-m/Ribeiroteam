@@ -42,6 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 9. Interactive 3D Before & After Comparison Slider
   setupComparisonSlider();
+
+  // 10. Interactive 3D Tilt Effect on Plan Cards
+  setupPlanCards3D();
+
+  // 11. Interactive HUD Toggle for 3D Deadlift Kinematics (localStorage & Keyboard 'H')
+  setupDeadliftHUDToggle();
 });
 
 /**
@@ -301,22 +307,22 @@ function setupStatsCounters() {
 const TRANSFORMATION_CASES = [
   {
     id: 0,
-    title: "Caso 1: Hipertrofia Acelerada",
-    timeTag: "Evolução 90 Dias • Protocolo Ribeiro Team",
-    category: "Hipertrofia 90D",
+    title: "Caso 1: Evolução Hipertrofia 90 Dias",
+    timeTag: "Evolução Hipertrofia 90 Dias • Protocolo Ribeiro Team",
+    category: "Caso 1: Hipertrofia 90D",
     badge: "Caso Real",
     beforeImg: "Assets/transformacoes/antes.jpeg",
     afterImg: "Assets/transformacoes/depois.jpeg",
-    metric1Val: "+6.5kg",
+    metric1Val: "+9.5kg",
     metric1Label: "Massa Magra",
     metric2Val: "-8%",
     metric2Label: "Gordura Corporal"
   },
   {
     id: 1,
-    title: "Caso 2: Recomposição Corporal",
-    timeTag: "Recomposição 120 Dias • Afinamento & Densidade",
-    category: "Recomposição Corporal",
+    title: "Caso 2: Recomposição Corporal & Definição",
+    timeTag: "Recomposição Corporal • Afinamento de Cintura & Densidade",
+    category: "Caso 2: Recomposição & Definição",
     badge: "Alta Densidade",
     beforeImg: "Assets/transformacoes/case2_antes.jpeg",
     afterImg: "Assets/transformacoes/case2_depois.jpeg",
@@ -327,10 +333,10 @@ const TRANSFORMATION_CASES = [
   },
   {
     id: 2,
-    title: "Caso 3: Físico Competitivo",
-    timeTag: "Preparação de Palco • Percentual de Gordura Mínimo",
-    category: "Físico Competitivo",
-    badge: "Físico Competitivo",
+    title: "Caso 3: Transformação de Alta Densidade",
+    timeTag: "Preparação de Palco • Percentual de Gordura Mínimo & Simetria",
+    category: "Caso 3: Alta Densidade",
+    badge: "Físico Extremo",
     beforeImg: "Assets/transformacoes/case3_antes.jpeg",
     afterImg: "Assets/transformacoes/case3_depois.jpeg",
     metric1Val: "Sub-8%",
@@ -549,4 +555,152 @@ function setupComparisonSlider() {
     card.style.transform = "none";
   }
 }
+
+/**
+ * 3D Tilt Effect on Plan Cards with Specular Light Glare
+ * Active on fine pointers (desktop mouse), safe on touch devices
+ */
+function setupPlanCards3D() {
+  const planCards = document.querySelectorAll(".plan-card-3d");
+  if (!planCards.length) return;
+
+  const isFinePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+  if (!isFinePointer) return;
+
+  planCards.forEach((card) => {
+    const glare = card.querySelector(".plan-card-glare");
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Subtle, refined 3D tilt angles
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+
+      if (glare) {
+        glare.style.opacity = "1";
+        const glareX = (x / rect.width) * 100;
+        const glareY = (y / rect.height) * 100;
+        glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.18) 0%, transparent 65%)`;
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+      if (glare) {
+        glare.style.opacity = "0";
+      }
+    });
+  });
+}
+
+/**
+ * Alternador de Visibilidade do HUD Biomecânico do Deadlift 3D
+ * Suporta persistência em localStorage, atalho de teclado ('H') e atualização dinâmica de ícones Lucide
+ */
+function setupDeadliftHUDToggle() {
+  const toggleBtn = document.getElementById("deadlift-hud-toggle");
+  const hudCard = document.getElementById("deadlift-hud-card");
+  if (!toggleBtn || !hudCard) return;
+
+  const STORAGE_KEY = "deadlift_hud_visible";
+
+  // 1. Ler estado inicial do localStorage (predefinição: visível/true)
+  const savedState = localStorage.getItem(STORAGE_KEY);
+  let isVisible = savedState === null ? true : savedState === "true";
+
+  // 2. Aplicação de classes e estado visual
+  function applyHUDState(visible, animate = true) {
+    if (!animate) {
+      hudCard.classList.remove("duration-300", "transition-all");
+    }
+
+    if (visible) {
+      // Estado Visível (true)
+      hudCard.classList.remove("opacity-0", "-translate-y-2", "pointer-events-none");
+      hudCard.classList.add("opacity-100", "translate-y-0");
+
+      toggleBtn.innerHTML = `
+        <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+        <span>Ocultar Fases</span>
+      `;
+      toggleBtn.classList.remove("border-red-500/40", "text-red-400");
+      toggleBtn.classList.add("border-white/15", "text-gray-300");
+      toggleBtn.setAttribute("aria-expanded", "true");
+    } else {
+      // Estado Oculto (false)
+      hudCard.classList.remove("opacity-100", "translate-y-0");
+      hudCard.classList.add("opacity-0", "-translate-y-2", "pointer-events-none");
+
+      toggleBtn.innerHTML = `
+        <i data-lucide="eye-off" class="w-3.5 h-3.5"></i>
+        <span>Exibir Fases</span>
+      `;
+      toggleBtn.classList.remove("border-white/15", "text-gray-300");
+      toggleBtn.classList.add("border-red-500/40", "text-red-400");
+      toggleBtn.setAttribute("aria-expanded", "false");
+    }
+
+    if (!animate) {
+      // Força reflow e restaura classes de transição após leitura inicial
+      void hudCard.offsetWidth;
+      hudCard.classList.add("transition-all", "duration-300");
+    }
+
+    // Atualização de ícones Lucide
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons();
+    }
+  }
+
+  // 3. Aplica o estado inicial lido do localStorage sem salto visual
+  applyHUDState(isVisible, false);
+
+  // 4. Alternância de estado com gravação no localStorage
+  function toggleHUD() {
+    isVisible = !isVisible;
+    try {
+      localStorage.setItem(STORAGE_KEY, String(isVisible));
+    } catch (e) {
+      console.warn("localStorage indisponível:", e);
+    }
+    applyHUDState(isVisible, true);
+  }
+
+  // 5. Evento de clique no botão
+  toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleHUD();
+  });
+
+  // 6. Suporte a Atalho de Teclado ("H" ou "h")
+  window.addEventListener("keydown", (e) => {
+    // Ignora se o utilizador estiver focado num campo de formulário ou editável
+    const activeEl = document.activeElement;
+    const isInput =
+      activeEl &&
+      (activeEl.tagName === "INPUT" ||
+        activeEl.tagName === "TEXTAREA" ||
+        activeEl.isContentEditable ||
+        activeEl.getAttribute("contenteditable") === "true");
+
+    if (isInput) return;
+
+    // Tecla H (maiúscula ou minúscula), evitando conflito com atalhos de sistema (Ctrl/Cmd/Alt)
+    if (e.key === "h" || e.key === "H") {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      e.preventDefault();
+      toggleHUD();
+    }
+  });
+}
+
+// Exporta globalmente para integração modular
+window.setupDeadliftHUDToggle = setupDeadliftHUDToggle;
 

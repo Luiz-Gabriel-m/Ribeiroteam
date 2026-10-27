@@ -477,3 +477,25 @@ body {
   scrollbar-width: none;
 }
 
+/* ==========================================================================
+   3D PLAN CARDS & SPECULAR LIGHT GLARE
+   ========================================================================== */
+.plan-card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.2s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0;
+  border-radius: inherit;
+  transition: opacity 0.25s ease;
+}
+

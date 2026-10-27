@@ -62,12 +62,12 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-[#070707] text-[#FFFFFF] font-body selection:bg-red-600 selection:text-white">
+<body class="bg-[#070707] text-[#FFFFFF] font-body selection:bg-red-600 selection:text-white overflow-x-hidden w-full max-w-full pb-16 lg:pb-0">
 
   <!-- ========================================================================
        1. FIXED HEADER (GLASSMORPHISM & BRAND LOGO)
        ======================================================================== -->
-  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 px-4 sm:px-8">
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-3.5 sm:py-5 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
 
       <!-- Logo Branding -->
@@ -88,7 +88,7 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-300">
         <a href="#hero" class="hover:text-red-500 transition-colors duration-200">Início</a>
         <a href="#metodologia-app" class="hover:text-red-500 transition-colors duration-200">App & Planilha</a>
         <a href="#metodo" class="hover:text-red-500 transition-colors duration-200">Método</a>
@@ -103,7 +103,7 @@
       </nav>
 
       <!-- Action Button CTA -->
-      <div class="hidden sm:flex items-center gap-4">
+      <div class="hidden lg:flex items-center gap-4">
         <a href="https://wa.me/553598657628?text=Ol%C3%A1%20Samuel!%20Quero%20fazer%20parte%20da%20Ribeiro%20Team%20e%20transformar%20meu%20f%C3%ADsico."
           target="_blank" rel="noopener noreferrer"
           class="btn-primary px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-[0_0_20px_rgba(229,9,20,0.4)]">
@@ -113,35 +113,38 @@
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-toggle" aria-label="Abrir Menu" class="md:hidden text-white p-2 focus:outline-none">
+      <button id="mobile-menu-toggle" aria-label="Abrir Menu"
+        class="lg:hidden text-white p-2.5 rounded-xl bg-neutral-900/80 border border-white/10 hover:border-white/20 transition-all focus:outline-none cursor-pointer flex items-center justify-center">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
 
-    <!-- Mobile Drawer Menu -->
+    <!-- Mobile Off-Canvas Drawer Menu -->
     <div id="mobile-drawer"
-      class="hidden md:hidden mt-3 px-4 py-6 bg-neutral-950/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl flex flex-col gap-4">
-      <a href="#hero" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Início</a>
-      <a href="#metodologia-app" class="mobile-nav-link text-base font-semibold text-red-400 flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-red-600"></span>
-        Planilha de Treino
-      </a>
-      <a href="#metodo" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Método
-        Ribeiro</a>
-      <a href="#deadlift-section"
-        class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Análise 3D Deadlift</a>
-      <a href="#planos" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Planos &
-        Consultoria</a>
-      <a href="#resultados" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Resultados
-        & Galeria</a>
-      <a href="#depoimentos" class="mobile-nav-link text-base font-semibold text-gray-200 hover:text-red-500">Perguntas
-        Frequentes</a>
-      <a href="https://wa.me/553598657628?text=Ol%C3%A1%20Samuel!%20Quero%20fazer%20parte%20da%20Ribeiro%20Team%20e%20transformar%20meu%20f%C3%ADsico."
-        target="_blank" rel="noopener noreferrer"
-        class="btn-primary w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider mt-2 flex items-center justify-center gap-2">
-        <i data-lucide="message-circle" class="w-4 h-4"></i>
-        <span>Entrar para o Time Agora</span>
-      </a>
+      class="fixed inset-x-0 top-[65px] sm:top-[75px] bottom-0 bg-[#0B0B0B]/98 backdrop-blur-2xl border-t border-white/10 z-40 flex flex-col justify-between p-6 overflow-y-auto transform transition-all duration-300 translate-x-full opacity-0 pointer-events-none lg:hidden">
+      <nav class="flex flex-col gap-2 text-base font-bold uppercase tracking-wider text-gray-200">
+        <a href="#hero" class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Início</a>
+        <a href="#metodologia-app" class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 flex items-center justify-between">
+          <span>Planilha & App de Treino</span>
+          <span class="text-[10px] text-red-400 font-bold px-2 py-0.5 rounded bg-red-950/80 border border-red-700/50">Personalizado</span>
+        </a>
+        <a href="#metodo" class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Método Científico</a>
+        <a href="#deadlift-section" class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 flex items-center gap-2 text-white">
+          <span class="w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
+          <span>Análise 3D Deadlift</span>
+        </a>
+        <a href="#planos" class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Planos & Consultoria</a>
+        <a href="#resultados" class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Antes & Depois</a>
+        <a href="#depoimentos" class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Perguntas Frequentes</a>
+      </nav>
+      <div class="pt-6 pb-6 border-t border-white/10 mt-4">
+        <a href="https://wa.me/553598657628?text=Ol%C3%A1%20Samuel!%20Quero%20fazer%20parte%20da%20Ribeiro%20Team%20e%20transformar%20meu%20f%C3%ADsico."
+          target="_blank" rel="noopener noreferrer"
+          class="btn-primary w-full py-4 rounded-xl text-center text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-red-900/50 min-h-[48px]">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Entrar para o Time no WhatsApp</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -150,7 +153,7 @@
        2. HERO SECTION (REFINAMENTO TIPOGRÁFICO & RETRATO PURO DE SAMUEL RIBEIRO)
        ======================================================================== -->
   <section id="hero"
-    class="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 sm:pb-20 lg:py-24 px-4 sm:px-8 overflow-hidden">
+    class="relative min-h-[92vh] flex items-center justify-center pt-24 sm:pt-28 pb-14 sm:pb-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
 
     <!-- Video Hero Background Layer -->
     <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
@@ -176,20 +179,20 @@
     </div>
 
     <!-- Main Content Container -->
-    <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
 
-      <!-- Left Column: Copywriting & High Conversion CTAs (max-w-xl refinado) -->
-      <div class="lg:col-span-7 flex flex-col items-start text-left max-w-xl">
+      <!-- Left Column: Copywriting & High Conversion CTAs (Order-1 on mobile, max-w-xl) -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left max-w-xl order-1 lg:order-1 w-full">
 
         <!-- Status / Authority Pill Badge -->
-        <div id="hero-badge" class="tech-badge mb-5 shadow-[0_0_15px_rgba(229,9,20,0.3)]">
+        <div id="hero-badge" class="tech-badge mb-4 sm:mb-5 shadow-[0_0_15px_rgba(229,9,20,0.3)]">
           <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
           <span>Biomecânica Aplicada & Alta Performance</span>
         </div>
 
-        <!-- Main Headline (Escala tipográfica refinada e equilibrada) -->
+        <!-- Main Headline (Escala tipográfica calibrada para mobile sem quebras estranhas) -->
         <h1 id="hero-title"
-          class="font-display font-black text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px] uppercase leading-[1.1] tracking-tight mb-5">
+          class="font-display font-black text-3xl sm:text-4xl lg:text-[46px] xl:text-[50px] uppercase leading-[1.15] tracking-tight mb-4 sm:mb-5">
           <span class="block text-white">FORÇA, TÉCNICA</span>
           <span class="block text-white">
             E <span
@@ -201,55 +204,86 @@
           </span>
         </h1>
 
-        <!-- Subheadline com opacidade e escala balanceadas -->
-        <p id="hero-subtitle" class="text-neutral-400 text-sm sm:text-base font-normal leading-relaxed mb-7 max-w-lg">
+        <!-- Subheadline com escala balanceada -->
+        <p id="hero-subtitle" class="text-neutral-400 text-sm sm:text-base font-normal leading-relaxed mb-6 sm:mb-7 max-w-lg">
           Transformação corporal de elite com o Treinador <strong>Samuel Ribeiro</strong>. Periodização individualizada,
           ajuste biomecânico milimétrico e acompanhamento contínuo para quem não aceita estagnação nos treinos.
         </p>
 
-        <!-- Dual Call-to-Action Buttons -->
+        <!-- Dual Call-to-Action Buttons (Vertical full-width no mobile, 48px min-height) -->
         <div id="hero-ctas"
-          class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-8">
+          class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-7 sm:mb-8">
           <a href="https://wa.me/553598657628?text=Ol%C3%A1%20Samuel!%20Quero%20iniciar%20minha%20consultoria%20com%20o%20Ribeiro%20Team."
             target="_blank" rel="noopener noreferrer"
-            class="btn-primary px-7 py-3.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5">
+            class="btn-primary w-full sm:w-auto min-h-[48px] px-7 py-3.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2.5">
             <span>Iniciar Minha Transformação</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
 
           <a href="#metodologia-app"
-            class="btn-secondary px-6 py-3.5 rounded-xl text-center text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2">
+            class="btn-secondary w-full sm:w-auto min-h-[48px] px-6 py-3.5 rounded-xl text-center text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2">
             <i data-lucide="smartphone" class="w-4 h-4 text-red-500"></i>
-            <span>Planilha de Treio Personalizada</span>
+            <span>Planilha de Treino Personalizada</span>
           </a>
         </div>
 
         <!-- Quick Metrics Bar -->
-        <div id="hero-stats" class="grid grid-cols-3 gap-4 sm:gap-6 pt-5 border-t border-white/10 w-full">
+        <div id="hero-stats" class="grid grid-cols-3 gap-2 sm:gap-6 pt-5 border-t border-white/10 w-full">
           <div class="flex flex-col">
-            <span class="font-display font-extrabold text-2xl sm:text-3xl text-white" data-counter-target="500"
+            <span class="font-display font-extrabold text-xl sm:text-3xl text-white" data-counter-target="500"
               data-counter-prefix="+">
               +50
             </span>
-            <span class="text-[11px] text-gray-400 uppercase tracking-wider font-medium">Vidas Transformadas</span>
+            <span class="text-[10px] sm:text-[11px] text-gray-400 uppercase tracking-wider font-medium">Vidas Transformadas</span>
           </div>
 
           <div class="flex flex-col">
-            <span class="font-display font-extrabold text-2xl sm:text-3xl text-red-500" data-counter-target="100"
+            <span class="font-display font-extrabold text-xl sm:text-3xl text-red-500" data-counter-target="100"
               data-counter-suffix="%">
               100%
             </span>
-            <span class="text-[11px] text-gray-400 uppercase tracking-wider font-medium">Personalizado</span>
+            <span class="text-[10px] sm:text-[11px] text-gray-400 uppercase tracking-wider font-medium">Personalizado</span>
           </div>
 
           <div class="flex flex-col">
-            <span class="font-display font-extrabold text-2xl sm:text-3xl text-white">
+            <span class="font-display font-extrabold text-xl sm:text-3xl text-white">
               BIOMECÂNICA
             </span>
-            <span class="text-[11px] text-gray-400 uppercase tracking-wider font-medium">Método Científico</span>
+            <span class="text-[10px] sm:text-[11px] text-gray-400 uppercase tracking-wider font-medium">Método Científico</span>
           </div>
         </div>
       </div>
+
+      <!-- Right Column: Samuel Ribeiro Featured Trainer Portrait (Order-2 on mobile, Order-2 on desktop) -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center order-2 lg:order-2 w-full mt-2 lg:mt-0">
+        <div class="relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm mx-auto group">
+          <!-- Subtle Red Volumetric Halo behind the Trainer Portrait -->
+          <div class="absolute -inset-2 bg-gradient-to-t from-red-600/25 via-red-950/15 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none"></div>
+          
+          <!-- Image Frame with Aspect-[4/5] -->
+          <div class="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/15 bg-neutral-950 shadow-2xl shadow-black/90">
+            <img src="Assets/eu/WhatsApp%20Image%202026-10-26%20at%2018.54.40.jpeg"
+              alt="Treinador Samuel Ribeiro - Fundador Ribeiro Team"
+              class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500">
+            
+            <!-- Dark Gradient Fade at Bottom -->
+            <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#070707] via-[#070707]/60 to-transparent pointer-events-none"></div>
+
+            <!-- Floating Authority Badge in Dark Glassmorphism -->
+            <div class="absolute bottom-4 inset-x-4 p-3 rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 flex items-center gap-3 shadow-lg pointer-events-none">
+              <div class="w-8 h-8 rounded-xl bg-red-600 flex items-center justify-center text-white shrink-0 shadow-[0_0_12px_rgba(229,9,20,0.5)]">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-white font-display uppercase tracking-tight">Samuel Ribeiro</span>
+                <span class="text-[10px] text-red-400 uppercase tracking-wider font-semibold">Treinador Principal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
 
@@ -728,52 +762,51 @@
         <!-- 3D Canvas Viewport + Technical Overlay Cards -->
         <div class="relative w-full">
           <!-- WebGL Three.js Container -->
-          <div id="deadlift-canvas-container" class="cursor-grab active:cursor-grabbing"></div>
+          <div id="deadlift-canvas-container" class="cursor-grab active:cursor-grabbing w-full h-[380px] sm:h-[480px] md:h-[540px] relative overflow-hidden rounded-xl"></div>
 
           <!-- Floating Biomechanical Diagnostic HUD Card -->
           <div
-            class="absolute top-4 left-4 max-w-xs sm:max-w-sm w-full p-4 rounded-xl bg-neutral-950/80 backdrop-blur-md border border-white/15 shadow-2xl pointer-events-none">
+            class="absolute top-3 left-3 sm:top-4 sm:left-4 max-w-[calc(100%-24px)] sm:max-w-xs p-3 sm:p-4 rounded-xl bg-neutral-950/85 backdrop-blur-md border border-white/15 shadow-2xl pointer-events-none">
             <div class="flex items-center justify-between mb-2">
               <span id="3d-card-badge"
-                class="text-[10px] uppercase font-bold tracking-wider text-red-400 px-2 py-0.5 rounded-md bg-red-950/60 border border-red-800/40">
+                class="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider text-red-400 px-2 py-0.5 rounded-md bg-red-950/60 border border-red-800/40">
                 Fundação Biomecânica
               </span>
-              <span class="text-[10px] text-gray-400 flex items-center gap-1">
+              <span class="text-[9px] sm:text-[10px] text-gray-400 flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                Em Tempo Real
+                Tempo Real
               </span>
             </div>
 
-            <h4 id="3d-card-title" class="text-base font-bold text-white uppercase font-display mb-3">
+            <h4 id="3d-card-title" class="text-sm sm:text-base font-bold text-white uppercase font-display mb-2 sm:mb-3">
               Fase 1: Setup & Saída
             </h4>
 
             <!-- Active Muscles Badges -->
-            <div class="mb-3">
-              <span class="text-[10px] text-gray-400 uppercase tracking-wider block mb-1.5 font-semibold">Musculatura em
+            <div class="mb-2 sm:mb-3">
+              <span class="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-wider block mb-1 font-semibold">Musculatura em
                 Alta Demanda:</span>
-              <div id="3d-card-muscles" class="flex flex-wrap gap-1.5">
+              <div id="3d-card-muscles" class="flex flex-wrap gap-1">
                 <span
-                  class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Isquiotibiais</span>
+                  class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Isquiotibiais</span>
                 <span
-                  class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Grande
-                  Dorsal</span>
+                  class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Grande Dorsal</span>
                 <span
-                  class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Core</span>
+                  class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-red-950/60 border border-red-800/40 text-red-300">Core</span>
               </div>
             </div>
 
             <!-- Technical Cues List -->
-            <div id="3d-card-cues" class="space-y-2 border-t border-white/10 pt-2.5">
+            <div id="3d-card-cues" class="space-y-1.5 border-t border-white/10 pt-2 text-xs">
               <!-- Dynamically populated by JS -->
             </div>
           </div>
 
           <!-- Bottom User Drag Hint -->
           <div
-            class="absolute bottom-4 right-4 pointer-events-none hidden sm:flex items-center gap-2 text-xs text-gray-400 bg-neutral-950/70 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10">
-            <i data-lucide="rotate-3d" class="w-4 h-4 text-red-500"></i>
-            <span>Arraste com o mouse para girar em 360°</span>
+            class="absolute bottom-3 right-3 pointer-events-none flex items-center gap-1.5 text-[10px] sm:text-xs text-gray-400 bg-neutral-950/75 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-white/10">
+            <i data-lucide="rotate-3d" class="w-3.5 h-3.5 text-red-500"></i>
+            <span>360° Interativo</span>
           </div>
         </div>
 
@@ -795,31 +828,31 @@
   <!-- ========================================================================
        5. ECOSSISTEMA DE PLANOS & CONSULTORIA (MODELO 4)
        ======================================================================== -->
-  <section id="planos" class="py-24 px-4 sm:px-8 relative tech-grid-bg">
+  <section id="planos" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 relative tech-grid-bg">
     <div class="max-w-7xl mx-auto">
 
       <!-- Section Header -->
-      <div class="section-reveal flex flex-col items-center text-center mb-16">
+      <div class="section-reveal flex flex-col items-center text-center mb-12 sm:mb-16">
         <span class="tech-badge mb-3">Vagas Mensais Limitadas</span>
         <h2 class="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-4">
           ESCOLHA SEU PROTOCOLO <span class="text-red-600">DE ALTO IMPACTO</span>
         </h2>
-        <p class="text-gray-400 text-base max-w-2xl">
+        <p class="text-gray-400 text-sm sm:text-base max-w-2xl leading-relaxed">
           Atendimento exclusivo focado em resultados rápidos, sólidos e sustentáveis. Selecione o modelo que melhor se
           encaixa nos seus objetivos.
         </p>
       </div>
 
-      <!-- Pricing & Services Grid (3 Cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <!-- Pricing & Services Grid (1 Coluna no Mobile / 3 Colunas no Desktop) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
 
         <!-- CARD 1: CONSULTORIA ONLINE INDIVIDUALIZADA (MAIS PROCURADO / FEATURED) -->
         <div
-          class="glass-card-featured rounded-2xl p-8 flex flex-col justify-between relative md:-translate-y-2 hover:-translate-y-3 transition-transform duration-300">
+          class="glass-card-featured rounded-2xl p-6 sm:p-8 pt-8 sm:pt-10 flex flex-col justify-between relative mt-3 lg:mt-0 lg:-translate-y-2 hover:-translate-y-3 transition-transform duration-300">
 
           <!-- Badge Mais Procurado -->
           <div
-            class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-red-800 text-white text-[11px] font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-[0_0_20px_rgba(229,9,20,0.6)] flex items-center gap-1.5 border border-white/20">
+            class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-red-800 text-white text-[11px] font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-[0_0_20px_rgba(229,9,20,0.6)] flex items-center gap-1.5 border border-white/20 whitespace-nowrap">
             <i data-lucide="flame" class="w-3.5 h-3.5"></i>
             <span>Mais Procurado</span>
           </div>
@@ -828,7 +861,7 @@
             <div class="mb-6">
               <span class="text-xs font-bold text-red-400 uppercase tracking-wider block mb-1">Totalmente Sob
                 Medida</span>
-              <h3 class="text-2xl font-black text-white uppercase font-display">Consultoria Online Individual</h3>
+              <h3 class="text-xl sm:text-2xl font-black text-white uppercase font-display">Consultoria Online Individual</h3>
               <p class="text-sm text-gray-300 mt-2">
                 O método completo no seu bolso. Treine onde quiser com acompanhamento direto do Treinador Samuel
                 Ribeiro.
@@ -862,7 +895,7 @@
 
           <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel%20Ribeiro!%20Vi%20o%20site%20do%20Ribeiro%20Team%20e%20gostaria%20de%20garantir%20minha%20vaga%20na%20Consultoria%20Online%20Individual.%20Como%20podemos%20iniciar%20minha%20periodiza%C3%A7%C3%A3o%3F"
             target="_blank" rel="noopener noreferrer"
-            class="btn-primary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+            class="btn-primary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px]">
             <span>Garantir Minha Vaga Online</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
@@ -870,12 +903,12 @@
 
         <!-- CARD 2: PERSONAL TRAINING PRESENCIAL -->
         <div
-          class="glass-panel p-8 rounded-2xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+          class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
           <div>
             <div class="mb-6">
               <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-1">Acompanhamento
                 Físico</span>
-              <h3 class="text-2xl font-black text-white uppercase font-display">Personal Presencial</h3>
+              <h3 class="text-xl sm:text-2xl font-black text-white uppercase font-display">Personal Presencial</h3>
               <p class="text-sm text-gray-400 mt-2">
                 Para quem busca precisão cirúrgica a cada repetição e motivação ininterrupta dentro da sala de
                 musculação.
@@ -909,7 +942,7 @@
 
           <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Samuel!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20hor%C3%A1rios%20para%20o%20acompanhamento%20de%20Personal%20Presencial%20com%20o%20Ribeiro%20Team."
             target="_blank" rel="noopener noreferrer"
-            class="btn-secondary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+            class="btn-secondary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px]">
             <span>Consultar Horários Disponíveis</span>
             <i data-lucide="calendar" class="w-4 h-4"></i>
           </a>
@@ -917,12 +950,12 @@
 
         <!-- CARD 3: PREPARAÇÃO DE ATLETAS & FÍSICO EXTREMO -->
         <div
-          class="glass-panel p-8 rounded-2xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+          class="glass-panel p-6 sm:p-8 rounded-2xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
           <div>
             <div class="mb-6">
               <span class="text-xs font-bold text-red-400 uppercase tracking-wider block mb-1">Alta Performance
                 Competitiva</span>
-              <h3 class="text-2xl font-black text-white uppercase font-display">Atletas & Físico Extremo</h3>
+              <h3 class="text-xl sm:text-2xl font-black text-white uppercase font-display">Atletas & Físico Extremo</h3>
               <p class="text-sm text-gray-400 mt-2">
                 Periodização rigorosa para palcos de fisiculturismo, testes de aptidão física (TAF) ou definição
                 extrema.
@@ -956,7 +989,7 @@
 
           <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel%20Ribeiro!%20Tenho%20interesse%20no%20protocolo%20de%20Prepara%C3%A7%C3%A3o%20de%20Atletas%20%2F%20Competi%C3%A7%C3%A3o%20do%20Ribeiro%20Team%20e%20gostaria%20de%20agendar%20uma%20triagem%20para%20o%20meu%20f%C3%ADsico."
             target="_blank" rel="noopener noreferrer"
-            class="btn-secondary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+            class="btn-secondary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px]">
             <span>Candidatar-se para Preparação</span>
             <i data-lucide="trophy" class="w-4 h-4"></i>
           </a>
@@ -990,22 +1023,22 @@
       <!-- ========================================================================
            CARROSSEL MULTI-CASOS DE "ANTES E DEPOIS" (SLIDER INTERATIVO 3D)
            ======================================================================== -->
-      <div class="max-w-3xl mx-auto mb-20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 mb-20">
 
         <!-- Case Switcher Navigation Tabs -->
-        <div class="flex items-center justify-center gap-2 sm:gap-3 mb-8 overflow-x-auto pb-2 scrollbar-none">
+        <div class="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 overflow-x-auto pb-2 scrollbar-none px-1">
           <button id="case-tab-0"
-            class="case-nav-tab active px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 border flex items-center gap-2 cursor-pointer shadow-md">
+            class="case-nav-tab active px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 border flex items-center gap-1.5 sm:gap-2 cursor-pointer shadow-md shrink-0">
             <span class="w-2 h-2 rounded-full bg-red-500"></span>
             <span>Hipertrofia 90D</span>
           </button>
           <button id="case-tab-1"
-            class="case-nav-tab px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 border flex items-center gap-2 cursor-pointer text-gray-400 bg-neutral-900/60 border-white/10 hover:border-white/30 hover:text-white">
+            class="case-nav-tab px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 border flex items-center gap-1.5 sm:gap-2 cursor-pointer text-gray-400 bg-neutral-900/60 border-white/10 hover:border-white/30 hover:text-white shrink-0">
             <span class="w-2 h-2 rounded-full bg-neutral-600"></span>
             <span>Recomposição Corporal</span>
           </button>
           <button id="case-tab-2"
-            class="case-nav-tab px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 border flex items-center gap-2 cursor-pointer text-gray-400 bg-neutral-900/60 border-white/10 hover:border-white/30 hover:text-white">
+            class="case-nav-tab px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 border flex items-center gap-1.5 sm:gap-2 cursor-pointer text-gray-400 bg-neutral-900/60 border-white/10 hover:border-white/30 hover:text-white shrink-0">
             <span class="w-2 h-2 rounded-full bg-neutral-600"></span>
             <span>Físico Competitivo</span>
           </button>
@@ -1016,8 +1049,8 @@
 
           <!-- Botão Seta Esquerda -->
           <button id="case-prev-btn" aria-label="Caso Anterior"
-            class="absolute -left-3 sm:-left-6 lg:-left-12 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-neutral-950/85 backdrop-blur-md border border-white/15 text-white hover:text-white hover:border-white/40 hover:scale-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-pointer">
-            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            class="absolute -left-2 sm:-left-6 lg:-left-12 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-neutral-950/85 backdrop-blur-md border border-white/15 text-white hover:text-white hover:border-white/40 hover:scale-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-pointer">
+            <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </button>
 
           <!-- 3D Interactive Comparison Container -->
@@ -1032,7 +1065,7 @@
 
               <!-- Badge ANTES (Canto Superior Esquerdo) -->
               <div
-                class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-bold uppercase tracking-wider text-gray-300 pointer-events-none shadow-md">
+                class="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-20 px-2.5 sm:px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-gray-300 pointer-events-none shadow-md">
                 Antes
               </div>
 
@@ -1047,7 +1080,7 @@
 
               <!-- Badge DEPOIS (Canto Superior Direito) -->
               <div
-                class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-red-600 backdrop-blur-md border border-red-500/40 text-[10px] font-bold uppercase tracking-wider text-white pointer-events-none shadow-md">
+                class="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-20 px-2.5 sm:px-3 py-1 rounded-full bg-red-600 backdrop-blur-md border border-red-500/40 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white pointer-events-none shadow-md">
                 Depois
               </div>
 
@@ -1064,29 +1097,29 @@
 
               <!-- Footer: Dados da Transformação & Métricas em Destaque -->
               <div
-                class="absolute bottom-0 inset-x-0 z-20 p-4 sm:p-5 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
-                <div class="flex items-center justify-between mb-1.5">
-                  <span id="case-time-tag" class="text-[10px] font-bold uppercase tracking-wider text-red-400">
+                class="absolute bottom-0 inset-x-0 z-20 p-3 sm:p-5 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
+                <div class="flex items-center justify-between mb-1">
+                  <span id="case-time-tag" class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-red-400 truncate max-w-[70%]">
                     Evolução 90 Dias • Protocolo Ribeiro Team
                   </span>
                   <span id="case-status-badge"
-                    class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-red-950/80 border border-red-700/50 text-red-300">
+                    class="text-[8px] sm:text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-red-950/80 border border-red-700/50 text-red-300 shrink-0">
                     Caso Real
                   </span>
                 </div>
-                <div class="grid grid-cols-2 gap-2 pt-2 border-t border-white/10">
+                <div class="grid grid-cols-2 gap-2 pt-1.5 border-t border-white/10">
                   <div class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
-                    <span class="text-xs font-black text-white">
+                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                    <span class="text-[11px] sm:text-xs font-black text-white flex items-baseline gap-1">
                       <span id="case-metric-1-val">+6.5kg</span>
-                      <span id="case-metric-1-lbl" class="text-[10px] font-medium text-gray-400">Massa Magra</span>
+                      <span id="case-metric-1-lbl" class="text-[9px] sm:text-[10px] font-medium text-gray-400">Massa Magra</span>
                     </span>
                   </div>
                   <div class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-red-500 shrink-0"></span>
-                    <span class="text-xs font-black text-white">
+                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-red-500 shrink-0"></span>
+                    <span class="text-[11px] sm:text-xs font-black text-white flex items-baseline gap-1">
                       <span id="case-metric-2-val">-8%</span>
-                      <span id="case-metric-2-lbl" class="text-[10px] font-medium text-gray-400">Gordura Corporal</span>
+                      <span id="case-metric-2-lbl" class="text-[9px] sm:text-[10px] font-medium text-gray-400">Gordura Corporal</span>
                     </span>
                   </div>
                 </div>
@@ -1100,8 +1133,8 @@
 
           <!-- Botão Seta Direita -->
           <button id="case-next-btn" aria-label="Próximo Caso"
-            class="absolute -right-3 sm:-right-6 lg:-right-12 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-neutral-950/85 backdrop-blur-md border border-white/15 text-white hover:text-white hover:border-white/40 hover:scale-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-pointer">
-            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            class="absolute -right-2 sm:-right-6 lg:-right-12 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-neutral-950/85 backdrop-blur-md border border-white/15 text-white hover:text-white hover:border-white/40 hover:scale-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-pointer">
+            <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </button>
 
         </div>
@@ -1126,13 +1159,13 @@
         </h3>
       </div>
 
-      <!-- Grid de Galeria de Alto Impacto (4 Colunas) -->
+      <!-- Grid de Galeria de Alto Impacto (Carrossel Snap no Mobile / 4 Colunas no Desktop) -->
       <div id="gallery-grid"
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 sm:px-6 mb-12">
+        class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-none sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible sm:pb-0 max-w-7xl mx-auto px-4 sm:px-6 mb-12">
 
         <!-- Card 1: ALTA CARGA • TENSÃO MECÂNICA PURA -->
         <div
-          class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
+          class="gallery-card relative aspect-[3/4] h-[360px] sm:h-auto snap-center shrink-0 w-[82vw] sm:w-auto rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
           <img src="Assets/galeria/card1_alta_carga.jpg" alt="Alta Carga - Tensão Mecânica Pura"
             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
 
@@ -1150,7 +1183,7 @@
 
         <!-- Card 2: METODOLOGIA • CONTROLE DE CADÊNCIA -->
         <div
-          class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
+          class="gallery-card relative aspect-[3/4] h-[360px] sm:h-auto snap-center shrink-0 w-[82vw] sm:w-auto rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
           <img src="Assets/galeria/card2_metodologia.jpg" alt="Metodologia - Controle de Cadência"
             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
 
@@ -1168,7 +1201,7 @@
 
         <!-- Card 3: PERFORMANCE • FÍSICO COMPETITIVO -->
         <div
-          class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
+          class="gallery-card relative aspect-[3/4] h-[360px] sm:h-auto snap-center shrink-0 w-[82vw] sm:w-auto rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
           <img src="Assets/galeria/card3_performance.jpg" alt="Performance - Físico Competitivo"
             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
 
@@ -1186,7 +1219,7 @@
 
         <!-- Card 4: DISCIPLINA • COMUNIDADE DE ELITE -->
         <div
-          class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
+          class="gallery-card relative aspect-[3/4] h-[360px] sm:h-auto snap-center shrink-0 w-[82vw] sm:w-auto rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
           <img src="Assets/galeria/card4_disciplina.jpg" alt="Disciplina - Comunidade de Elite"
             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
 
@@ -1451,10 +1484,20 @@
   </footer>
 
 
-  <!-- Floating Quick WhatsApp Button -->
+  <!-- Mobile Sticky Bottom Call-to-Action Bar -->
+  <div class="fixed bottom-0 inset-x-0 p-3 bg-black/85 backdrop-blur-md border-t border-white/10 z-40 flex items-center gap-2 lg:hidden shadow-[0_-4px_25px_rgba(0,0,0,0.85)]">
+    <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel%20Ribeiro!%20Vi%20o%20site%20do%20Ribeiro%20Team%20e%20gostaria%20de%20garantir%20minha%20vaga."
+      target="_blank" rel="noopener noreferrer"
+      class="btn-primary w-full py-3.5 px-4 rounded-xl text-center text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-red-900/50 min-h-[48px]">
+      <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+      <span>Garantir Vaga no WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- Floating Quick WhatsApp Button (Desktop Only) -->
   <a href="https://wa.me/553598657628?text=Ol%C3%A1%20Samuel!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Ribeiro%20Team."
     target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp"
-    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-tr from-emerald-600 to-green-500 flex items-center justify-center text-white shadow-[0_8px_30px_rgba(16,185,129,0.45)] hover:scale-110 active:scale-95 transition-all duration-300 group">
+    class="hidden lg:flex fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-tr from-emerald-600 to-green-500 items-center justify-center text-white shadow-[0_8px_30px_rgba(16,185,129,0.45)] hover:scale-110 active:scale-95 transition-all duration-300 group">
     <span
       class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-red-600 border-2 border-neutral-900 animate-ping"></span>
     <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-red-600 border-2 border-neutral-900"></span>

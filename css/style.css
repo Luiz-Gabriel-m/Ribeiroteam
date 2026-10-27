@@ -263,7 +263,7 @@ body {
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: none;
+  touch-action: pan-y;
   transform-style: preserve-3d;
   will-change: transform;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -279,10 +279,18 @@ body {
   border-color: rgba(255, 255, 255, 0.28);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .comparison-card {
-    height: 470px;
-    max-width: 340px;
+    height: 420px;
+    max-width: 330px;
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+  .comparison-card {
+    height: 460px;
+    max-width: 360px;
   }
 }
 
@@ -297,6 +305,7 @@ body {
   transform: translateX(-50%);
   cursor: ew-resize;
   pointer-events: auto;
+  touch-action: none;
 }
 
 .comparison-slider-btn {
@@ -448,3 +457,23 @@ body {
   border-color: rgba(229, 9, 20, 0.45);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(229, 9, 20, 0.25);
 }
+
+/* Mobile & Touch Optimizations */
+#deadlift-canvas-container {
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#deadlift-canvas-container canvas {
+  touch-action: pan-y;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

@@ -174,19 +174,40 @@ function setupMobileNav() {
 
   if (!mobileToggle || !mobileDrawer) return;
 
-  mobileToggle.addEventListener("click", () => {
-    const isOpen = !mobileDrawer.classList.contains("hidden");
-    if (isOpen) {
-      mobileDrawer.classList.add("hidden");
+  function toggleMenu(forceClose = false) {
+    const isClosed = mobileDrawer.classList.contains("translate-x-full") || mobileDrawer.classList.contains("hidden");
+
+    if (!isClosed || forceClose) {
+      mobileDrawer.classList.add("translate-x-full", "opacity-0", "pointer-events-none");
+      mobileDrawer.classList.remove("translate-x-0", "opacity-100", "pointer-events-auto");
+      document.body.classList.remove("overflow-hidden");
+      mobileToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
     } else {
-      mobileDrawer.classList.remove("hidden");
+      mobileDrawer.classList.remove("translate-x-full", "opacity-0", "pointer-events-none", "hidden");
+      mobileDrawer.classList.add("translate-x-0", "opacity-100", "pointer-events-auto");
+      document.body.classList.add("overflow-hidden");
+      mobileToggle.innerHTML = '<i data-lucide="x" class="w-6 h-6 text-red-500"></i>';
     }
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  }
+
+  mobileToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMenu();
   });
 
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      mobileDrawer.classList.add("hidden");
+      toggleMenu(true);
     });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!mobileDrawer.contains(e.target) && !mobileToggle.contains(e.target)) {
+      toggleMenu(true);
+    }
   });
 }
 
@@ -421,7 +442,7 @@ function setupComparisonSlider() {
     }
   });
 
-  // Slider Dragging Functionality
+  // Slider Dragging Functionality with Touch Ergonomics
   function updateSlider(clientX) {
     const rect = card.getBoundingClientRect();
     const offsetX = clientX - rect.left;
@@ -432,45 +453,71 @@ function setupComparisonSlider() {
     afterLayer.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
   }
 
-  function onPointerDown(e) {
+  function startDrag(clientX) {
     isDragging = true;
     card.classList.add("is-dragging");
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     updateSlider(clientX);
   }
 
-  function onPointerMove(e) {
-    if (!isDragging) return;
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    updateSlider(clientX);
-  }
-
-  function onPointerUp() {
+  function endDrag() {
     if (isDragging) {
       isDragging = false;
       card.classList.remove("is-dragging");
     }
   }
 
-  // Pointer events on handle & card
-  handle.addEventListener("mousedown", onPointerDown);
-  handle.addEventListener("touchstart", onPointerDown, { passive: true });
-
-  card.addEventListener("mousedown", (e) => {
-    onPointerDown(e);
-  });
-  card.addEventListener("touchstart", (e) => {
-    onPointerDown(e);
+  // Handle direct touch/mouse
+  handle.addEventListener("mousedown", (e) => startDrag(e.clientX));
+  handle.addEventListener("touchstart", (e) => {
+    if (e.touches && e.touches[0]) {
+      startDrag(e.touches[0].clientX);
+    }
   }, { passive: true });
 
-  window.addEventListener("mousemove", onPointerMove);
-  window.addEventListener("touchmove", onPointerMove, { passive: true });
+  // Card Touch Intent Handling (separates horizontal slider drag from vertical page scroll)
+  let touchStartX = 0;
+  let touchStartY = 0;
 
-  window.addEventListener("mouseup", onPointerUp);
-  window.addEventListener("touchend", onPointerUp);
+  card.addEventListener("mousedown", (e) => startDrag(e.clientX));
 
-  // 3D Tilt Effect on Desktop (Mousemove)
-  if (window.innerWidth > 768) {
+  card.addEventListener("touchstart", (e) => {
+    if (e.touches && e.touches[0]) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  card.addEventListener("touchmove", (e) => {
+    if (!e.touches || !e.touches[0]) return;
+    const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
+    const diffX = Math.abs(currentX - touchStartX);
+    const diffY = Math.abs(currentY - touchStartY);
+
+    if (isDragging) {
+      if (e.cancelable) e.preventDefault();
+      updateSlider(currentX);
+      return;
+    }
+
+    if (diffX > 10 && diffX > diffY) {
+      if (e.cancelable) e.preventDefault();
+      startDrag(currentX);
+    }
+  }, { passive: false });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    updateSlider(e.clientX);
+  });
+
+  window.addEventListener("mouseup", endDrag);
+  window.addEventListener("touchend", endDrag);
+  window.addEventListener("touchcancel", endDrag);
+
+  // 3D Tilt Effect: Active ONLY on desktop mouse pointer, strictly disabled on touch
+  const isFinePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+  if (isFinePointer && window.innerWidth > 1024) {
     card.addEventListener("mousemove", (e) => {
       if (isDragging) return;
       const rect = card.getBoundingClientRect();
@@ -479,8 +526,8 @@ function setupComparisonSlider() {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -8;
-      const rotateY = ((x - centerX) / centerX) * 8;
+      const rotateX = ((y - centerY) / centerY) * -7;
+      const rotateY = ((x - centerX) / centerX) * 7;
 
       card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
 
@@ -488,7 +535,7 @@ function setupComparisonSlider() {
         glare.style.opacity = "1";
         const glareX = (x / rect.width) * 100;
         const glareY = (y / rect.height) * 100;
-        glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.18) 0%, transparent 65%)`;
+        glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.15) 0%, transparent 65%)`;
       }
     });
 
@@ -498,6 +545,8 @@ function setupComparisonSlider() {
         glare.style.opacity = "0";
       }
     });
+  } else {
+    card.style.transform = "none";
   }
 }
 

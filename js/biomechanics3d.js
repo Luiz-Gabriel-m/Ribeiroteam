@@ -91,19 +91,24 @@ class DeadliftBiomechanics3D {
   }
 
   setupScene() {
+    const isMobile = window.innerWidth < 640;
     const width = this.container.clientWidth;
-    const height = this.container.clientHeight || 560;
+    const height = this.container.clientHeight || (isMobile ? 380 : 560);
 
     this.scene = new THREE.Scene();
     this.scene.fog = new THREE.FogExp2(0x070709, 0.045);
 
-    this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    this.camera = new THREE.PerspectiveCamera(isMobile ? 50 : 45, width / height, 0.1, 100);
     // Positioned at an athletic 3/4 angle
-    this.camera.position.set(3.4, 1.8, 3.8);
+    if (isMobile) {
+      this.camera.position.set(3.8, 1.9, 4.3);
+    } else {
+      this.camera.position.set(3.4, 1.8, 3.8);
+    }
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
     this.renderer.setSize(width, height);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -416,6 +421,24 @@ class DeadliftBiomechanics3D {
       this.controls.maxDistance = 7.0;
       this.controls.maxPolarAngle = Math.PI / 2 + 0.05; // Don't clip below floor
       this.controls.target.set(0, 0.75, 0);
+      this.controls.enableZoom = false; // Prevent trapping vertical scroll on mobile
+      this.controls.update();
+    }
+  }
+
+  onWindowResize() {
+    if (!this.container || !this.renderer || !this.camera) return;
+    const isMobile = window.innerWidth < 640;
+    const width = this.container.clientWidth;
+    const height = this.container.clientHeight || (isMobile ? 380 : 560);
+
+    this.camera.aspect = width / height;
+    this.camera.fov = isMobile ? 50 : 45;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(width, height);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    if (this.controls) {
       this.controls.update();
     }
   }

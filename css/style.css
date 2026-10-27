@@ -258,7 +258,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 410px;
-  height: 510px;
+  height: 520px;
   border-radius: 24px;
   overflow: hidden;
   user-select: none;
@@ -266,22 +266,22 @@ body {
   touch-action: none;
   transform-style: preserve-3d;
   will-change: transform;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   background: #08080a;
   box-shadow: 
     0 25px 65px rgba(0, 0, 0, 0.95),
-    0 0 35px rgba(229, 9, 20, 0.25);
+    0 0 0 1px rgba(255, 255, 255, 0.05);
   cursor: ew-resize;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .comparison-card:hover {
-  border-color: rgba(229, 9, 20, 0.45);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
 @media (max-width: 640px) {
   .comparison-card {
-    height: 460px;
+    height: 470px;
     max-width: 340px;
   }
 }
@@ -290,9 +290,9 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 2.5px;
-  background: #E50914;
-  box-shadow: 0 0 16px rgba(229, 9, 20, 0.95), 0 0 4px #FFFFFF;
+  width: 2px;
+  background: #FFFFFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   z-index: 30;
   transform: translateX(-50%);
   cursor: ew-resize;
@@ -304,22 +304,24 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #E50914;
+  background: #111115;
   border: 2px solid #FFFFFF;
-  box-shadow: 0 0 20px rgba(229, 9, 20, 0.8), 0 4px 15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  transition: transform 0.15s ease, background 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
-.comparison-card.is-dragging .comparison-slider-btn {
-  transform: translate(-50%, -50%) scale(1.12);
-  background: #ff1a26;
+.comparison-card.is-dragging .comparison-slider-btn,
+.comparison-slider-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #1a1a22;
+  border-color: #FFFFFF;
 }
 
 .comparison-glare {
@@ -339,15 +341,15 @@ body {
 }
 
 .case-nav-tab:hover {
-  border-color: rgba(229, 9, 20, 0.4);
+  border-color: rgba(255, 255, 255, 0.25);
   color: #FFFFFF;
 }
 
 .case-nav-tab.active {
-  background: linear-gradient(135deg, rgba(229, 9, 20, 0.25) 0%, rgba(20, 15, 18, 0.9) 100%);
-  border-color: #E50914;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
   color: #FFFFFF;
-  box-shadow: 0 0 20px rgba(229, 9, 20, 0.35);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 .case-dot {
@@ -356,8 +358,8 @@ body {
 
 .case-dot.active {
   width: 2rem !important;
-  background-color: #E50914 !important;
-  box-shadow: 0 0 12px rgba(229, 9, 20, 0.7);
+  background-color: #FFFFFF !important;
+  box-shadow: none;
 }
 
 

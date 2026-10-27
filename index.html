@@ -1007,7 +1007,7 @@
           <button id="case-tab-2"
             class="case-nav-tab px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 border flex items-center gap-2 cursor-pointer text-gray-400 bg-neutral-900/60 border-white/10 hover:border-white/30 hover:text-white">
             <span class="w-2 h-2 rounded-full bg-neutral-600"></span>
-            <span>Emagrecimento & Definição</span>
+            <span>Físico Competitivo</span>
           </button>
         </div>
 
@@ -1016,27 +1016,19 @@
 
           <!-- Botão Seta Esquerda -->
           <button id="case-prev-btn" aria-label="Caso Anterior"
-            class="absolute -left-3 sm:-left-6 lg:-left-12 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-neutral-950/85 backdrop-blur-md border border-white/15 text-white hover:text-red-500 hover:border-red-500 hover:scale-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-pointer">
+            class="absolute -left-3 sm:-left-6 lg:-left-12 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-neutral-950/85 backdrop-blur-md border border-white/15 text-white hover:text-white hover:border-white/40 hover:scale-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-pointer">
             <i data-lucide="chevron-left" class="w-6 h-6"></i>
           </button>
 
           <!-- 3D Interactive Comparison Container -->
           <div class="comparison-container relative w-full flex justify-center">
 
-            <!-- Volumetric Glow Traseiro -->
-            <div
-              class="absolute -inset-4 bg-gradient-to-t from-red-600/35 via-red-900/15 to-transparent rounded-3xl blur-3xl -z-10 pointer-events-none">
-            </div>
-            <div
-              class="absolute top-1/4 -right-4 w-44 h-44 bg-red-600/25 rounded-full blur-2xl -z-10 pointer-events-none">
-            </div>
-
             <!-- 3D Comparison Card -->
             <div id="before-after-card" class="comparison-card group">
 
               <!-- Base Layer: ANTES -->
               <img id="case-before-img" src="Assets/transformacoes/antes.jpeg" alt="Aluno Antes da Consultoria"
-                class="absolute inset-0 w-full h-full object-cover object-top pointer-events-none transition-opacity duration-300">
+                class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none transition-opacity duration-300">
 
               <!-- Badge ANTES (Canto Superior Esquerdo) -->
               <div
@@ -1050,12 +1042,12 @@
                 style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
                 <img id="case-after-img" src="Assets/transformacoes/depois.jpeg"
                   alt="Aluno Depois da Consultoria Ribeiro Team"
-                  class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300">
+                  class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300">
               </div>
 
               <!-- Badge DEPOIS (Canto Superior Direito) -->
               <div
-                class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-red-600/85 backdrop-blur-md border border-red-500/50 text-[10px] font-bold uppercase tracking-wider text-white pointer-events-none shadow-[0_0_15px_rgba(229,9,20,0.6)]">
+                class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-red-600 backdrop-blur-md border border-red-500/40 text-[10px] font-bold uppercase tracking-wider text-white pointer-events-none shadow-md">
                 Depois
               </div>
 
@@ -1102,21 +1094,13 @@
 
               <!-- 3D Specular Light Glare Overlay -->
               <div id="comparison-glare" class="comparison-glare"></div>
-
-              <!-- Acentos técnicos sutis nos cantos -->
-              <div
-                class="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-red-600/80 pointer-events-none z-20">
-              </div>
-              <div
-                class="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-red-600/80 pointer-events-none z-20">
-              </div>
             </div>
 
           </div>
 
           <!-- Botão Seta Direita -->
           <button id="case-next-btn" aria-label="Próximo Caso"
-            class="absolute -right-3 sm:-right-6 lg:-right-12 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-neutral-950/85 backdrop-blur-md border border-white/15 text-white hover:text-red-500 hover:border-red-500 hover:scale-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-pointer">
+            class="absolute -right-3 sm:-right-6 lg:-right-12 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-neutral-950/85 backdrop-blur-md border border-white/15 text-white hover:text-white hover:border-white/40 hover:scale-110 active:scale-95 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.8)] flex items-center justify-center cursor-pointer">
             <i data-lucide="chevron-right" class="w-6 h-6"></i>
           </button>
 
@@ -1125,7 +1109,7 @@
         <!-- Paginação por Pontos (Dots) -->
         <div class="flex items-center justify-center gap-2.5 mt-6">
           <button id="case-dot-0" aria-label="Ir para Caso 1"
-            class="case-dot h-2 rounded-full transition-all duration-300 w-8 bg-red-600"></button>
+            class="case-dot h-2 rounded-full transition-all duration-300 w-8 bg-white active"></button>
           <button id="case-dot-1" aria-label="Ir para Caso 2"
             class="case-dot h-2 rounded-full transition-all duration-300 w-2.5 bg-neutral-700 hover:bg-neutral-500"></button>
           <button id="case-dot-2" aria-label="Ir para Caso 3"
@@ -1143,69 +1127,78 @@
       </div>
 
       <!-- Grid de Galeria de Alto Impacto (4 Colunas) -->
-      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 sm:px-6 mb-12">
+      <div id="gallery-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 sm:px-6 mb-12">
 
         <!-- Card 1: ALTA CARGA • TENSÃO MECÂNICA PURA -->
-        <div class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
-          <img src="Assets/galeria/card1_alta_carga.jpg"
-            alt="Alta Carga - Tensão Mecânica Pura"
+        <div
+          class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
+          <img src="Assets/galeria/card1_alta_carga.jpg" alt="Alta Carga - Tensão Mecânica Pura"
             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
-          
+
           <!-- Overlay de gradiente inferior para legibilidade cirúrgica -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none">
+          </div>
 
           <!-- Conteúdo Tipográfico -->
           <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end pointer-events-none z-10">
             <span class="text-red-500 font-bold text-xs uppercase tracking-wider block mb-1">ALTA CARGA</span>
-            <h4 class="text-white font-extrabold text-lg sm:text-xl uppercase tracking-tight font-display">TENSÃO MECÂNICA PURA</h4>
+            <h4 class="text-white font-extrabold text-lg sm:text-xl uppercase tracking-tight font-display">TENSÃO
+              MECÂNICA PURA</h4>
           </div>
         </div>
 
         <!-- Card 2: METODOLOGIA • CONTROLE DE CADÊNCIA -->
-        <div class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
-          <img src="Assets/galeria/card2_metodologia.jpg"
-            alt="Metodologia - Controle de Cadência"
+        <div
+          class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
+          <img src="Assets/galeria/card2_metodologia.jpg" alt="Metodologia - Controle de Cadência"
             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
-          
+
           <!-- Overlay de gradiente inferior para legibilidade cirúrgica -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none">
+          </div>
 
           <!-- Conteúdo Tipográfico -->
           <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end pointer-events-none z-10">
             <span class="text-red-500 font-bold text-xs uppercase tracking-wider block mb-1">METODOLOGIA</span>
-            <h4 class="text-white font-extrabold text-lg sm:text-xl uppercase tracking-tight font-display">CONTROLE DE CADÊNCIA</h4>
+            <h4 class="text-white font-extrabold text-lg sm:text-xl uppercase tracking-tight font-display">CONTROLE DE
+              CADÊNCIA</h4>
           </div>
         </div>
 
         <!-- Card 3: PERFORMANCE • FÍSICO COMPETITIVO -->
-        <div class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
-          <img src="Assets/galeria/card3_performance.jpg"
-            alt="Performance - Físico Competitivo"
+        <div
+          class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
+          <img src="Assets/galeria/card3_performance.jpg" alt="Performance - Físico Competitivo"
             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
-          
+
           <!-- Overlay de gradiente inferior para legibilidade cirúrgica -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none">
+          </div>
 
           <!-- Conteúdo Tipográfico -->
           <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end pointer-events-none z-10">
             <span class="text-red-500 font-bold text-xs uppercase tracking-wider block mb-1">PERFORMANCE</span>
-            <h4 class="text-white font-extrabold text-lg sm:text-xl uppercase tracking-tight font-display">FÍSICO COMPETITIVO</h4>
+            <h4 class="text-white font-extrabold text-lg sm:text-xl uppercase tracking-tight font-display">FÍSICO
+              COMPETITIVO</h4>
           </div>
         </div>
 
         <!-- Card 4: DISCIPLINA • COMUNIDADE DE ELITE -->
-        <div class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
-          <img src="Assets/galeria/card4_disciplina.jpg"
-            alt="Disciplina - Comunidade de Elite"
+        <div
+          class="gallery-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-red-600/60 transition-all duration-300 group shadow-lg shadow-black/80 hover:shadow-[0_0_25px_rgba(229,9,20,0.35)]">
+          <img src="Assets/galeria/card4_disciplina.jpg" alt="Disciplina - Comunidade de Elite"
             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500">
-          
+
           <!-- Overlay de gradiente inferior para legibilidade cirúrgica -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none">
+          </div>
 
           <!-- Conteúdo Tipográfico -->
           <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end pointer-events-none z-10">
             <span class="text-red-500 font-bold text-xs uppercase tracking-wider block mb-1">DISCIPLINA</span>
-            <h4 class="text-white font-extrabold text-lg sm:text-xl uppercase tracking-tight font-display">COMUNIDADE DE ELITE</h4>
+            <h4 class="text-white font-extrabold text-lg sm:text-xl uppercase tracking-tight font-display">COMUNIDADE DE
+              ELITE</h4>
           </div>
         </div>
 

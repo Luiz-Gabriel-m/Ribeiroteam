@@ -294,28 +294,28 @@ const TRANSFORMATION_CASES = [
   {
     id: 1,
     title: "Caso 2: Recomposição Corporal",
-    timeTag: "Recomposição 120 Dias • Densidade & Força",
+    timeTag: "Recomposição 120 Dias • Afinamento & Densidade",
     category: "Recomposição Corporal",
     badge: "Alta Densidade",
-    beforeImg: "Assets/transformacoes/case2_antes.jpg",
-    afterImg: "Assets/transformacoes/case2_depois.jpg",
-    metric1Val: "+4.8kg",
-    metric1Label: "Massa Magra",
-    metric2Val: "-11%",
-    metric2Label: "Gordura Corporal"
+    beforeImg: "Assets/transformacoes/case2_antes.jpeg",
+    afterImg: "Assets/transformacoes/case2_depois.jpeg",
+    metric1Val: "-12cm",
+    metric1Label: "Linha de Cintura",
+    metric2Val: "+4.8kg",
+    metric2Label: "Massa Magra"
   },
   {
     id: 2,
-    title: "Caso 3: Emagrecimento & Definição",
-    timeTag: "Definição 16 Semanas • Retenção Muscular",
-    category: "Emagrecimento & Definição",
-    badge: "Definição Extrema",
-    beforeImg: "Assets/transformacoes/case3_antes.jpg",
-    afterImg: "Assets/transformacoes/case3_depois.jpg",
-    metric1Val: "-14kg",
-    metric1Label: "Gordura Total",
-    metric2Val: "6-Pack",
-    metric2Label: "Definição Visível"
+    title: "Caso 3: Físico Competitivo",
+    timeTag: "Preparação de Palco • Percentual de Gordura Mínimo",
+    category: "Físico Competitivo",
+    badge: "Físico Competitivo",
+    beforeImg: "Assets/transformacoes/case3_antes.jpeg",
+    afterImg: "Assets/transformacoes/case3_depois.jpeg",
+    metric1Val: "Sub-8%",
+    metric1Label: "Gordura Corporal",
+    metric2Val: "Estriações",
+    metric2Label: "Densidade Dorsal"
   }
 ];
 
@@ -393,7 +393,7 @@ function setupComparisonSlider() {
 
       if (dot) {
         if (i === currentCaseIndex) {
-          dot.className = "case-dot h-2 rounded-full transition-all duration-300 w-8 bg-red-600 active";
+          dot.className = "case-dot h-2 rounded-full transition-all duration-300 w-8 bg-white active";
         } else {
           dot.className = "case-dot h-2 rounded-full transition-all duration-300 w-2.5 bg-neutral-700 hover:bg-neutral-500";
         }

@@ -322,17 +322,17 @@
       class="animate-marquee flex items-center gap-12 whitespace-nowrap text-xs sm:text-sm font-display font-extrabold uppercase tracking-[0.25em] text-gray-200">
       <span>• RIBEIRO TEAM</span>
       <span class="text-red-500">• </span>
-      <span>• HIPERTROFIA DE ALTA DENSIDADE</span>
-      <span class="text-red-500">• PERIODIZAÇÃO NÃO-LINEAR</span>
-      <span>• EMAGRECIMENTO COM RETENÇÃO DE MASSA</span>
-      <span class="text-red-500">• EXECUÇÃO MILIMÉTRICA</span>
+      <span>• HIPERTROFIA</span>
+      <span class="text-red-500">• TREINO PERSONALIZADO</span>
+      <span>• EMAGRECIMENTO</span>
+      <span class="text-red-500">• ACOMPANHAMENTO MENSAL </span>
       <span>• @TREINADOR_SAMUELRIBEIRO</span>
       <span>• RIBEIRO TEAM</span>
       <span class="text-red-500">• </span>
-      <span>• HIPERTROFIA DE ALTA DENSIDADE</span>
-      <span class="text-red-500">• PERIODIZAÇÃO NÃO-LINEAR</span>
-      <span>• EMAGRECIMENTO COM RETENÇÃO DE MASSA</span>
-      <span class="text-red-500">• EXECUÇÃO MILIMÉTRICA</span>
+      <span>• HIPERTROFIA</span>
+      <span class="text-red-500">• TREINO PERSONALIZADO</span>
+      <span>• EMAGRECIMENTO</span>
+      <span class="text-red-500">• ACOMPANHAMENTO MENSAL </span>
       <span>• @TREINADOR_SAMUELRIBEIRO</span>
     </div>
   </section>
@@ -629,7 +629,7 @@
             <!-- Overlay inferior em degradê com contraste reforçado -->
             <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black via-black/85 to-transparent">
               <span class="text-red-500 font-bold text-xs uppercase tracking-widest block mb-1">
-                Personall Trainer & Coach
+                Personal Trainer & Coach
               </span>
               <h3 class="text-white font-extrabold text-2xl uppercase tracking-tight font-display">
                 SAMUEL RIBEIRO
@@ -887,20 +887,27 @@
       <!-- Pricing & Services Grid (Alinhamento de altura idêntico entre os 3 cards) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
-        <!-- PLANO 1: BRONZE (ESSENCIAL / ENTRADA / TRIMESTRAL) -->
+        <!-- PLANO 1: BRONZE (ESSENCIAL / ENTRADA / TRIMESTRAL • MAIS POPULAR) -->
         <div
-          class="plan-card-3d glass-panel p-6 sm:p-8 rounded-2xl h-full flex flex-col justify-between border border-white/10 hover:border-amber-600/40 transition-all duration-300 relative group">
+          class="plan-card-3d glass-card-featured rounded-2xl p-6 sm:p-8 pt-9 sm:pt-10 h-full flex flex-col justify-between relative border-2 border-red-600 shadow-[0_0_35px_rgba(229,9,20,0.25)] transition-all duration-300 group">
           <div class="plan-card-glare"></div>
+
+          <!-- Badge Flutuante Mais Popular -->
+          <div
+            class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-red-800 text-white text-[10px] sm:text-[11px] font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-[0_0_20px_rgba(229,9,20,0.6)] flex items-center gap-1.5 border border-white/20 whitespace-nowrap z-20">
+            <i data-lucide="flame" class="w-3.5 h-3.5 text-white"></i>
+            <span>MAIS POPULAR</span>
+          </div>
 
           <!-- Top / Content Area -->
           <div>
             <!-- Badge Superior -->
             <div class="flex items-center justify-between mb-4">
               <span
-                class="text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-neutral-900 text-amber-400 border border-amber-500/30">
+                class="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-red-950/80 text-red-300 border border-red-600/40">
                 Essencial • Trimestral
               </span>
-              <span class="text-xs text-gray-400 font-semibold">3 Meses</span>
+              <span class="text-xs text-red-400 font-bold uppercase tracking-wider">3 Meses</span>
             </div>
 
             <!-- Title & Concept -->
@@ -909,24 +916,28 @@
                 Plano Bronze
               </h3>
               <p class="text-xs sm:text-sm text-gray-300 mt-2 leading-relaxed">
-                Voltado para quem busca treino individualizado de hipertrofia estruturado na rotina e suporte pontual
-                para sair da estagnação.
+                O ponto de partida mais procurado. Treino individualizado de hipertrofia estruturado na sua rotina real,
+                com suporte para quebrar a estagnação.
               </p>
             </div>
 
-            <!-- Price Box -->
-            <div class="p-4 rounded-xl bg-neutral-900/80 border border-white/10 mb-6">
-              <div class="flex items-baseline gap-1">
-                <span class="text-xs text-gray-400 font-bold uppercase">R$</span>
-                <span class="text-3xl sm:text-4xl font-black text-white font-display">180</span>
-                <span class="text-xs text-gray-400 font-medium">/mês</span>
+            <!-- Price Box (Valor Cheio Principal / Parcela Menor) -->
+            <div class="p-4 rounded-xl bg-red-950/30 border border-red-600/30 mb-6">
+              <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1">
+                Valor Total à Vista
               </div>
-              <p class="text-xs text-gray-400 mt-1 font-medium">
-                Total: <strong class="text-white">R$ 540</strong> à vista ou em até 3x no cartão (com juros)
+              <div class="flex items-baseline gap-1">
+                <span class="text-xs text-red-500 font-bold uppercase">R$</span>
+                <span class="text-3xl sm:text-4xl font-black text-white font-display">540</span>
+                <span class="text-xs text-gray-400 font-medium">/ 3 meses</span>
+              </div>
+              <p class="text-xs text-gray-300 mt-2 font-medium flex items-center gap-1.5">
+                <i data-lucide="credit-card" class="w-3.5 h-3.5 text-red-400 shrink-0"></i>
+                <span>ou em até <strong>3x de R$ 180</strong> no cartão <span class="text-gray-400 text-[10px]">(com juros)</span></span>
               </p>
               <div
-                class="mt-2.5 pt-2.5 border-t border-white/10 flex items-center gap-1.5 text-[11px] text-amber-400 font-semibold">
-                <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                class="mt-2.5 pt-2.5 border-t border-red-600/25 flex items-center gap-1.5 text-[11px] text-red-300 font-semibold">
+                <i data-lucide="calendar" class="w-3.5 h-3.5 text-red-400"></i>
                 <span>Feedback Mensal (a cada 30 dias)</span>
               </div>
             </div>
@@ -934,58 +945,51 @@
             <!-- Feature Checklist (Rigoroso ao PDF) -->
             <ul class="space-y-3 text-xs sm:text-sm text-gray-300 mb-8">
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
                 <span>Protocolo personalizado que se encaixa na sua rotina</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
                 <span>Treino de hipertrofia com vídeos explicativos direto no aplicativo</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
                 <span>Acompanhamento com suporte para tirar dúvidas 7 dias por semana</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
                 <span>Feedbacks a cada 30 dias para ajustar o protocolo conforme sua evolução</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
                 <span>Metas semanais para estimular sua evolução e constância</span>
               </li>
             </ul>
           </div>
 
-          <!-- CTA Button -->
-          <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel!%20Gostaria%20de%20escolher%20o%20Plano%20Bronze%20(Trimestral%20-%20R%24%20540)%20para%20iniciar%20minha%20evolu%C3%A7%C3%A3o."
+          <!-- CTA Button (Destaque Mais Popular) -->
+          <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel!%20Gostaria%20de%20escolher%20o%20Plano%20Bronze%20Mais%20Popular%20(Trimestral%20-%20R%24%20540)%20para%20iniciar%20minha%20evolu%C3%A7%C3%A3o."
             target="_blank" rel="noopener noreferrer"
-            class="btn-secondary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px] hover:border-amber-500/50">
+            class="btn-primary w-full py-4 rounded-xl text-center text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px] shadow-[0_0_25px_rgba(229,9,20,0.5)]">
             <span>Escolher Plano Bronze</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
         </div>
 
 
-        <!-- PLANO 2: SILVER (INTERMEDIÁRIO • DESTAQUE / MAIS PROCURADO / SEMESTRAL) -->
+        <!-- PLANO 2: SILVER (INTERMEDIÁRIO • INFORMAÇÕES COMPLETAS / SEMESTRAL) -->
         <div
-          class="plan-card-3d glass-card-featured rounded-2xl p-6 sm:p-8 pt-9 sm:pt-10 h-full flex flex-col justify-between relative border-2 border-red-600 shadow-[0_0_35px_rgba(229,9,20,0.3)] lg:-translate-y-2 transition-all duration-300 group">
+          class="plan-card-3d glass-panel p-6 sm:p-8 pt-9 sm:pt-10 rounded-2xl h-full flex flex-col justify-between border border-white/10 hover:border-white/20 transition-all duration-300 relative group">
           <div class="plan-card-glare"></div>
-
-          <!-- Badge Superior Oficial -->
-          <div
-            class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-red-800 text-white text-[10px] sm:text-[11px] font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-[0_0_20px_rgba(229,9,20,0.6)] flex items-center gap-1.5 border border-white/20 whitespace-nowrap z-20">
-            <i data-lucide="flame" class="w-3.5 h-3.5 text-white"></i>
-            <span>MAIS PROCURADO • MELHOR CUSTO-BENEFÍCIO</span>
-          </div>
 
           <!-- Top / Content Area -->
           <div>
             <div class="flex items-center justify-between mb-4">
               <span
-                class="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-red-950/80 text-red-300 border border-red-600/40">
+                class="text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-neutral-900 text-gray-300 border border-white/15">
                 Semestral • 6 Meses
               </span>
-              <span class="text-xs text-red-400 font-bold uppercase tracking-wider">Mais Popular</span>
+              <span class="text-xs text-gray-400 font-semibold">Intermediário Avançado</span>
             </div>
 
             <!-- Title & Concept -->
@@ -993,70 +997,86 @@
               <h3 class="text-2xl sm:text-3xl font-black text-white uppercase font-display tracking-wide">
                 Plano Silver
               </h3>
-              <p class="text-xs sm:text-sm text-gray-200 mt-2 leading-relaxed">
-                O mais procurado. Ganho acelerado de massa magra, recomposição corporal e correção minuciosa de execução
-                para quebra definitiva de platô.
+              <p class="text-xs sm:text-sm text-gray-300 mt-2 leading-relaxed">
+                Consistência e maturação muscular. Desenvolvido para quebra definitiva de platôs com correções técnicas de execução via vídeo e progressão semestral estruturada.
               </p>
             </div>
 
-            <!-- Price Box -->
-            <div class="p-4 rounded-xl bg-red-950/30 border border-red-600/30 mb-6">
-              <div class="flex items-baseline gap-1">
-                <span class="text-xs text-red-400 font-bold uppercase">R$</span>
-                <span class="text-3xl sm:text-4xl font-black text-white font-display">150</span>
-                <span class="text-xs text-red-300 font-medium">/mês</span>
+            <!-- Price Box (Valor Cheio Principal / Parcela Menor) -->
+            <div class="p-4 rounded-xl bg-neutral-900/80 border border-white/10 mb-6">
+              <div class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1">
+                Valor Total à Vista
               </div>
-              <p class="text-xs text-gray-300 mt-1 font-medium">
-                Total: <strong class="text-white">R$ 900</strong> à vista ou em até 6x no cartão (com juros)
+              <div class="flex items-baseline gap-1">
+                <span class="text-xs text-gray-400 font-bold uppercase">R$</span>
+                <span class="text-3xl sm:text-4xl font-black text-white font-display">900</span>
+                <span class="text-xs text-gray-400 font-medium">/ 6 meses</span>
+              </div>
+              <p class="text-xs text-gray-300 mt-2 font-medium flex items-center gap-1.5">
+                <i data-lucide="credit-card" class="w-3.5 h-3.5 text-gray-400 shrink-0"></i>
+                <span>ou em até <strong>6x de R$ 150</strong> no cartão <span class="text-gray-400 text-[10px]">(com juros)</span></span>
               </p>
               <div
-                class="mt-2.5 pt-2.5 border-t border-red-600/25 flex items-center gap-1.5 text-[11px] text-red-300 font-semibold">
-                <i data-lucide="video" class="w-3.5 h-3.5 text-red-400"></i>
+                class="mt-2.5 pt-2.5 border-t border-white/10 flex items-center gap-1.5 text-[11px] text-gray-300 font-semibold">
+                <i data-lucide="video" class="w-3.5 h-3.5 text-red-500"></i>
                 <span>Feedback mensal com análise em vídeo + WhatsApp</span>
               </div>
             </div>
 
-            <!-- Feature Checklist (Rigoroso ao PDF com diferenciais) -->
-            <ul class="space-y-3 text-xs sm:text-sm text-gray-200 mb-8">
+            <!-- Feature Checklist (Mais Informações Detalhadas) -->
+            <ul class="space-y-3 text-xs sm:text-sm text-gray-300 mb-8">
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span class="font-bold text-white">Tudo incluso no Plano Bronze</span>
+                <span class="font-bold text-white">Todos os recursos inclusos no Plano Bronze</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span><strong>Correções de execução dos exercícios via WhatsApp</strong> garantindo que treine certo e
-                  com segurança</span>
+                <span><strong>Correções de execução via WhatsApp:</strong> envie vídeos dos seus exercícios para ajuste biomecânico fino de postura e segurança</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span><strong>Feedbacks via vídeos</strong> analisando sua evolução de cargas e física a cada 30
-                  dias</span>
+                <span><strong>Feedbacks mensais em vídeo:</strong> análise profunda da evolução de cargas, tônus e proporção corporal a cada 30 dias</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span>Ajustes frequentes de cardio e recomposição para quebra contínua de platô</span>
+                <span><strong>Periodização semestral estratégica:</strong> alternância de blocos de hipertrofia, densidade e quebra contínua de platô</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span>Acompanhamento com suporte para tirar dúvidas 7 dias por semana</span>
+                <span><strong>Ajustes dinâmicos de cardio & recomposição:</strong> calibração metabólica para máxima definição sem perda muscular</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+                <span><strong>Suporte direto 7 dias por semana:</strong> canal ágil para tirar dúvidas de treino e exercícios no WhatsApp</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+                <span><strong>Metas semanais de constância</strong> e acesso ao app interativo com tutoriais demonstrativos de cada exercício</span>
               </li>
             </ul>
           </div>
 
-          <!-- CTA Button (Fundo vermelho sólido) -->
+          <!-- CTA Button -->
           <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel!%20Quero%20garantir%20minha%20vaga%20no%20Plano%20Silver%20(Semestral%20-%20R%24%20900)%20com%20corre%C3%A7%C3%B5es%20por%20v%C3%ADdeo."
             target="_blank" rel="noopener noreferrer"
-            class="btn-primary w-full py-4 rounded-xl text-center text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px] shadow-[0_0_25px_rgba(229,9,20,0.5)]">
+            class="btn-secondary w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px] hover:border-red-500/50 hover:text-white transition-all">
             <span>Garantir Vaga no Silver</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
         </div>
 
 
-        <!-- PLANO 3: GOLD (VIP / ALTA PERFORMANCE / FÍSICO EXTREMO / ANUAL) -->
+        <!-- PLANO 3: GOLD (MELHOR CUSTO-BENEFÍCIO • VIP / ANUAL) -->
         <div
-          class="plan-card-3d glass-panel p-6 sm:p-8 rounded-2xl h-full flex flex-col justify-between border border-amber-500/40 hover:border-amber-400 transition-all duration-300 relative group bg-gradient-to-b from-[#141419] via-[#0f0f13] to-[#0a0a0d] shadow-[0_0_25px_rgba(245,158,11,0.12)]">
+          class="plan-card-3d glass-panel p-6 sm:p-8 pt-9 sm:pt-10 rounded-2xl h-full flex flex-col justify-between border-2 border-amber-500/60 hover:border-amber-400 transition-all duration-300 relative group bg-gradient-to-b from-[#141419] via-[#0f0f13] to-[#0a0a0d] shadow-[0_0_30px_rgba(245,158,11,0.2)]">
           <div class="plan-card-glare"></div>
+
+          <!-- Badge Flutuante Custo-Benefício VIP -->
+          <div
+            class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 via-amber-600 to-red-600 text-white text-[10px] sm:text-[11px] font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-[0_0_25px_rgba(245,158,11,0.5)] flex items-center gap-1.5 border border-amber-300/40 whitespace-nowrap z-20">
+            <i data-lucide="award" class="w-3.5 h-3.5 text-amber-200"></i>
+            <span>MELHOR CUSTO-BENEFÍCIO • VIP</span>
+          </div>
 
           <!-- Top / Content Area -->
           <div>
@@ -1079,21 +1099,29 @@
                   class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-950/60 px-2 py-0.5 rounded border border-amber-500/40">VIP</span>
               </h3>
               <p class="text-xs sm:text-sm text-gray-300 mt-2 leading-relaxed">
-                Acompanhamento premium e completo com acesso direto ao Treinador Samuel Ribeiro. O protocolo definitivo
-                para físico extremo e máxima hipertrofia.
+                O maior custo-benefício anual. Acompanhamento premium e completo com acesso direto ao Treinador Samuel Ribeiro, consultas por vídeo e feedback quinzenal por apenas R$ 133/mês.
               </p>
             </div>
 
-            <!-- Price Box -->
+            <!-- Price Box (Valor Cheio Principal / Parcela Menor) -->
             <div
               class="p-4 rounded-xl bg-gradient-to-r from-amber-950/30 to-red-950/20 border border-amber-500/30 mb-6">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-400/90">
+                  Valor Total à Vista
+                </span>
+                <span class="text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                  Apenas R$ 133/mês
+                </span>
+              </div>
               <div class="flex items-baseline gap-1">
                 <span class="text-xs text-amber-400 font-bold uppercase">R$</span>
-                <span class="text-3xl sm:text-4xl font-black text-white font-display text-glow-white">133</span>
-                <span class="text-xs text-amber-300 font-medium">/mês</span>
+                <span class="text-3xl sm:text-4xl font-black text-white font-display text-glow-white">1.600</span>
+                <span class="text-xs text-amber-300 font-medium">/ 12 meses</span>
               </div>
-              <p class="text-xs text-gray-300 mt-1 font-medium">
-                Total: <strong class="text-white">R$ 1.600</strong> à vista ou em até 12x no cartão (com juros)
+              <p class="text-xs text-gray-200 mt-2 font-medium flex items-center gap-1.5">
+                <i data-lucide="credit-card" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span>ou em até <strong>12x de R$ 133</strong> no cartão <span class="text-gray-400 text-[10px]">(com juros)</span></span>
               </p>
               <div
                 class="mt-2.5 pt-2.5 border-t border-amber-500/20 flex flex-col gap-1.5 text-[11px] text-amber-300 font-bold">
@@ -1116,28 +1144,25 @@
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                <span><strong>Consulta mensal por vídeo chamada</strong> para avaliarmos seu progresso e alinhar o
-                  protocolo se necessário</span>
+                <span><strong>Consulta mensal por vídeo chamada:</strong> encontro individual para avaliarmos seu progresso e alinhar a estratégia</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                <span><strong>Feedback quinzenal (a cada 15 dias)</strong> com análise em vídeo da evolução de cargas e
-                  física</span>
+                <span><strong>Feedback quinzenal (a cada 15 dias):</strong> acompanhamento dobrado com análise em vídeo da evolução e cargas</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                <span>Periodização avançada de hipertrofia contínua, quebra de platô e estratégia metabólica</span>
+                <span><strong>Periodização anual completa:</strong> macrociclo desenhado para transformação física definitiva sem regresso</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                <span><strong>Suporte prioritário VIP 7 dias por semana</strong> no WhatsApp direto com o Treinador
-                  Samuel Ribeiro</span>
+                <span><strong>Suporte prioritário VIP 7 dias por semana:</strong> canal direto e prioritário no WhatsApp com o Treinador Samuel Ribeiro</span>
               </li>
             </ul>
           </div>
 
           <!-- CTA Button (Dourado/Escarlate) -->
-          <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel!%20Gostaria%20de%20me%20candidatar%20ao%20Plano%20Gold%20VIP%20(Anual%20-%20R%24%201600)%20com%20consultas%20por%20v%C3%ADdeo%20e%20feedback%20quinzenal."
+          <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel!%20Gostaria%20de%20me%20candidatar%20ao%20Plano%20Gold%20VIP%20(Anual%20-%20R%24%201.600%20-%20Melhor%20Custo-Benef%C3%ADcio)%20com%20consultas%20por%20v%C3%ADdeo%20e%20feedback%20quinzenal."
             target="_blank" rel="noopener noreferrer"
             class="w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px] bg-gradient-to-r from-amber-500 via-red-600 to-amber-600 hover:from-amber-400 hover:to-red-500 text-white shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-all duration-300">
             <span>Candidatar-se ao Plano Gold</span>
@@ -1252,7 +1277,7 @@
                 <div class="flex items-center justify-between mb-1">
                   <span id="case-time-tag"
                     class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-red-400 truncate max-w-[70%]">
-                    Evolução Hipertrofia 90 Dias • Protocolo Ribeiro Team
+                    Evolução Com Foco Em Hipertrofia• Protocolo Ribeiro Team
                   </span>
                   <span id="case-status-badge"
                     class="text-[8px] sm:text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-red-950/80 border border-red-700/50 text-red-300 shrink-0">
@@ -1400,7 +1425,7 @@
               </span>
               <h3
                 class="text-white font-extrabold text-xl sm:text-2xl uppercase tracking-tight font-display leading-tight mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                ATLETA HÍBRIDO
+                TREINO HÍBRIDO
               </h3>
               <div
                 class="flex items-center gap-1.5 text-xs font-semibold text-gray-300 group-hover:text-red-400 transition-colors duration-200 pt-2 border-t border-white/10">
@@ -1442,7 +1467,7 @@
               </span>
               <h3
                 class="text-white font-extrabold text-xl sm:text-2xl uppercase tracking-tight font-display leading-tight mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                HYROX &amp; CROSS
+                HYROX
               </h3>
               <div
                 class="flex items-center gap-1.5 text-xs font-semibold text-gray-300 group-hover:text-red-400 transition-colors duration-200 pt-2 border-t border-white/10">

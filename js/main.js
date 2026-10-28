@@ -123,6 +123,7 @@ function setupGSAPAnimations(deadlift3D) {
 
 /**
  * Hero Video Autoplay Assurance & Graceful Fallback
+ * Enhanced for iOS Safari & Mobile Low Power Mode
  */
 function setupHeroVideo() {
   const video = document.getElementById("hero-video");
@@ -130,26 +131,80 @@ function setupHeroVideo() {
 
   if (!video) return;
 
-  // Guarantee required autoplay attributes
+  // Guarantee required autoplay attributes for mobile WebKit & iOS Safari
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;
+  video.setAttribute("muted", "");
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+  video.setAttribute("x5-playsinline", "");
 
-  const playPromise = video.play();
-  if (playPromise !== undefined) {
-    playPromise
-      .then(() => {
-        if (fallbackImg) fallbackImg.style.opacity = "0";
-      })
-      .catch((error) => {
-        console.warn("Hero background video autoplay prevented or asset loading error:", error);
-        if (fallbackImg) fallbackImg.style.opacity = "1";
-      });
-  }
+  const onPlaySuccess = () => {
+    if (fallbackImg) fallbackImg.style.opacity = "0";
+    detachGestureListeners();
+  };
 
-  video.addEventListener("error", () => {
-    if (fallbackImg) fallbackImg.style.opacity = "1";
+  const startPlayback = () => {
+    if (!video.paused) {
+      onPlaySuccess();
+      return;
+    }
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          onPlaySuccess();
+        })
+        .catch((error) => {
+          console.warn("Hero video autoplay waiting for user interaction on mobile:", error);
+          if (fallbackImg) fallbackImg.style.opacity = "0.35";
+        });
+    }
+  };
+
+  const onGesture = () => {
+    if (video.paused) {
+      startPlayback();
+    } else {
+      detachGestureListeners();
+    }
+  };
+
+  const onVisibilityChange = () => {
+    if (!document.hidden && video.paused) {
+      startPlayback();
+    }
+  };
+
+  const detachGestureListeners = () => {
+    window.removeEventListener("touchstart", onGesture);
+    window.removeEventListener("touchend", onGesture);
+    window.removeEventListener("click", onGesture);
+    window.removeEventListener("scroll", onGesture);
+  };
+
+  // 1. Immediate playback attempt
+  startPlayback();
+
+  // 2. Play on loaded metadata / canplay events
+  video.addEventListener("loadedmetadata", () => {
+    if (video.paused) startPlayback();
   });
+  video.addEventListener("loadeddata", () => {
+    if (video.paused) startPlayback();
+  });
+  video.addEventListener("canplay", () => {
+    if (video.paused) startPlayback();
+  });
+  video.addEventListener("playing", onPlaySuccess);
+
+  // 3. User interaction triggers (vital for iOS Safari when battery saver / low power mode is active)
+  window.addEventListener("touchstart", onGesture, { passive: true });
+  window.addEventListener("touchend", onGesture, { passive: true });
+  window.addEventListener("click", onGesture, { passive: true });
+  window.addEventListener("scroll", onGesture, { passive: true });
+  document.addEventListener("visibilitychange", onVisibilityChange);
 }
 
 /**

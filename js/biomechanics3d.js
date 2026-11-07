@@ -1,5 +1,5 @@
 /**
- * RIBEIRO TEAM - DEADLIFT 3D BIOMECHANICS ENGINE
+ * TEAM RIBEIRO - DEADLIFT 3D BIOMECHANICS ENGINE
  * Interactive Three.js WebGL anatomical deadlift simulation with kinetic vectors & GSAP sync
  * Coach Samuel Ribeiro (@treinador_samuelribeiro)
  */
@@ -129,7 +129,7 @@ class DeadliftBiomechanics3D {
     keyLight.shadow.mapSize.height = 1024;
     this.scene.add(keyLight);
 
-    // Dramatic Ribeiro Team Scarlet Red Rim Light from behind
+    // Dramatic Team Ribeiro Scarlet Red Rim Light from behind
     const redRimLight = new THREE.DirectionalLight(0xE50914, 2.5);
     redRimLight.position.set(-3, 3, -3);
     this.scene.add(redRimLight);

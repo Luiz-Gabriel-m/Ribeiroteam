@@ -1,5 +1,5 @@
 /**
- * RIBEIRO TEAM - MAIN JAVASCRIPT CONTROLLER
+ * TEAM RIBEIRO - MAIN JAVASCRIPT CONTROLLER
  * Coach Samuel Ribeiro (@treinador_samuelribeiro)
  * GSAP ScrollTrigger Animations, Interactive UI, Video Handling & Lead Generation
  */
@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 11. Interactive HUD Toggle for 3D Deadlift Kinematics (localStorage & Keyboard 'H')
   setupDeadliftHUDToggle();
+
+  // 12. Student Feedbacks Lightbox Modal & Zoom
+  setupFeedbacksGallery();
 });
 
 /**
@@ -362,42 +365,81 @@ function setupStatsCounters() {
 const TRANSFORMATION_CASES = [
   {
     id: 0,
-    title: "Caso 1: Evolução Hipertrofia 90 Dias",
-    timeTag: "Evolução Hipertrofia 90 Dias • Protocolo Ribeiro Team",
-    category: "Caso 1: Hipertrofia 90D",
+    title: "Caso 1: Hipertrofia & Volume Estético",
+    timeTag: "Evolução Hipertrofia • Protocolo Team Ribeiro",
+    category: "Caso 1: Hipertrofia",
     badge: "Caso Real",
-    beforeImg: "Assets/transformacoes/antes.jpeg",
-    afterImg: "Assets/transformacoes/depois.jpeg",
-    metric1Val: "+9.5kg",
+    beforeImg: "Assets/adicionar antes e depois/antes1.jpeg",
+    afterImg: "Assets/adicionar antes e depois/depois1.jpeg",
+    metric1Val: "+8.5kg",
     metric1Label: "Massa Magra",
-    metric2Val: "-8%",
+    metric2Val: "-6.2%",
     metric2Label: "Gordura Corporal"
   },
   {
     id: 1,
-    title: "Caso 2: Recomposição Corporal & Definição",
-    timeTag: "Recomposição Corporal • Afinamento de Cintura & Densidade",
-    category: "Caso 2: Recomposição & Definição",
+    title: "Caso 2: Recomposição Corporal & Densidade",
+    timeTag: "Recomposição Corporal • Ganho de Volume & Densidade",
+    category: "Caso 2: Recomposição",
     badge: "Alta Densidade",
-    beforeImg: "Assets/transformacoes/case2_antes.jpeg",
-    afterImg: "Assets/transformacoes/case2_depois.jpeg",
-    metric1Val: "-12cm",
-    metric1Label: "Linha de Cintura",
-    metric2Val: "+4.8kg",
-    metric2Label: "Massa Magra"
+    beforeImg: "Assets/adicionar antes e depois/antes2.jpeg",
+    afterImg: "Assets/adicionar antes e depois/depois2.jpeg",
+    metric1Val: "+6.8kg",
+    metric1Label: "Massa Magra",
+    metric2Val: "-7.4%",
+    metric2Label: "Gordura Corporal"
   },
   {
     id: 2,
-    title: "Caso 3: Transformação de Alta Densidade",
-    timeTag: "Preparação de Palco • Percentual de Gordura Mínimo & Simetria",
-    category: "Caso 3: Alta Densidade",
-    badge: "Físico Extremo",
-    beforeImg: "Assets/transformacoes/case3_antes.jpeg",
-    afterImg: "Assets/transformacoes/case3_depois.jpeg",
-    metric1Val: "Sub-8%",
+    title: "Caso 3: Definição & Secagem Abdominal",
+    timeTag: "Definição Máxima • Afinamento de Linha de Cintura",
+    category: "Caso 3: Definição",
+    badge: "Secagem Rápida",
+    beforeImg: "Assets/adicionar antes e depois/antes3.jpeg",
+    afterImg: "Assets/adicionar antes e depois/depois3.jpeg",
+    metric1Val: "-11cm",
+    metric1Label: "Linha de Cintura",
+    metric2Val: "-9.1%",
+    metric2Label: "Percentual Gordura"
+  },
+  {
+    id: 3,
+    title: "Caso 4: Construção de Dorsais & V-Taper",
+    timeTag: "Construção de Dorsais & V-Taper • Protocolo Team Ribeiro",
+    category: "Caso 4: V-Taper",
+    badge: "Simetria Estética",
+    beforeImg: "Assets/adicionar antes e depois/antes4.jpeg",
+    afterImg: "Assets/adicionar antes e depois/depois4.jpeg",
+    metric1Val: "+5.4kg",
+    metric1Label: "Massa Magra",
+    metric2Val: "-5.0%",
+    metric2Label: "Gordura Corporal"
+  },
+  {
+    id: 4,
+    title: "Caso 5: Transformação Completa & Postura",
+    timeTag: "Reestruturação Física • Alinhamento Biomecânico & Hipertrofia",
+    category: "Caso 5: Transformação",
+    badge: "Evolução Real",
+    beforeImg: "Assets/adicionar antes e depois/antes5.jpeg",
+    afterImg: "Assets/adicionar antes e depois/depois5.jpeg",
+    metric1Val: "+7.2kg",
+    metric1Label: "Massa Muscular",
+    metric2Val: "-8.0kg",
+    metric2Label: "Gordura Corporal"
+  },
+  {
+    id: 5,
+    title: "Caso 6: Densidade Muscular & Condicionamento",
+    timeTag: "Condicionamento Extremo • Simetria e Densidade Total",
+    category: "Caso 6: Condicionamento",
+    badge: "Densidade & Simetria",
+    beforeImg: "Assets/adicionar antes e depois/antes6.jpeg",
+    afterImg: "Assets/adicionar antes e depois/depois6.jpeg",
+    metric1Val: "Sub-9%",
     metric1Label: "Gordura Corporal",
-    metric2Val: "Estriações",
-    metric2Label: "Densidade Dorsal"
+    metric2Val: "+4.9kg",
+    metric2Label: "Massa Magra"
   }
 ];
 
@@ -465,6 +507,7 @@ function setupComparisonSlider() {
           tab.classList.remove("text-gray-400", "bg-neutral-900/60", "border-white/10");
           const dotSpan = tab.querySelector("span:first-child");
           if (dotSpan) dotSpan.className = "w-2 h-2 rounded-full bg-red-500";
+          tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
         } else {
           tab.classList.remove("active");
           tab.classList.add("text-gray-400", "bg-neutral-900/60", "border-white/10");
@@ -758,4 +801,118 @@ function setupDeadliftHUDToggle() {
 
 // Exporta globalmente para integração modular
 window.setupDeadliftHUDToggle = setupDeadliftHUDToggle;
+
+/**
+ * 12. Student Feedbacks Lightbox Modal & Zoom Interactions
+ */
+function setupFeedbacksGallery() {
+  const cards = document.querySelectorAll(".feedback-card");
+  const modal = document.getElementById("feedback-modal");
+  const modalImg = document.getElementById("feedback-modal-img");
+  const modalCounter = document.getElementById("feedback-modal-counter");
+  const modalCaption = document.getElementById("feedback-modal-caption");
+  const closeBtn = document.getElementById("feedback-modal-close");
+  const prevBtn = document.getElementById("feedback-modal-prev");
+  const nextBtn = document.getElementById("feedback-modal-next");
+
+  if (!modal || !modalImg || cards.length === 0) return;
+
+  const feedbacks = Array.from(cards).map((card, idx) => ({
+    src: card.getAttribute("data-feedback-src") || "",
+    caption: card.getAttribute("data-feedback-caption") || "Relato de Aluno Oficial • Team Ribeiro",
+    index: idx
+  }));
+
+  let currentIdx = 0;
+  let isOpen = false;
+
+  function openModal(index) {
+    currentIdx = (index + feedbacks.length) % feedbacks.length;
+    const item = feedbacks[currentIdx];
+
+    modalImg.src = item.src;
+    if (modalCounter) {
+      modalCounter.textContent = `Feedback ${currentIdx + 1} de ${feedbacks.length}`;
+    }
+    if (modalCaption) {
+      modalCaption.textContent = item.caption;
+    }
+
+    modal.classList.remove("hidden");
+    requestAnimationFrame(() => {
+      modal.classList.remove("opacity-0");
+      modal.classList.add("opacity-100");
+    });
+    document.body.style.overflow = "hidden";
+    isOpen = true;
+  }
+
+  function closeModal() {
+    if (!isOpen) return;
+    modal.classList.remove("opacity-100");
+    modal.classList.add("opacity-0");
+    setTimeout(() => {
+      modal.classList.add("hidden");
+      modalImg.src = "";
+    }, 250);
+    document.body.style.overflow = "";
+    isOpen = false;
+  }
+
+  function nextFeedback() {
+    openModal(currentIdx + 1);
+  }
+
+  function prevFeedback() {
+    openModal(currentIdx - 1);
+  }
+
+  // Click on each card
+  cards.forEach((card, idx) => {
+    card.addEventListener("click", () => openModal(idx));
+  });
+
+  // Modal control buttons
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      prevFeedback();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      nextFeedback();
+    });
+  }
+
+  // Click on backdrop to close
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Keyboard accessibility
+  window.addEventListener("keydown", (e) => {
+    if (!isOpen) return;
+    if (e.key === "Escape") {
+      closeModal();
+    } else if (e.key === "ArrowLeft") {
+      prevFeedback();
+    } else if (e.key === "ArrowRight") {
+      nextFeedback();
+    }
+  });
+
+  // Initialize Lucide icons inside modal if available
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
+}
+
+// Exporta globalmente para integração modular
+window.setupFeedbacksGallery = setupFeedbacksGallery;
+
 

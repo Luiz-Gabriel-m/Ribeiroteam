@@ -1,6 +1,6 @@
-# 🏋️‍♂️ Ribeiro Team — Treinador Samuel Ribeiro
+# 🏋️‍♂️ Team Ribeiro — Treinador Samuel Ribeiro
 
-Landing page institucional e de alta conversão desenvolvida para o treinador **Samuel Ribeiro** e a sua equipe **"Ribeiro Team"** ([@treinador_samuelribeiro](https://www.instagram.com/treinador_samuelribeiro/)).
+Landing page institucional e de alta conversão desenvolvida para o treinador **Samuel Ribeiro** e a sua equipe **"Team Ribeiro"** ([@treinador_samuelribeiro](https://www.instagram.com/treinador_samuelribeiro/)).
 
 O projeto combina uma estética escura agressiva de elite esportiva com animações fluidas via **GSAP ScrollTrigger** e um módulo interativo 3D em **Three.js (WebGL)** com análise cinemática do Levantamento Terra (*Deadlift*).
 
@@ -108,4 +108,4 @@ Para publicar:
 
 ---
 
-© 2026 Ribeiro Team. Todos os direitos reservados.
+© 2026 Team Ribeiro. Todos os direitos reservados.

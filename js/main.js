@@ -8,6 +8,9 @@
 const WHATSAPP_NUMBER = "553598657628";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 0. Initialize Preloader Animation (0 to 100%)
+  setupPreloader();
+
   // 1. Initialize Lucide Icons if available
   if (typeof lucide !== "undefined") {
     lucide.createIcons();
@@ -52,6 +55,65 @@ document.addEventListener("DOMContentLoaded", () => {
   // 12. Student Feedbacks Lightbox Modal & Zoom
   setupFeedbacksGallery();
 });
+
+/**
+ * 0. Preloader with Dynamic Progress Animation (0 to 100%)
+ */
+function setupPreloader() {
+  const preloader = document.getElementById("preloader");
+  const bar = document.getElementById("preloader-bar");
+  const counter = document.getElementById("preloader-counter");
+
+  if (!preloader || !bar || !counter) return;
+
+  let progress = 0;
+  let isWindowLoaded = document.readyState === "complete";
+
+  window.addEventListener("load", () => {
+    isWindowLoaded = true;
+  });
+
+  const interval = setInterval(() => {
+    if (isWindowLoaded) {
+      // Avanço acelerado assim que a janela estiver pronta
+      progress += Math.random() * 14 + 10;
+    } else if (progress < 90) {
+      // Avanço progressivo realista enquanto carrega
+      progress += Math.random() * 6 + 2;
+    }
+
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(interval);
+      bar.style.width = "100%";
+      counter.textContent = "100%";
+
+      // Pausa tátil ao atingir 100% antes da transição de saída
+      setTimeout(() => {
+        preloader.classList.add("preloader-hidden");
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 500);
+      }, 160);
+    } else {
+      bar.style.width = `${progress}%`;
+      counter.textContent = `${Math.floor(progress)}%`;
+    }
+  }, 25);
+
+  // Fallback de segurança (2.5s) para garantir liberação da tela
+  setTimeout(() => {
+    if (preloader && !preloader.classList.contains("preloader-hidden")) {
+      clearInterval(interval);
+      bar.style.width = "100%";
+      counter.textContent = "100%";
+      preloader.classList.add("preloader-hidden");
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 500);
+    }
+  }, 2500);
+}
 
 /**
  * GSAP Entrance & ScrollTrigger Animations
@@ -450,12 +512,6 @@ function setupComparisonSlider() {
   const glare = document.getElementById("comparison-glare");
   const beforeImg = document.getElementById("case-before-img");
   const afterImg = document.getElementById("case-after-img");
-  const timeTag = document.getElementById("case-time-tag");
-  const statusBadge = document.getElementById("case-status-badge");
-  const metric1Val = document.getElementById("case-metric-1-val");
-  const metric1Lbl = document.getElementById("case-metric-1-lbl");
-  const metric2Val = document.getElementById("case-metric-2-val");
-  const metric2Lbl = document.getElementById("case-metric-2-lbl");
   const prevBtn = document.getElementById("case-prev-btn");
   const nextBtn = document.getElementById("case-next-btn");
 
@@ -485,13 +541,6 @@ function setupComparisonSlider() {
         afterImg.style.opacity = "1";
       }, 140);
     }
-
-    if (timeTag) timeTag.textContent = c.timeTag;
-    if (statusBadge) statusBadge.textContent = c.badge;
-    if (metric1Val) metric1Val.textContent = c.metric1Val;
-    if (metric1Lbl) metric1Lbl.textContent = c.metric1Label;
-    if (metric2Val) metric2Val.textContent = c.metric2Val;
-    if (metric2Lbl) metric2Lbl.textContent = c.metric2Label;
 
     // Reset drag handle to exactly 50%
     resetSlider();

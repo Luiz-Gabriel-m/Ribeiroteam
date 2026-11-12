@@ -72,31 +72,31 @@
   <!-- ========================================================================
        PRELOADER COM ANIMAÇÃO DE CONTAGEM & LOGOTIPO OFICIAL
        ======================================================================== -->
-  <div id="preloader" class="fixed inset-0 z-[100] bg-[#070707] flex flex-col items-center justify-center select-none overflow-hidden">
-    
+  <div id="preloader"
+    class="fixed inset-0 z-[100] bg-[#070707] flex flex-col items-center justify-center select-none overflow-hidden">
+
     <!-- Luz de Fundo Vermelha (Glow Volumétrico) -->
-    <div class="absolute w-72 h-72 bg-red-600/15 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse"></div>
+    <div class="absolute w-72 h-72 bg-red-600/15 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse">
+    </div>
 
     <div class="relative z-10 flex flex-col items-center">
-      
+
       <!-- Logo Oficial 'TR' -->
       <div class="relative mb-5 flex items-center justify-center">
-        <img 
-          src="Assets/logo.png" 
-          alt="Team Ribeiro Logo" 
-          id="preloader-logo" 
+        <img src="Assets/logo.png" alt="Team Ribeiro Logo" id="preloader-logo"
           class="h-16 sm:h-20 w-auto object-contain mx-auto"
-          style="filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 35px rgba(229, 9, 20, 0.35));"
-        >
+          style="filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 35px rgba(229, 9, 20, 0.35));">
       </div>
 
       <!-- Barra de Progresso Minimalista -->
       <div class="w-48 sm:w-60 h-[2px] bg-white/10 rounded-full overflow-hidden mb-3 relative">
-        <div id="preloader-bar" class="h-full bg-gradient-to-r from-red-600 to-rose-500 w-0 transition-all duration-75"></div>
+        <div id="preloader-bar" class="h-full bg-gradient-to-r from-red-600 to-rose-500 w-0 transition-all duration-75">
+        </div>
       </div>
 
       <!-- Indicador Numérico 0 a 100% -->
-      <div class="flex items-center gap-1 font-mono font-bold text-xs sm:text-sm tracking-wider text-neutral-400 uppercase">
+      <div
+        class="flex items-center gap-1 font-mono font-bold text-xs sm:text-sm tracking-wider text-neutral-400 uppercase">
         <span>CARREGANDO</span>
         <span id="preloader-counter" class="text-white ml-1">0%</span>
       </div>
@@ -212,7 +212,8 @@
           class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Antes &
           Depois</a>
         <a href="#feedbacks"
-          class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Feedbacks &amp; Depoimentos</a>
+          class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Feedbacks &amp;
+          Depoimentos</a>
         <a href="#objetivos"
           class="mobile-nav-link py-3 px-2 border-b border-white/5 hover:text-red-500 transition-colors">Objetivos de
           Treino</a>
@@ -242,8 +243,7 @@
     <!-- Video Hero Background Layer -->
     <div class="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
       <!-- Dark Fallback Background Image -->
-      <img id="hero-video-fallback" src="Assets/eu/fotocapa.jpeg"
-        alt="Treinador Samuel Ribeiro"
+      <img id="hero-video-fallback" src="Assets/eu/fotocapa.jpeg" alt="Treinador Samuel Ribeiro"
         class="absolute inset-0 w-full h-full object-cover object-top opacity-30 filter blur-[2px] transition-opacity duration-700">
 
       <!-- Video Element -->
@@ -352,31 +352,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-
-  <!-- ========================================================================
-       INFINITE BRAND MARQUEE BANNER
-       ======================================================================== -->
-  <section
-    class="py-4 bg-gradient-to-r from-red-950/70 via-red-900/40 to-neutral-950 border-y border-red-900/30 overflow-hidden">
-    <div
-      class="animate-marquee flex items-center gap-12 whitespace-nowrap text-xs sm:text-sm font-display font-extrabold uppercase tracking-[0.25em] text-gray-200">
-      <span>• TEAM RIBEIRO</span>
-      <span class="text-red-500">• </span>
-      <span>• HIPERTROFIA</span>
-      <span class="text-red-500">• TREINO PERSONALIZADO</span>
-      <span>• EMAGRECIMENTO</span>
-      <span class="text-red-500">• ACOMPANHAMENTO MENSAL </span>
-      <span>• @TREINADOR_SAMUELRIBEIRO</span>
-      <span>• TEAM RIBEIRO</span>
-      <span class="text-red-500">• </span>
-      <span>• HIPERTROFIA</span>
-      <span class="text-red-500">• TREINO PERSONALIZADO</span>
-      <span>• EMAGRECIMENTO</span>
-      <span class="text-red-500">• ACOMPANHAMENTO MENSAL </span>
-      <span>• @TREINADOR_SAMUELRIBEIRO</span>
     </div>
   </section>
 
@@ -654,7 +629,8 @@
           A CIÊNCIA POR TRÁS DO <span class="text-red-600">SEU RESULTADO</span>
         </h2>
         <p class="text-neutral-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-          Chega de treinos genéricos da internet, aqui no team ribeiro cada estratégia é construída a partir das suas características individuais, dos seus objetivos e da ciência do treinamento.
+          Chega de treinos genéricos da internet, aqui no team ribeiro cada estratégia é construída a partir das suas
+          características individuais, dos seus objetivos e da ciência do treinamento.
         </p>
       </div>
 
@@ -975,7 +951,8 @@
               </div>
               <p class="text-xs text-gray-300 mt-2 font-medium flex items-center gap-1.5">
                 <i data-lucide="credit-card" class="w-3.5 h-3.5 text-red-400 shrink-0"></i>
-                <span>ou parcelado em até <strong>3x no cartão</strong> <span class="text-gray-400 text-[10px]">(com juros)</span></span>
+                <span>ou parcelado em até <strong>3x no cartão</strong> <span class="text-gray-400 text-[10px]">(com
+                    juros)</span></span>
               </p>
               <div
                 class="mt-2.5 pt-2.5 border-t border-red-600/25 flex items-center gap-1.5 text-[11px] text-red-300 font-semibold">
@@ -1010,8 +987,7 @@
           </div>
 
           <!-- CTA Button (Destaque Mais Popular) -->
-          <a href="https://go.primecoaching.com.br/c/ZXqUKt1837"
-            target="_blank" rel="noopener noreferrer"
+          <a href="https://go.primecoaching.com.br/c/ZXqUKt1837" target="_blank" rel="noopener noreferrer"
             class="btn-primary w-full py-4 rounded-xl text-center text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px] shadow-[0_0_25px_rgba(229,9,20,0.5)]">
             <span>Escolher Plano Bronze</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -1047,7 +1023,8 @@
                 Plano Silver
               </h3>
               <p class="text-xs sm:text-sm text-gray-300 mt-2 leading-relaxed">
-                Consistência e maturação muscular. Desenvolvido para quebra definitiva de platôs com correções técnicas de execução via vídeo e progressão semestral estruturada.
+                Consistência e maturação muscular. Desenvolvido para quebra definitiva de platôs com correções técnicas
+                de execução via vídeo e progressão semestral estruturada.
               </p>
             </div>
 
@@ -1063,7 +1040,8 @@
               </div>
               <p class="text-xs text-gray-300 mt-2 font-medium flex items-center gap-1.5">
                 <i data-lucide="credit-card" class="w-3.5 h-3.5 text-red-400 shrink-0"></i>
-                <span>ou parcelado em até <strong>6x no cartão</strong> <span class="text-gray-400 text-[10px]">(com juros)</span></span>
+                <span>ou parcelado em até <strong>6x no cartão</strong> <span class="text-gray-400 text-[10px]">(com
+                    juros)</span></span>
               </p>
               <div
                 class="mt-2.5 pt-2.5 border-t border-red-600/25 flex items-center gap-1.5 text-[11px] text-red-300 font-semibold">
@@ -1080,34 +1058,39 @@
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span><strong class="text-white">Correções de execução via WhatsApp:</strong> envie vídeos dos seus exercícios para ajuste biomecânico fino de postura e segurança</span>
+                <span><strong class="text-white">Correções de execução via WhatsApp:</strong> envie vídeos dos seus
+                  exercícios para ajuste biomecânico fino de postura e segurança</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span><strong class="text-white">Feedbacks mensais em vídeo:</strong> análise profunda da evolução de cargas, tônus e proporção corporal a cada 30 dias</span>
+                <span><strong class="text-white">Feedbacks mensais em vídeo:</strong> análise profunda da evolução de
+                  cargas, tônus e proporção corporal a cada 30 dias</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span><strong class="text-white">Periodização semestral estratégica:</strong> alternância de blocos de hipertrofia, densidade e quebra contínua de platô</span>
+                <span><strong class="text-white">Periodização semestral estratégica:</strong> alternância de blocos de
+                  hipertrofia, densidade e quebra contínua de platô</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span><strong class="text-white">Ajustes dinâmicos de cardio &amp; recomposição:</strong> calibração metabólica para máxima definição sem perda muscular</span>
+                <span><strong class="text-white">Ajustes dinâmicos de cardio &amp; recomposição:</strong> calibração
+                  metabólica para máxima definição sem perda muscular</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span><strong class="text-white">Suporte direto 7 dias por semana:</strong> canal ágil para tirar dúvidas de treino e exercícios no WhatsApp</span>
+                <span><strong class="text-white">Suporte direto 7 dias por semana:</strong> canal ágil para tirar
+                  dúvidas de treino e exercícios no WhatsApp</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
-                <span><strong class="text-white">Metas semanais de constância</strong> e acesso ao app interativo com tutoriais demonstrativos de cada exercício</span>
+                <span><strong class="text-white">Metas semanais de constância</strong> e acesso ao app interativo com
+                  tutoriais demonstrativos de cada exercício</span>
               </li>
             </ul>
           </div>
 
           <!-- CTA Button -->
-          <a href="https://go.primecoaching.com.br/c/EgfnLFhFz7"
-            target="_blank" rel="noopener noreferrer"
+          <a href="https://go.primecoaching.com.br/c/EgfnLFhFz7" target="_blank" rel="noopener noreferrer"
             class="btn-primary w-full py-4 rounded-xl text-center text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px] bg-red-600 hover:bg-red-700 text-white shadow-[0_0_25px_rgba(229,9,20,0.5)] transition-all">
             <span>Garantir Vaga no Silver</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -1148,7 +1131,8 @@
                   class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-950/60 px-2 py-0.5 rounded border border-amber-500/40">VIP</span>
               </h3>
               <p class="text-xs sm:text-sm text-gray-300 mt-2 leading-relaxed">
-                O maior custo-benefício anual. Acompanhamento premium e completo com acesso direto ao Treinador Samuel Ribeiro, consultas por vídeo e feedback quinzenal.
+                O maior custo-benefício anual. Acompanhamento premium e completo com acesso direto ao Treinador Samuel
+                Ribeiro, consultas por vídeo e feedback quinzenal.
               </p>
             </div>
 
@@ -1159,7 +1143,8 @@
                 <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-400/90">
                   Valor Total à Vista
                 </span>
-                <span class="text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                <span
+                  class="text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40">
                   Melhor Custo-Benefício
                 </span>
               </div>
@@ -1170,7 +1155,8 @@
               </div>
               <p class="text-xs text-gray-200 mt-2 font-medium flex items-center gap-1.5">
                 <i data-lucide="credit-card" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
-                <span>ou parcelado em até <strong>12x no cartão</strong> <span class="text-gray-400 text-[10px]">(com juros)</span></span>
+                <span>ou parcelado em até <strong>12x no cartão</strong> <span class="text-gray-400 text-[10px]">(com
+                    juros)</span></span>
               </p>
               <div
                 class="mt-2.5 pt-2.5 border-t border-amber-500/20 flex flex-col gap-1.5 text-[11px] text-amber-300 font-bold">
@@ -1193,26 +1179,29 @@
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                <span><strong>Consulta mensal por vídeo chamada:</strong> encontro individual para avaliarmos seu progresso e alinhar a estratégia</span>
+                <span><strong>Consulta mensal por vídeo chamada:</strong> encontro individual para avaliarmos seu
+                  progresso e alinhar a estratégia</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                <span><strong>Feedback quinzenal (a cada 15 dias):</strong> acompanhamento dobrado com análise em vídeo da evolução e cargas</span>
+                <span><strong>Feedback quinzenal (a cada 15 dias):</strong> acompanhamento dobrado com análise em vídeo
+                  da evolução e cargas</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                <span><strong>Periodização anual completa:</strong> macrociclo desenhado para transformação física definitiva sem regresso</span>
+                <span><strong>Periodização anual completa:</strong> macrociclo desenhado para transformação física
+                  definitiva sem regresso</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                <span><strong>Suporte prioritário VIP 7 dias por semana:</strong> canal direto e prioritário no WhatsApp com o Treinador Samuel Ribeiro</span>
+                <span><strong>Suporte prioritário VIP 7 dias por semana:</strong> canal direto e prioritário no WhatsApp
+                  com o Treinador Samuel Ribeiro</span>
               </li>
             </ul>
           </div>
 
           <!-- CTA Button (Dourado/Escarlate) -->
-          <a href="https://go.primecoaching.com.br/c/yvUKDBiJAG"
-            target="_blank" rel="noopener noreferrer"
+          <a href="https://go.primecoaching.com.br/c/yvUKDBiJAG" target="_blank" rel="noopener noreferrer"
             class="w-full py-4 rounded-xl text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[48px] bg-gradient-to-r from-amber-500 via-red-600 to-amber-600 hover:from-amber-400 hover:to-red-500 text-white shadow-[0_0_25px_rgba(245,158,11,0.35)] transition-all duration-300">
             <span>Candidatar-se ao Plano Gold</span>
             <i data-lucide="crown" class="w-4 h-4"></i>
@@ -1300,7 +1289,8 @@
             <div id="before-after-card" class="comparison-card group">
 
               <!-- Base Layer: ANTES -->
-              <img id="case-before-img" src="Assets/adicionar antes e depois/antes1.jpeg" alt="Aluno Antes da Consultoria"
+              <img id="case-before-img" src="Assets/adicionar antes e depois/antes1.jpeg"
+                alt="Aluno Antes da Consultoria"
                 class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none transition-opacity duration-300">
 
               <!-- Badge ANTES (Canto Superior Esquerdo) -->
@@ -1612,13 +1602,13 @@
         <!-- Card 1 -->
         <div
           class="feedback-card bg-[#121214]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 p-3 shadow-lg flex flex-col justify-between group cursor-pointer hover:shadow-[0_10px_30px_rgba(229,9,20,0.2)]"
-          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.52 (1).jpeg"
-          data-feedback-index="0"
+          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.52 (1).jpeg" data-feedback-index="0"
           data-feedback-caption="Evolução muscular e satisfação com o protocolo personalizado">
           <div>
             <div class="flex items-center justify-between mb-3 px-1 pt-1">
               <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
                   TR
                 </div>
                 <div>
@@ -1633,17 +1623,20 @@
                 ★★★★★
               </div>
             </div>
-            <div class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
+            <div
+              class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
               <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.52 (1).jpeg"
                 alt="Feedback Aluno Team Ribeiro 1" loading="lazy"
                 class="w-full h-auto max-h-[360px] object-contain group-hover:scale-[1.03] transition-transform duration-300">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
                 <i data-lucide="zoom-in" class="w-4 h-4 text-red-500"></i>
                 <span>Clique para Ler</span>
               </div>
             </div>
           </div>
-          <div class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
+          <div
+            class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
             <span class="flex items-center gap-1 text-emerald-400 font-medium">
               <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
               <span>Relato no WhatsApp</span>
@@ -1658,13 +1651,13 @@
         <!-- Card 2 -->
         <div
           class="feedback-card bg-[#121214]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 p-3 shadow-lg flex flex-col justify-between group cursor-pointer hover:shadow-[0_10px_30px_rgba(229,9,20,0.2)]"
-          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.52.jpeg"
-          data-feedback-index="1"
+          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.52.jpeg" data-feedback-index="1"
           data-feedback-caption="Progresso de carga e ganho de massa magra comprovado">
           <div>
             <div class="flex items-center justify-between mb-3 px-1 pt-1">
               <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
                   TR
                 </div>
                 <div>
@@ -1679,17 +1672,20 @@
                 ★★★★★
               </div>
             </div>
-            <div class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
-              <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.52.jpeg"
-                alt="Feedback Aluno Team Ribeiro 2" loading="lazy"
+            <div
+              class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
+              <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.52.jpeg" alt="Feedback Aluno Team Ribeiro 2"
+                loading="lazy"
                 class="w-full h-auto max-h-[360px] object-contain group-hover:scale-[1.03] transition-transform duration-300">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
                 <i data-lucide="zoom-in" class="w-4 h-4 text-red-500"></i>
                 <span>Clique para Ler</span>
               </div>
             </div>
           </div>
-          <div class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
+          <div
+            class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
             <span class="flex items-center gap-1 text-emerald-400 font-medium">
               <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
               <span>Relato no WhatsApp</span>
@@ -1704,13 +1700,13 @@
         <!-- Card 3 -->
         <div
           class="feedback-card bg-[#121214]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 p-3 shadow-lg flex flex-col justify-between group cursor-pointer hover:shadow-[0_10px_30px_rgba(229,9,20,0.2)]"
-          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (1).jpeg"
-          data-feedback-index="2"
+          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (1).jpeg" data-feedback-index="2"
           data-feedback-caption="Superação de limites e rotina ajustada individualmente">
           <div>
             <div class="flex items-center justify-between mb-3 px-1 pt-1">
               <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
                   TR
                 </div>
                 <div>
@@ -1725,17 +1721,20 @@
                 ★★★★★
               </div>
             </div>
-            <div class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
+            <div
+              class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
               <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (1).jpeg"
                 alt="Feedback Aluno Team Ribeiro 3" loading="lazy"
                 class="w-full h-auto max-h-[360px] object-contain group-hover:scale-[1.03] transition-transform duration-300">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
                 <i data-lucide="zoom-in" class="w-4 h-4 text-red-500"></i>
                 <span>Clique para Ler</span>
               </div>
             </div>
           </div>
-          <div class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
+          <div
+            class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
             <span class="flex items-center gap-1 text-emerald-400 font-medium">
               <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
               <span>Relato no WhatsApp</span>
@@ -1750,13 +1749,13 @@
         <!-- Card 4 -->
         <div
           class="feedback-card bg-[#121214]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 p-3 shadow-lg flex flex-col justify-between group cursor-pointer hover:shadow-[0_10px_30px_rgba(229,9,20,0.2)]"
-          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (2).jpeg"
-          data-feedback-index="3"
+          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (2).jpeg" data-feedback-index="3"
           data-feedback-caption="Redução de medidas e afinamento de cintura perceptível">
           <div>
             <div class="flex items-center justify-between mb-3 px-1 pt-1">
               <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
                   TR
                 </div>
                 <div>
@@ -1771,17 +1770,20 @@
                 ★★★★★
               </div>
             </div>
-            <div class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
+            <div
+              class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
               <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (2).jpeg"
                 alt="Feedback Aluno Team Ribeiro 4" loading="lazy"
                 class="w-full h-auto max-h-[360px] object-contain group-hover:scale-[1.03] transition-transform duration-300">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
                 <i data-lucide="zoom-in" class="w-4 h-4 text-red-500"></i>
                 <span>Clique para Ler</span>
               </div>
             </div>
           </div>
-          <div class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
+          <div
+            class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
             <span class="flex items-center gap-1 text-emerald-400 font-medium">
               <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
               <span>Relato no WhatsApp</span>
@@ -1796,13 +1798,13 @@
         <!-- Card 5 -->
         <div
           class="feedback-card bg-[#121214]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 p-3 shadow-lg flex flex-col justify-between group cursor-pointer hover:shadow-[0_10px_30px_rgba(229,9,20,0.2)]"
-          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (3).jpeg"
-          data-feedback-index="4"
+          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (3).jpeg" data-feedback-index="4"
           data-feedback-caption="Acompanhamento próximo com ajustes rápidos de execução">
           <div>
             <div class="flex items-center justify-between mb-3 px-1 pt-1">
               <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
                   TR
                 </div>
                 <div>
@@ -1817,17 +1819,20 @@
                 ★★★★★
               </div>
             </div>
-            <div class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
+            <div
+              class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
               <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53 (3).jpeg"
                 alt="Feedback Aluno Team Ribeiro 5" loading="lazy"
                 class="w-full h-auto max-h-[360px] object-contain group-hover:scale-[1.03] transition-transform duration-300">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
                 <i data-lucide="zoom-in" class="w-4 h-4 text-red-500"></i>
                 <span>Clique para Ler</span>
               </div>
             </div>
           </div>
-          <div class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
+          <div
+            class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
             <span class="flex items-center gap-1 text-emerald-400 font-medium">
               <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
               <span>Relato no WhatsApp</span>
@@ -1842,13 +1847,13 @@
         <!-- Card 6 -->
         <div
           class="feedback-card bg-[#121214]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 p-3 shadow-lg flex flex-col justify-between group cursor-pointer hover:shadow-[0_10px_30px_rgba(229,9,20,0.2)]"
-          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53.jpeg"
-          data-feedback-index="5"
+          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53.jpeg" data-feedback-index="5"
           data-feedback-caption="Físico transformado sem dor e com técnica biomecânica apurada">
           <div>
             <div class="flex items-center justify-between mb-3 px-1 pt-1">
               <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
                   TR
                 </div>
                 <div>
@@ -1863,17 +1868,20 @@
                 ★★★★★
               </div>
             </div>
-            <div class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
-              <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53.jpeg"
-                alt="Feedback Aluno Team Ribeiro 6" loading="lazy"
+            <div
+              class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
+              <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.53.jpeg" alt="Feedback Aluno Team Ribeiro 6"
+                loading="lazy"
                 class="w-full h-auto max-h-[360px] object-contain group-hover:scale-[1.03] transition-transform duration-300">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
                 <i data-lucide="zoom-in" class="w-4 h-4 text-red-500"></i>
                 <span>Clique para Ler</span>
               </div>
             </div>
           </div>
-          <div class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
+          <div
+            class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
             <span class="flex items-center gap-1 text-emerald-400 font-medium">
               <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
               <span>Relato no WhatsApp</span>
@@ -1888,13 +1896,13 @@
         <!-- Card 7 -->
         <div
           class="feedback-card bg-[#121214]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 p-3 shadow-lg flex flex-col justify-between group cursor-pointer hover:shadow-[0_10px_30px_rgba(229,9,20,0.2)]"
-          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.54 (1).jpeg"
-          data-feedback-index="6"
+          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.54 (1).jpeg" data-feedback-index="6"
           data-feedback-caption="Segurança e evolução consistente com feedback contínuo">
           <div>
             <div class="flex items-center justify-between mb-3 px-1 pt-1">
               <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
                   TR
                 </div>
                 <div>
@@ -1909,17 +1917,20 @@
                 ★★★★★
               </div>
             </div>
-            <div class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
+            <div
+              class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
               <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.54 (1).jpeg"
                 alt="Feedback Aluno Team Ribeiro 7" loading="lazy"
                 class="w-full h-auto max-h-[360px] object-contain group-hover:scale-[1.03] transition-transform duration-300">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
                 <i data-lucide="zoom-in" class="w-4 h-4 text-red-500"></i>
                 <span>Clique para Ler</span>
               </div>
             </div>
           </div>
-          <div class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
+          <div
+            class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
             <span class="flex items-center gap-1 text-emerald-400 font-medium">
               <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
               <span>Relato no WhatsApp</span>
@@ -1934,13 +1945,13 @@
         <!-- Card 8 -->
         <div
           class="feedback-card bg-[#121214]/80 border border-white/10 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 p-3 shadow-lg flex flex-col justify-between group cursor-pointer hover:shadow-[0_10px_30px_rgba(229,9,20,0.2)]"
-          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.54.jpeg"
-          data-feedback-index="7"
+          data-feedback-src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.54.jpeg" data-feedback-index="7"
           data-feedback-caption="Resultados visíveis no espelho e aumento expressivo de força">
           <div>
             <div class="flex items-center justify-between mb-3 px-1 pt-1">
               <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-gradient-to-br from-red-600 to-red-900 border border-red-500/40 flex items-center justify-center text-white font-extrabold text-[11px] shadow-sm">
                   TR
                 </div>
                 <div>
@@ -1955,17 +1966,20 @@
                 ★★★★★
               </div>
             </div>
-            <div class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
-              <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.54.jpeg"
-                alt="Feedback Aluno Team Ribeiro 8" loading="lazy"
+            <div
+              class="relative w-full rounded-xl overflow-hidden bg-neutral-950 border border-white/5 flex items-center justify-center min-h-[220px]">
+              <img src="Assets/feedback/WhatsApp Image 2026-10-29 at 12.18.54.jpeg" alt="Feedback Aluno Team Ribeiro 8"
+                loading="lazy"
                 class="w-full h-auto max-h-[360px] object-contain group-hover:scale-[1.03] transition-transform duration-300">
-              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
+              <div
+                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-[2px]">
                 <i data-lucide="zoom-in" class="w-4 h-4 text-red-500"></i>
                 <span>Clique para Ler</span>
               </div>
             </div>
           </div>
-          <div class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
+          <div
+            class="pt-2.5 px-1 flex items-center justify-between text-[11px] text-gray-400 border-t border-white/5 mt-3">
             <span class="flex items-center gap-1 text-emerald-400 font-medium">
               <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
               <span>Relato no WhatsApp</span>
@@ -1980,14 +1994,18 @@
       </div>
 
       <!-- Bottom Social Trust Call-to-Action Banner -->
-      <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-neutral-900/60 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+      <div
+        class="mt-14 p-6 sm:p-8 rounded-2xl bg-neutral-900/60 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-500 shrink-0 shadow-[0_0_15px_rgba(229,9,20,0.3)]">
+          <div
+            class="w-12 h-12 rounded-xl bg-red-600/20 border border-red-500/40 flex items-center justify-center text-red-500 shrink-0 shadow-[0_0_15px_rgba(229,9,20,0.3)]">
             <i data-lucide="message-square-quote" class="w-6 h-6"></i>
           </div>
           <div>
-            <h4 class="text-base sm:text-lg font-bold text-white font-display uppercase tracking-wide">Resultados Comprovados no Dia a Dia</h4>
-            <p class="text-xs sm:text-sm text-gray-400">Conversas reais retiradas diretamente dos nossos canais oficiais de acompanhamento com o Treinador Samuel Ribeiro.</p>
+            <h4 class="text-base sm:text-lg font-bold text-white font-display uppercase tracking-wide">Resultados
+              Comprovados no Dia a Dia</h4>
+            <p class="text-xs sm:text-sm text-gray-400">Conversas reais retiradas diretamente dos nossos canais oficiais
+              de acompanhamento com o Treinador Samuel Ribeiro.</p>
           </div>
         </div>
         <a href="https://wa.me/553598657628?text=Ol%C3%A1%2C%20Treinador%20Samuel!%20Vi%20os%20feedbacks%20dos%20alunos%20e%20quero%20iniciar%20minha%20transforma%C3%A7%C3%A3o%20no%20Team%20Ribeiro!"
@@ -2006,7 +2024,7 @@
     class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-3 sm:p-6"
     role="dialog" aria-modal="true" aria-label="Visualização em alta resolução do feedback do aluno">
     <div class="relative w-full max-w-3xl max-h-[96vh] flex flex-col items-center justify-center">
-      
+
       <!-- Top Bar: Indicador e Fechar -->
       <div class="w-full flex items-center justify-between py-2 px-1 text-white mb-2">
         <div class="flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-300">
@@ -2020,10 +2038,11 @@
       </div>
 
       <!-- Main Image Container com Setas -->
-      <div class="relative w-full flex items-center justify-center overflow-hidden rounded-2xl bg-[#0e0e11] border border-white/20 shadow-2xl p-2 sm:p-4">
+      <div
+        class="relative w-full flex items-center justify-center overflow-hidden rounded-2xl bg-[#0e0e11] border border-white/20 shadow-2xl p-2 sm:p-4">
         <img id="feedback-modal-img" src="" alt="Feedback ampliado de aluno Team Ribeiro"
           class="max-h-[76vh] w-auto max-w-full object-contain rounded-xl select-none transition-transform duration-200">
-        
+
         <!-- Botão Navegação Anterior -->
         <button id="feedback-modal-prev" aria-label="Feedback anterior"
           class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/80 hover:bg-red-600 border border-white/20 text-white flex items-center justify-center transition-all hover:scale-110 active:scale-95 cursor-pointer shadow-xl z-20">
@@ -2039,8 +2058,15 @@
 
       <!-- Legenda Inferior & Dica de Atalhos -->
       <div class="mt-3 text-center flex flex-col sm:flex-row items-center justify-between w-full px-2 gap-2">
-        <span id="feedback-modal-caption" class="text-xs text-gray-300 font-medium">Relato de Aluno Oficial • Team Ribeiro</span>
-        <p class="text-[11px] text-gray-500">Pressione <kbd class="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-gray-300 font-mono text-[10px]">ESC</kbd> para fechar ou <kbd class="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-gray-300 font-mono text-[10px]">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-gray-300 font-mono text-[10px]">→</kbd> para navegar</p>
+        <span id="feedback-modal-caption" class="text-xs text-gray-300 font-medium">Relato de Aluno Oficial • Team
+          Ribeiro</span>
+        <p class="text-[11px] text-gray-500">Pressione <kbd
+            class="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-gray-300 font-mono text-[10px]">ESC</kbd>
+          para fechar ou <kbd
+            class="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-gray-300 font-mono text-[10px]">←</kbd>
+          <kbd
+            class="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-gray-300 font-mono text-[10px]">→</kbd>
+          para navegar</p>
       </div>
 
     </div>
